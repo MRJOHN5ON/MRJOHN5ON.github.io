@@ -13,7 +13,7 @@
             <img src="assets/images/GitHub.png" alt="GitHub" class="github-button">
         </a>
     </header>
-
+    <hr class="giant-divider">
     <main>
         <section class="project-details">
             <h2><u>Summary</u></h2>
@@ -27,19 +27,31 @@
                 <p><strong>(👇 Full test case data sheet available 👇)</strong></p>
                 <p><a href="https://docs.google.com/spreadsheets/d/1u7IGVb-FNyHqHK7GsBrwKLk84MCGCfISmwzFId9o3K0/edit?usp=drivesdk" target="_blank">Google Sheets Test Case Data</a></p>
               </div>
+              <hr class="giant-divider">
             <h2><u>Requirement 1: Adding Products to a Kit</u></h2>
             <img src="assets/images/p1.png" alt="Adding Products to a Kit">
-
+            <hr class="giant-divider">
             <h3><u>Key Findings</u></h3>
             <ul>
                 <li><strong>Total Tests:</strong> 28</li>
                 <li><strong>Parameters:</strong> Tested scenarios around the 30-item limit, invalid product IDs, and kit IDs.</li>
             </ul>
-
+            <hr class="giant-divider">
             <h3><u>Major Bugs</u></h3>
 
 <div class="image-section">
     <h4>Verifying Body Response When Requesting An Excess of 30 Items</h4>
+    <p class="highlighted-paragraph">
+        In addition to using Postman, I wrote JavaScript scripts and ran them through Node.js to manually test the same API scenarios. These scripts replicate the Postman tests, ensuring the Urban Grocers API correctly adheres to the 30-item limit for kits. You can view the scripts in my GitHub repository: 
+        <a href="https://github.com/MRJOHN5ON/postmanAPI_testing/tree/main/node-tests" target="_blank" rel="noopener noreferrer">
+            Click here!
+        </a>
+    </p>
+    <p><strong>Exceeding 30 Items:</strong></p>
+    <ul>
+        <li>The API incorrectly allowed multiple quantities of the same product to be added to a kit, causing it to exceed the 30-item limit (expected HTTP 400, received HTTP 200).</li>
+        <li>Interestingly, when adding multiple different products, each with a single quantity, to a kit that had under 30 items (causing it to exceed 30), the API behaved correctly and returned HTTP 400.</li>
+    </ul>
     <img src="assets/images/p2.png" alt="Exceeding 30 Items">
 </div>
 
@@ -48,8 +60,15 @@
     <img src="assets/images/p3.png" alt="Bug Report in JIRA">
 </div>
 
+
+<hr class="giant-divider">
+
 <div class="image-section">
     <h4>Requesting Non-existent Product IDs</h4>
+    <ul>
+        <li>The system accepted non-existent product IDs (e.g., product ID 407 which does not exist) and responded with HTTP 200 OK instead of the expected HTTP 400 Bad Request.</li>
+        <li>This could lead to users believing they have successfully added a valid product to their kit when, in fact, the product does not exist in the system.</li>
+    </ul>
     <img src="assets/images/p4.png" alt="Non-existent Product IDs">
 </div>
 
@@ -61,7 +80,8 @@
 
             <h4><u>Invalid Inputs</u></h4>
             <p>The system was tested with various invalid product IDs and kit IDs (e.g., using Latin letters, symbols, decimal points, non-Latin letters).</p>
-
+            <hr class="giant-divider">
+            <hr class="giant-divider">
             <h2><u>Requirement 2: Fast Delivery Calculations</u></h2>
             <p><strong>Test Cases Overview</strong></p>
             <ul>
@@ -71,28 +91,63 @@
             <p class="centered-link">
                 <a href="https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/pdf/Requirements_Shipping_Price_Calculations.pdf" target="_blank">Detailed Requirements PDF</a>
               </p>              
-            <h3><u>Test Scenarios</u></h3>
-            <ul>
-                <li><strong>Valid Middle-Ground Input:</strong> Tested the system with valid, middle-range parameters to ensure basic functionality.</li>
-                <li><strong>Minimal Product Weight and Middle Values for Other Parameters:</strong> Ensured the system accepted orders with minimal weight and middle-range product counts and delivery times.</li>
-                <li><strong>Minimal Product Weight and Count:</strong> Verified that the client delivery cost remained $0 for orders with minimal weight and product count within limits.</li>
-                <li><strong>Product Weight Exceeding Maximum Limit:</strong> Tested fast delivery with product count within limits but weight slightly over the limit (6.01 kg). The system failed to apply the excess client delivery cost correctly when the product weight exceeded the maximum limit.</li>
-                <li><strong>Product Count Exceeding Maximum Limit:</strong> Tested fast delivery with weight within limits but product count slightly over the limit. The system failed to apply the excess client delivery cost correctly when the product count exceeded the maximum limit.</li>
-                <li><strong>Operating Hours Edge Cases:</strong> Tested ordering one minute before and after operating hours. The system incorrectly allowed orders outside of operating hours.</li>
-            </ul>
-
+              <h3><u>Test Scenarios</u></h3>
+              <ul>
+                  <li><strong>Valid Middle-Ground Input:</strong> Tested the system with valid, middle-range parameters to ensure basic functionality.</li>
+                  <li><strong>Minimal Product Weight and Middle Values for Other Parameters:</strong> Ensured the system accepted orders with minimal weight and middle-range product counts and delivery times.</li>
+                  <li><strong>Minimal Product Weight and Count:</strong> Verified that the client delivery cost remained $0 for orders with minimal weight and product count within limits.</li>
+                  <li><strong>Product Weight Exceeding Maximum Limit:</strong>
+                      <ul>
+                          <li><strong>Scenario:</strong> Tested fast delivery with product count within limits but weight slightly over the limit (6.01 kg).</li>
+                          <li><strong>Expected:</strong> Host delivery cost $6, client delivery cost $9.</li>
+                          <li><strong>Observed:</strong> Client delivery cost was incorrectly charged $6 instead of $9.</li>
+                          <li><strong style="color: #ffffff;">Bug:</strong> The system failed to apply the excess client delivery cost correctly when the product weight exceeded the maximum limit.</li>
+                      </ul>
+                  </li>
+                  <li><strong>Product Count Exceeding Maximum Limit:</strong>
+                      <ul>
+                          <li><strong>Scenario:</strong> Tested fast delivery with weight within limits but product count slightly over the limit.</li>
+                          <li><strong>Expected:</strong> Host delivery cost $6, client delivery cost $9.</li>
+                          <li><strong>Observed:</strong> Client delivery cost was incorrectly charged $6 instead of $9.</li>
+                          <li><strong style="color: #ffffff;">Bug:</strong> The system failed to apply the excess client delivery cost correctly when the product count exceeded the maximum limit.</li>
+                      </ul>
+                  </li>
+                  <li><strong>Operating Hours Edge Cases:</strong>
+                      <ul>
+                          <li><strong>Scenario:</strong> Tested ordering one minute before operating hours (06:59).
+                              <ul>
+                                  <li><strong>Expected:</strong> `isItPossibleToDeliver` should be `false`.</li>
+                                  <li><strong>Observed:</strong> `isItPossibleToDeliver` was `true`.</li>
+                                  <li><strong style="color: #ffffff;">Bug:</strong> The system incorrectly allowed orders one minute before operating hours.</li>
+                              </ul>
+                          </li>
+                          <li><strong>Scenario:</strong> Tested ordering one minute after operating hours (21:01).
+                              <ul>
+                                  <li><strong>Expected:</strong> `isItPossibleToDeliver` should be `false`.</li>
+                                  <li><strong>Observed:</strong> `isItPossibleToDeliver` was `true`.</li>
+                                  <li><strong style="color: #ffffff;">Bug:</strong> The system incorrectly allowed orders one minute after operating hours.</li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+              
+            <hr class="giant-divider">
             <h3><u>Inconclusive Tests</u></h3>
             <p>Two tests were deemed inconclusive, pointing to a significant flaw in the design of the API's cost calculation system. These tests highlighted a gap in the defined ranges for host delivery cost:</p>
             <ul>
                 <li>Ordering Fast Delivery with Product Weight Just Above the Lower Limit (2.51 kg).</li>
                 <li>Ordering Fast Delivery with Product Weight Slightly Below the Upper Limit (2.59 kg).</li>
             </ul>
+            <hr class="giant-divider">
             <div class="image-section">
                 <h4><u>Results</u></h4>
                 <img src="assets/images/p6.png" alt="results">
             </div>
+            <hr class="giant-divider">
+            <p><strong style="color: #fffdfd;">Major Flaw in Design:</strong> The current requirements have a gap between the $3 price range (0-2.5 kg) and the $6 price range (2.6-6 kg). This ambiguity creates uncertainty in expected outcomes for product weights that fall within this gap (e.g., 2.51 kg and 2.59 kg).</p>
 
-            <p><strong>Major Flaw in Design:</strong> The current requirements have a gap between the $3 price range (0-2.5 kg) and the $6 price range (2.6-6 kg). This ambiguity creates uncertainty in expected outcomes for product weights that fall within this gap (e.g., 2.51 kg and 2.59 kg).</p>
+            <hr class="giant-divider">
             <a href="https://github.com/MRJOHN5ON/postmanAPI_testing" target="_blank">
                 <img src="assets/images/GitHub.png" alt="GitHub" class="github-button">
             </a>
