@@ -4,8 +4,10 @@ function myMenuFunction() {
 
   if (menuBtn.className === "nav-menu") {
     menuBtn.className += " responsive";
+    addMenuLinkListeners(); // Add listeners when menu is opened
   } else {
     menuBtn.className = "nav-menu";
+    removeMenuLinkListeners(); // Remove listeners when menu is closed
   }
 }
 
@@ -95,3 +97,23 @@ function scrollActive() {
 }
 
 window.addEventListener('scroll', scrollActive);
+
+/* ----- CLOSE MENU ON LINK CLICK ----- */
+function addMenuLinkListeners() {
+  const menuLinks = document.querySelectorAll('.nav-menu a');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+}
+
+function removeMenuLinkListeners() {
+  const menuLinks = document.querySelectorAll('.nav-menu a');
+  menuLinks.forEach(link => {
+    link.removeEventListener('click', closeMenu);
+  });
+}
+
+function closeMenu() {
+  var menuBtn = document.getElementById("myNavMenu");
+  menuBtn.className = "nav-menu"; // Close the menu
+}
