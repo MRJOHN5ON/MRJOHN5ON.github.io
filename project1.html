@@ -5,41 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API Testing with Postman</title>
     <link rel="stylesheet" href="assets/css/project1.css">
-    <style>
-        /* Modal Styles */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
-        }
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%; /* Make image responsive */
-            max-width: 700px;
-        }
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #ff0404;
-            font-size: 40px;
-            font-weight: bold;
-        }
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
+    
 </head>
 <body>
     <header>
@@ -68,15 +34,13 @@
                 <hr class="giant-divider">
                 <h2><u>Requirement 1: Adding Products to a Kit</u></h2>
                 <div class="image-container">
-                    <img src="assets/images/p1.png" alt="Adding Products to a Kit" class="modal-trigger">
+                    <a href="assets/images/p1.png" target="_blank">
+                        <img src="assets/images/p1.png" alt="Adding Products to a Kit">
+                    </a>
                     <p class="image-caption">CLICK IMAGE TO ENLARGE</p>
                 </div>
 
-                <!-- Modal for Enlarged Image -->
-                <div class="modal" id="imageModal">
-                    <span class="close">&times;</span>
-                    <img class="modal-content" id="modalImage">
-                </div>
+                
             </div>
         </section>
 
@@ -103,16 +67,21 @@
                 <br>Interestingly, when adding multiple different products, each with a single quantity, to a kit that had under 30 items (causing it to exceed 30), the API behaved correctly & returned HTTP 400.</li>
             <br><br></div>
             <div class="image-section">
-                <img src="assets/images/p2.png" alt="Exceeding 30 Items" class="modal-trigger">
+                <a href="assets/images/p2.png" target="_blank">
+                    <img src="assets/images/p2.png" alt="Exceeding 30 Items">
+                </a>
                 <p class="image-caption">CLICK IMAGE TO ENLARGE</p>
             </div>
         </div>
 
         <div class="image-section">
             <h4>Bug Report in JIRA</h4>
-            <img src="assets/images/p3.png" alt="Bug Report in JIRA" class="modal-trigger">
+            <a href="assets/images/p3.png" target="_blank">
+                <img src="assets/images/p3.png" alt="Bug Report in JIRA">
+            </a>
             <p class="image-caption">CLICK IMAGE TO ENLARGE</p>
         </div>
+        
 
         <hr class="giant-divider">
 
@@ -122,16 +91,21 @@
             <div class="text-center">
                 The system accepted non-existent product IDs (e.g., product ID 407 which does not exist) and responded with HTTP 200 OK instead of the expected HTTP 400 Bad Request.
                 <br>This could lead to users believing they have successfully added a valid product to their kit when, in fact, the product does not exist in the system.
-            <br><br></div>
-            <img src="assets/images/p4.png" alt="Non-existent Product IDs" class="modal-trigger">
+                <br><br>
+            </div>
+            <a href="assets/images/p4.png" target="_blank">
+                <img src="assets/images/p4.png" alt="Non-existent Product IDs">
+            </a>
             <p class="image-caption">CLICK IMAGE TO ENLARGE</p>
-        </div>
+            
 
-        <div class="image-section">
-            <h4>Bug Report in JIRA</h4>
-            <img src="assets/images/p5.png" alt="Bug Report in JIRA" class="modal-trigger">
-            <p class="image-caption">CLICK IMAGE TO ENLARGE</p>
-        </div>
+            <div class="image-section">
+                <h4>Bug Report in JIRA</h4>
+                <a href="assets/images/p5.png" target="_blank">
+                    <img src="assets/images/p5.png" alt="Bug Report in JIRA">
+                </a>
+                <p class="image-caption">CLICK IMAGE TO ENLARGE</p>
+            </div>
 
         <h4><u>Invalid Inputs</u></h4>
         <div class="text-center">
@@ -149,27 +123,49 @@
             <a href="https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/pdf/Requirements_Shipping_Price_Calculations.pdf" target="_blank">Detailed Requirements PDF</a>
         </p>
         <h3><u>Test Scenarios</u></h3>
-        <ul>
-            <li><strong>Valid Middle-Ground Input:</strong> Tested the system with valid, middle-range parameters to ensure basic functionality.</li><br>
-            <li><strong>Minimal Product Weight and Middle Values for Other Parameters:</strong> Ensured the system accepted orders with minimal weight and middle-range product counts and delivery times.</li><br>
-            <li><strong>Minimal Product Weight and Count:</strong> Verified that the client delivery cost remained $0 for orders with minimal weight and product count within limits.</li><br>
-            <li><strong>Product Weight Exceeding Maximum Limit:</strong><br><br>
-                <ul>
-                    <li><strong>Scenario:</strong> Tested fast delivery with product count within limits but weight slightly over the limit (6.01 kg).</li><br>
-                    <li><strong>Expected:</strong> Host delivery cost $6, client delivery cost $9.</li><br>
-                    <li><strong>Observed:</strong> Client delivery cost was incorrectly charged $6 instead of $9.</li><br>
-                    <li><strong style="color: #ff0404;">Bug:</strong> The system failed to apply the excess client delivery cost correctly when the product weight exceeded the maximum limit.</li><br>
-                </ul>
-            </li>
-            <li><strong>Product Count Exceeding Maximum Limit:</strong><br><br>
-                <ul>
-                    <li><strong>Scenario:</strong> Tested fast delivery with weight within limits but product count slightly over the limit.</li><br>
-                    <li><strong>Expected:</strong> Host delivery cost $6, client delivery cost $9.</li><br>
-                    <li><strong>Observed:</strong> Client delivery cost was incorrectly charged $6 instead of $9.</li><br>
-                    <li><strong style="color: #ff0404;">Bug:</strong> The system failed to apply the excess client delivery cost correctly when the product count exceeded the maximum limit.</li><br>
-                </ul>
-            </li>
-        </ul>
+<div class="test-scenarios">
+    <div class="scenario-item">
+        <strong>Valid Middle-Ground Input:</strong> Tested the system with valid, middle-range parameters to ensure basic functionality.
+    </div>
+    <div class="scenario-item">
+        <strong>Minimal Product Weight and Middle Values for Other Parameters:</strong> Ensured the system accepted orders with minimal weight and middle-range product counts and delivery times.
+    </div>
+    <div class="scenario-item">
+        <strong>Minimal Product Weight and Count:</strong> Verified that the client delivery cost remained $0 for orders with minimal weight and product count within limits.
+    </div>
+    <div class="scenario-item">
+        <strong>Product Weight Exceeding Maximum Limit:</strong>
+        <div class="sub-item">
+            <strong>Scenario:</strong> Tested fast delivery with product count within limits but weight slightly over the limit (6.01 kg).
+        </div>
+        <div class="sub-item">
+            <strong>Expected:</strong> Host delivery cost $6, client delivery cost $9.
+        </div>
+        <div class="sub-item">
+            <strong>Observed:</strong> Client delivery cost was incorrectly charged $6 instead of $9.
+        </div>
+        <div class="sub-item">
+            <strong style="color: #ff0404;">Bug:</strong> The system failed to apply the excess client delivery cost correctly when the product weight exceeded the maximum limit.
+        </div>
+    </div>
+    <div class="scenario-item">
+        <strong>Product Count Exceeding Maximum Limit:</strong>
+        <div class="sub-item">
+            <strong>Scenario:</strong> Tested fast delivery with weight within limits but product count slightly over the limit.
+        </div>
+        <div class="sub-item">
+            <strong>Expected:</strong> Host delivery cost $6, client delivery cost $9.
+        </div>
+        <div class="sub-item">
+            <strong>Observed:</strong> Client delivery cost was incorrectly charged $6 instead of $9.
+        </div>
+        <div class="sub-item">
+            <strong style="color: #ff0404;">Bug:</strong> The system failed to apply the excess client delivery cost correctly when the product count exceeded the maximum limit.
+        </div>
+    </div>
+</div>
+
+
         <hr class="giant-divider">
         <h3><u>Inconclusive Tests</u></h3>
         <div class="text-center">
@@ -181,7 +177,9 @@
         <hr class="giant-divider">
         <div class="image-section">
             <h4><u>Results</u></h4>
-            <img src="assets/images/p6.png" alt="results" class="modal-trigger">
+            <a href="assets/images/p6.png" target="_blank">
+                <img src="assets/images/p6.png" alt="Results">
+            </a>
             <p class="image-caption">CLICK IMAGE TO ENLARGE</p>
         </div>
         <hr class="giant-divider">
@@ -195,41 +193,16 @@
 
 <footer>
     <p>&copy; 2024 Ryley Johnson</p>
+    <a href="index.html"> Go Back To Home Page</a>
     <p>Contact me: <a href="mailto:ryleyjohnsonemail@gmail.com">ryleyjohnsonemail@gmail.com</a></p>
+    
     <div class="github-button-container">
         <a href="https://github.com/MRJOHN5ON/postmanAPI_testing" target="_blank">
             <img src="assets/images/GitHub.png" alt="GitHub" class="github-button">
         </a>
     </div>
 </footer>
-    <script>
-        // Modal functionality
-        const modals = document.querySelectorAll('.modal');
-        const modalTriggers = document.querySelectorAll('.modal-trigger');
-        const closeButtons = document.querySelectorAll('.close');
-        const modalImage = document.getElementById('modalImage');
-
-        modalTriggers.forEach((trigger, index) => {
-            trigger.onclick = function() {
-                const modal = document.getElementById('imageModal');
-                modal.style.display = "block";
-                modalImage.src = trigger.src;
-            }
-        });
-
-        closeButtons.forEach((btn) => {
-            btn.onclick = function() {
-                const modal = document.getElementById('imageModal');
-                modal.style.display = "none";
-            }
-        });
-
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = "none";
-            }
-        }
-    </script>
+    
 </body>
 </html>
 

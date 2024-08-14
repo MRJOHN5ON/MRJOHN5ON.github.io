@@ -141,7 +141,7 @@ img {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #000000;
+    background-color: #f0e9e9d2;
     color: #ff0404;
 }
 
@@ -260,4 +260,43 @@ h1 {
 }
 .text-center {
     text-align: center;
+}
+/* Container for the test scenarios */
+.test-scenarios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Flexible grid layout */
+    gap: 1rem; /* Space between items */
+    padding: 1rem;
+}
+
+/* Style for individual items */
+.scenario-item {
+    background-color: #3c3c3c; /* Light background for each item */
+    border: 1px solid #ff0404; /* Border for better visibility */
+    padding: 1rem; /* Padding inside each item */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+}
+
+/* Style for nested items */
+.sub-item {
+    margin-top: 0.5rem; /* Space between nested items */
+}
+
+/* Ensure text and content inside items are not too wide */
+.scenario-item, .sub-item {
+    text-align: left; /* Align text to the left */
+}
+
+/* Responsive grid layout */
+@media (min-width: 768px) {
+    .test-scenarios {
+        grid-template-columns: repeat(3, 1fr); /* 3 items per row on larger screens */
+    }
+}
+
+@media (max-width: 767px) {
+    .test-scenarios {
+        grid-template-columns: 1fr; /* 1 item per row on smaller screens */
+    }
 }
