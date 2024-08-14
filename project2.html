@@ -10,8 +10,8 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            color: #090300; 
-            background-color: #646363; 
+            color: #fcfcfc; 
+            background-color: #000000d2; 
         }
 
         /* ----- CONTAINER STYLES ----- */
@@ -142,14 +142,14 @@
 /* Style for table headers and cells */
 .test-case-summary th, 
 .test-case-summary td {
-    border: 1px solid #ddd; /* Border color */
+    border: 1px solid #ff0404; /* Border color */
     padding: 8px; /* Adjust padding as needed */
     text-align: left; /* Align text to the left */
 }
 
 /* Style for table headers */
 .test-case-summary th {
-    background-color: #e96f3a; /* Light gray background for headers */
+    background-color: #3a38c0cf; /* Light gray background for headers */
     font-weight: bold;
 }
 
@@ -161,13 +161,13 @@
 
 /* Style for table rows */
 .test-case-summary tr:nth-child(even) {
-    background-color: #c5c2c2; /* Zebra striping for rows */
+    background-color: #292061; /* Zebra striping for rows */
 }
 /* New section styles */
 .analysis-section {
             margin-top: 20px;
             padding: 20px;
-            background-color: #fff;
+            background-color: #4d4a4a;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -214,7 +214,7 @@
         footer {
             background-color: #3b3b3b; /* Darker background color */
             padding: 20px;
-            color: #fff;
+            color: #f80000;
             text-align: center;
             position: fixed;
             width: 100%;
@@ -436,12 +436,12 @@
                 <h3>1. Verify clicking + adds the dish amount without any errors in the GUI</h3>
                 <img src="https://wary-ethernet-059.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffaada197-3f00-4085-a2c7-f628f29ece6f%2F03e9fa1d-b2d3-4fe6-a35c-2a6b467c4b6b%2FScreen_Shot_2024-07-10_at_14.51.59.png?table=block&id=e7ed9ddf-2c3a-49d6-939e-42da71dfbd3d&spaceId=faada197-3f00-4085-a2c7-f628f29ece6f&width=2000&userId=&cache=v2" alt="Issue Screenshot">
                 <ul>
-                    <li><strong>Issue Description:</strong> When increasing the quantity of the "Tomato Soup with Croutons" item using the + button, the price text overlaps with the restaurant name when the quantity exceeds 9 items. This issue worsens when the quantity exceeds 99 items, causing further overlap and making it difficult for users to read the information clearly.</li>
-                    <li><strong>Impact:</strong> Poor user experience due to UI elements overlapping, leading to potential confusion and frustration when placing large quantity orders.</li>
-                    <li><strong><u>Recommendation:</u></strong><br><br>
+                    <li><strong><mark>Issue Description:</mark></strong><br><br><em>When increasing the quantity of the "Tomato Soup with Croutons" item using the + button, the price text overlaps with the restaurant name when the quantity exceeds 9 items. This issue worsens when the quantity exceeds 99 items, causing further overlap and making it difficult for users to read the information clearly.</em> </li>
+                    <li><strong><mark>Impact:</mark></strong><br><br><em> Poor user experience due to UI elements overlapping, leading to potential confusion and frustration when placing large quantity orders.</em></li>
+                    <li><strong><mark><u>Recommendation:</mark></u></strong><br><br>
                         <ul>
-                            <li><strong>UI Adjustment:</strong> Modify the GUI layout to dynamically adjust the placement of price text based on the quantity selected, ensuring it does not overlap with adjacent elements.</li>
-                            <li><strong>Testing Focus:</strong> Conduct thorough GUI testing with varying quantities of all menu items to ensure no overlaps occur across different screen sizes and resolutions.</li>
+                            <li><strong>UI Adjustment:</strong><em> Modify the GUI layout to dynamically adjust the placement of price text based on the quantity selected, ensuring it does not overlap with adjacent elements.</em></li>
+                            <li><strong>Testing Focus:</strong><em> Conduct thorough GUI testing with varying quantities of all menu items to ensure no overlaps occur across different screen sizes and resolutions.</li></em>
                         </ul>
                     </li>
                 </ul>
@@ -449,12 +449,12 @@
                 <h3>2. Verify the total amount calculation includes the price of all prepared dishes and delivery</h3>
                 <img src="https://wary-ethernet-059.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffaada197-3f00-4085-a2c7-f628f29ece6f%2F54941417-12fd-46b6-9b41-9822fdd59fe4%2FScreen_Shot_2024-07-10_at_13.35.04.png?table=block&id=654c5ca1-0fea-4213-aeb1-15332d1b443d&spaceId=faada197-3f00-4085-a2c7-f628f29ece6f&width=2000&userId=&cache=v2" alt="Issue Screenshot">
                 <ul>
-                    <li><strong>Issue Description:</strong> The total amount displayed on the order confirmation screen did not consistently include delivery costs or accurately sum up the prices of all ordered dishes. In some instances, delivery charges were omitted from the total, leading to incorrect billing.</li>
-                    <li><strong>Impact:</strong> Financial discrepancies and user dissatisfaction when the total amount billed does not match the expected sum, potentially affecting trust in the app's payment system.</li>
-                    <li><strong><u>Recommendation:</u></strong><br><br>
+                    <li><strong><mark>Issue Description:</mark></strong><br><br><em> The total amount displayed on the order confirmation screen did not consistently include delivery costs or accurately sum up the prices of all ordered dishes. In some instances, delivery charges were omitted from the total, leading to incorrect billing.</li>
+                    <li><strong><mark>Impact:</mark></strong> <br><br>Financial discrepancies and user dissatisfaction when the total amount billed does not match the expected sum, potentially affecting trust in the app's payment system.</em></li>
+                    <li><strong><mark><u>Recommendation:</mark></u></strong><br><br>
                         <ul>
-                            <li><strong>Backend Validation:</strong> Review the backend calculation logic to ensure all components of the order, including delivery fees, are correctly factored into the total amount.</li>
-                            <li><strong>Integration Testing:</strong> Perform comprehensive integration testing to validate that the final calculated amount accurately reflects the cost of all ordered items and associated fees.</li>
+                            <li><strong>Backend Validation:</strong><em> Review the backend calculation logic to ensure all components of the order, including delivery fees, are correctly factored into the total amount.</em></li>
+                            <li><strong>Integration Testing:</strong><em>Perform comprehensive integration testing to validate that the final calculated amount accurately reflects the cost of all ordered items and associated fees.</em></li>
                         </ul>
                     </li>
                 </ul>
@@ -462,12 +462,12 @@
                 <h3>3. Tracker Screen: Long dish names are cut off, and quantities are not aggregated</h3>
                 <img src="https://wary-ethernet-059.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffaada197-3f00-4085-a2c7-f628f29ece6f%2F88ed3a79-45dc-49b2-bcf0-745c291b94db%2FScreen_Shot_2024-07-10_at_13.50.39.png?table=block&id=17b9f4be-d020-488d-af8a-6be5c6910fb6&spaceId=faada197-3f00-4085-a2c7-f628f29ece6f&width=1420&userId=&cache=v2" alt="Issue Screenshot">
                 <ul>
-                    <li><strong>Issue Description:</strong> On the order tracking screen, long dish names are not fully visible and get cut off. Additionally, multiple items of the same dish are listed individually rather than aggregating the quantity ordered into a single line item (e.g., "Dish Name x3").</li>
-                    <li><strong>Impact:</strong> This results in a cluttered and unclear order tracking screen, making it difficult for users to understand their orders and potentially causing confusion.</li>
-                    <li><strong><u>Recommendation:</u></strong><br><br>
+                    <li><strong><mark>Issue Description:</mark></strong><br><br> On the order tracking screen, long dish names are not fully visible and get cut off. Additionally, multiple items of the same dish are listed individually rather than aggregating the quantity ordered into a single line item (e.g., "Dish Name x3").</li>
+                    <li><strong><mark>Impact:</mark></strong> <br><br>This results in a cluttered and unclear order tracking screen, making it difficult for users to understand their orders and potentially causing confusion.</li>
+                    <li><strong><u><mark>Recommendation:</mark></u></strong><br><br>
                         <ul>
-                            <li><strong>UI Enhancement:</strong> Implement text truncation with ellipsis for long dish names to ensure they fit within the allocated space. Aggregate quantities for the same dish to display them as a single line item.</li>
-                            <li><strong>Testing and Validation:</strong> Conduct extensive UI testing to verify the display of long dish names and quantity aggregation across different screen sizes and resolutions.</li>
+                            <li><strong>UI Enhancement:</strong><em> Implement text truncation with ellipsis for long dish names to ensure they fit within the allocated space. Aggregate quantities for the same dish to display them as a single line item.</em></li>
+                            <li><strong>Testing and Validation:</strong> <em>Conduct extensive UI testing to verify the display of long dish names and quantity aggregation across different screen sizes and resolutions.</em></li>
                         </ul>
                     </li>
                 </ul>
@@ -475,11 +475,11 @@
                 <h3>4. Ensure the costs of each product match the costs outlined in the requirements</h3>
                 <img src="https://wary-ethernet-059.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffaada197-3f00-4085-a2c7-f628f29ece6f%2Fbdd6c5f5-c319-4a39-9ce9-900c91497380%2FScreen_Shot_2024-07-10_at_14.07.18.png?table=block&id=322cb71c-6ceb-4aec-bb4c-5d33a722c171&spaceId=faada197-3f00-4085-a2c7-f628f29ece6f&width=2000&userId=&cache=v2" alt="Issue Screenshot">
                 <ul>
-                    <li><strong>Issue Description:</strong> The Vegan Beet Burger was listed at $25 per burger on the ordering screen, whereas the requirement document lists it at $15 per burger. When ordering two Vegan Beet Burgers, the total was incorrectly displayed as $30.</li>
-                    <li><strong>Impact:</strong> This discrepancy in pricing can lead to overcharging customers and potential loss of trust in the app's accuracy.</li>
-                    <li><strong><u>Recommendation:</u></strong><br><br>
+                    <li><strong><mark> Description:</mark></strong> <br><br><em>The Vegan Beet Burger was listed at $25 per burger on the ordering screen, whereas the requirement document lists it at $15 per burger. When ordering two Vegan Beet Burgers, the total was incorrectly displayed as $30.</em></li>
+                    <li><strong><mark>Impact:</strong></mark><br><br><em>This discrepancy in pricing can lead to overcharging customers and potential loss of trust in the app's accuracy.</em></li>
+                    <li><strong><u><mark>Recommendation:</u></strong></mark><br><br>
                         <ul>
-                            <li><strong>Pricing Correction:</strong> Review and correct the pricing logic for all products to ensure they match the requirements. Conduct thorough testing to validate the displayed prices against the requirement document.</li>
+                            <li><strong>Pricing Correction:</strong><em> Review and correct the pricing logic for all products to ensure they match the requirements. Conduct thorough testing to validate the displayed prices against the requirement document.</em></li>
                         </ul>
                         <img src="https://wary-ethernet-059.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffaada197-3f00-4085-a2c7-f628f29ece6f%2Faa99235f-d1fb-4063-be96-f775ce4f736c%2FScreen_Shot_2024-07-10_at_6.45.02_PM.png?table=block&id=dd51ed5d-40e0-4373-aa03-a3b99dea2802&spaceId=faada197-3f00-4085-a2c7-f628f29ece6f&width=1420&userId=&cache=v2" alt="Issue Screenshot">
                     </li>
@@ -488,11 +488,11 @@
                 <h3>5. Ensure the delivery time countdown matches the advertised delivery time</h3>
                 <img src="https://wary-ethernet-059.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffaada197-3f00-4085-a2c7-f628f29ece6f%2F66d7fc4f-7ae9-4a03-a9e9-7486a9e064c3%2FScreen_Shot_2024-07-10_at_14.12.42.png?table=block&id=727f5243-5dae-4023-95a0-49a3a7b60add&spaceId=faada197-3f00-4085-a2c7-f628f29ece6f&width=2000&userId=&cache=v2" alt="Issue Screenshot">
                 <ul>
-                    <li><strong>Issue Description:</strong> The delivery time countdown did not match the advertised delivery time when placing an order, leading to inconsistencies in the order tracking.</li>
-                    <li><strong>Impact:</strong> Incorrect delivery time estimates can lead to customer dissatisfaction and reduced trust in the app's reliability.</li>
-                    <li><strong><u>Recommendation:</u></strong><br><br>
+                    <li><strong><mark>Issue Description:</strong></mark><br><br><em> The delivery time countdown did not match the advertised delivery time when placing an order, leading to inconsistencies in the order tracking.</em></li>
+                    <li><strong><mark>Impact:</strong> </mark><br><br><em>Incorrect delivery time estimates can lead to customer dissatisfaction and reduced trust in the app's reliability.</em></li>
+                    <li><strong><u><mark>Recommendation:</u></strong></mark><br><br>
                         <ul>
-                            <li><strong>Time Calculation Correction:</strong> Review and correct the delivery time calculation logic to ensure it accurately reflects the advertised delivery times. Test with various order scenarios to validate the consistency of the delivery time countdown.</li>
+                            <li><strong>Time Calculation Correction:</strong> <em>Review and correct the delivery time calculation logic to ensure it accurately reflects the advertised delivery times. Test with various order scenarios to validate the consistency of the delivery time countdown.</em></li>
                         </ul>
                     </li>
                 </ul>
