@@ -523,6 +523,7 @@ textarea{
     padding: 15px 20px;
     outline: none;
     resize: none;
+    color: white;
 }
 .form-button>.btn{
     display: flex;
