@@ -97,3 +97,16 @@ footer {
     background-color: #1e1e1e;
     color: #e0e0e0;
 }
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Adjust padding as needed */
+}
+
+.video-container iframe {
+    width: 100%;
+    max-width: 560px; /* Max width for larger screens */
+    height: 315px; /* Height of the video */
+    border: none; /* Remove border if any */
+}
