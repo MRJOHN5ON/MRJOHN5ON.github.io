@@ -1,0 +1,99 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #f0f0f0;
+    background-color: #121212;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+}
+
+.title {
+    color: #ff0404;
+    font-size: 2.5rem;
+}
+
+/* Section Styles */
+section {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Intro Section Styles */
+.intro {
+    text-align: center;
+}
+
+.video-container {
+    margin: 20px auto;
+}
+
+video {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+}
+
+/* Links and Highlights */
+a {
+    color: #61d2ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.highlight {
+    color: #ff0404;
+}
+
+/* Team Section Styles */
+.team, .tools, .jira, .sheet, .reflection {
+    background: #1e1e1e;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.team h2, .tools h2, .jira h2, .sheet h2, .reflection h2 {
+    color: #a6ff00;
+}
+
+/* Jira Screenshot Styles */
+.jira-screenshot img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 8px;
+}
+
+/* Test Case Sheet Styles */
+.sheet-container {
+    margin: 20px auto;
+}
+
+iframe {
+    border: none;
+    border-radius: 8px;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
