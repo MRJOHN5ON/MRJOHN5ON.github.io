@@ -1,415 +1,279 @@
+:root {
+  --primary-bg: #121212;
+  --secondary-bg: #1e1e1e;
+  --primary-text: #e0e0e0;
+  --secondary-text: #a0a0a0;
+  --accent-color: #ff4081;
+  --card-bg: #2a2a2a;
+}
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  body {
-    line-height: 1.6;
-    background-color: #121212;
-    color: #333;
-    padding-bottom: 50px;
-  }
-  
-  /* Header Styles */
-  header {
-    background-color: #e6dede3f;
-    color: #ff0404;
-    padding: 10px 0;
-    text-align: center;
-  }
-  
-  header h1 {
-    font-size: 2rem;
-  }
-  
-  /* Section Styles */
-  section {
-    margin: 20px;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  
-  /* Heading Styles */
-  h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  }
-  
-  h3, h4 {
-    margin-bottom: 8px;
-    color: #ff0404;
-  }
-  
-  /* List Styles */
-  ul {
-    margin-left: 20px;
-    list-style: disc;
-  }
-  
-  ul li {
-    margin-bottom: 10px;
-  }
-  
-  /* Image Styles */
-  img.screenshot {
-    max-width: 100%;
-    height: auto;
-    margin: 10px 0;
-  }
-  
-  /* Footer Styles */
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-  }
-  
-  footer p {
-    margin: 0;
-  }
-  
-  /* Overview Styles */
-  .overview, .testing-scope {
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 30px 0;
-  }
-  
-  .overview h2, .testing-scope h2 {
-    font-size: 2rem;
-    color: #ff0404;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .overview-content, .testing-scope-grid {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: left;
-  }
-  
-  /* Flex/Grid Styles */
-  .overview-list, .testing-scope-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px; /* Add gap between the grid items */
-    margin-top: 20px;
-  }
-  
-  .overview-item, .testing-category {
-    flex: 1 1 calc(33.333% - 40px); /* Ensure proper width of each column */
-    background-color: #f8f9fa; /* Background color */
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: left; /* Align text to the left */
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .overview-item:hover, .testing-category:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .testing-category h3 {
-    margin-bottom: 15px;
-    color: #ff0404;
-  }
-  
-  .testing-category ul {
-    list-style-position: inside; /* Keeps bullet points inside the container */
-    margin-left: 0; /* No extra left margin */
-  }
-  
-  .testing-category ul li {
-    margin-bottom: 10px; /* Adds space between list items */
-  }
-  
-  /* Icon Styles */
-  .overview-icon, .testing-icon {
-    width: 40px; /* Adjust the size as needed */
-    height: 40px;
-    margin-right: 10px;
-    color: #ff0404; /* Color of the icon */
-  }
-  
-  /* Media Queries */
-  @media (max-width: 768px) {
-    .overview-list, .testing-scope-grid {
-      flex-direction: column;
-    }
-  
-    .overview-item, .testing-category {
-      flex: 1 1 100%; /* Each item takes full width on mobile */
-      margin-bottom: 20px;
-    }
-  
-    .methodologies-grid, .tools-grid {
-      grid-template-columns: 1fr; /* Stack items in a single column on mobile */
-      gap: 15px;
-    }
-  }
-  
-  /* Methodologies and Tools Styles */
-  .methodologies, .tools {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 40px 0;
-  }
-  
-  .methodologies h2, .tools h2 {
-    font-size: 2rem;
-    color: #ff0404;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .methodologies-grid, .tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    justify-items: center;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-  }
-  
-  .methodology-box, .tool-box {
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    width: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .methodology-box:hover, .tool-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  }
-  
-  .methodology-box h3, .tool-box h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    color: #ff0404;
-  }
-  
-  .methodology-box p, .tool-box p {
-    font-size: 1rem;
-    color: #555;
-  }
-  
-  /* Additional Styles */
-  .centered-header {
-    text-align: center;
-    font-size: 2rem;
-    color: #ff0404;
-    margin-bottom: 15px;
-  }
-  
-  .form-testing, .results-summary, .critical-findings {
-    margin: 20px 0;
-    text-align: center;
-  }
-  
-  .results-summary {
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    margin: 20px auto;
-  }
-  
-  .results-summary p {
-    font-size: 1.2rem;
-    color: #555;
-    margin: 0;
-  }
-  
-  .results-summary strong {
-    color: #000000;
-  }
-  
-  .critical-findings h3 {
-    font-size: 2rem;
-    color: #ff0404;
-    margin-bottom: 20px;
-  }
-  
-  .finding {
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 15px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .finding h4 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .finding p {
-    font-size: 1rem;
-    color: #555;
-  }
-  
-  .screenshot {
-    max-width: 50%;
-    height: auto;
-    border-radius: 5px;
-    margin: 10px 0;
-  }
-  .screenshot.centered {
-    width: 40%; /* Resize images to 50% of their original size */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Makes the image a block element */
-    margin: 10px auto; /* Center the image with auto margins */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.form-testing,  .critical-findings {
-    margin: 20px 0;
-    text-align: center; /* Ensures text is centered */
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
 }
 
-#mobile-application-testing {
-    margin: 40px 0;
+header {
+  background-color: var(--secondary-bg);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.testing-categories,
-.testing-results {
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Center the text */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--primary-text);
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-.testing-categories h3,
-.testing-results h3 {
-    font-size: 1.6rem;
-    color: #ff0404;
-    margin-bottom: 15px;
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
 }
 
-.testing-categories ul,
-.testing-results ul {
-    margin-left: 20px;
-    display: inline-block; /* Make the list inline-block to center */
+nav ul li {
+  margin: 0 1rem;
 }
 
-.testing-categories ul li,
-.testing-results ul li {
-    margin-bottom: 10px;
+nav ul li a {
+  color: var(--primary-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.testing-results ul li ul {
-    margin-left: 20px; /* Indentation for nested lists */
+nav ul li a:hover {
+  color: var(--accent-color);
 }
-.image-container {
-    max-width: 100%;
-    justify-content: center; /* Center the items */
-    gap: 10px; /* Space between images (optional) */
-    margin: 20px 0; /* Margin for top and bottom */
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 4rem;
+}
+
+h1, h2, h3, h4 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--accent-color);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.btn {
+  display: block;
+  width: fit-content;
+  margin: 1rem auto;
+  background-color: var(--accent-color);
+  color: var(--primary-bg);
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ff679a;
+}
+
+.overview-grid,
+.scope-grid,
+.methodologies-grid,
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.overview-item,
+.scope-item,
+.methodology-item,
+.tool-item,
+.finding {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.methodology-item,
+.tool-item {
+  padding: 1rem;
 }
 
 .screenshot {
-    max-width: 100%; /* Ensure images are responsive */
-    height: auto; /* Maintain aspect ratio */
-}
-/* API Testing Section Styles */
-.api-testing-summary {
-    margin: 20px;
-    padding: 20px;
-    background-color: #ffffff; /* White background for contrast */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin: 1rem auto;
+  display: block;
 }
 
-.api-testing-summary h2 {
-    font-size: 2rem;
-    color: #ff0404; /* Match existing red color */
-    margin-bottom: 15px; /* Space below the header */
-    text-align: center; /* Center the title */
+.testing-results,
+.critical-findings {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 2rem;
 }
 
-.api-testing-summary h3 {
-    font-size: 1.6rem;
-    color: #333; /* Darker color for subheaders */
-    margin-top: 20px; /* Space above subheaders */
-}
-
-.api-testing-summary h4 {
-    font-size: 1.4rem;
-    color: #000000; 
-    margin-top: 15px; /* Space above smaller headers */
-}
-
-.api-testing-summary p {
-    font-size: 1rem;
-    color: #555; /* Softer color for paragraph text */
-    margin-bottom: 15px; /* Space below paragraphs */
-}
-
-.api-testing-summary ul {
-    margin-left: 20px; /* Indentation for lists */
-    list-style: disc; /* Disc style for bullets */
-}
-
-.api-testing-summary ul li {
-    margin-bottom: 10px; /* Space between list items */
-}
-
-.api-testing-summary .finding {
-    background-color: #f8f9fa; /* Light gray background */
-    border-radius: 8px; /* Rounded corners */
-    padding: 15px; /* Inner padding */
-    margin: 10px 0; /* Space between findings */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
-}
-
-.api-testing-summary .finding h4 {
-    font-size: 1.5rem; /* Slightly larger for emphasis */
-    margin-bottom: 8px; /* Space below findings headers */
-}
-
-.api-testing-summary .screenshot {
-    max-width: 100%; /* Responsive images */
-    height: auto; /* Maintain aspect ratio */
-    margin: 10px auto; /* Centered with space around */
-    border-radius: 5px; /* Soft corners for images */
-}
-
-.api-testing-summary .centered-header {
-    text-align: center; /* Center all headers */
-    font-size: 1.8rem; /* Size for emphasized headers */
-    color: #ff0404; /* Match existing header color */
-}
-/* Footer Styles */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #1e1e1e;
-    color: #e0e0e0;
+  background-color: var(--secondary-bg);
+  color: var(--secondary-text);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+footer a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 0.5rem;
+  }
+
+  nav ul {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  nav ul.show {
+      display: flex;
+  }
+
+  nav ul li {
+      margin: 0.5rem 0;
+  }
+
+  .overview-grid,
+  .scope-grid,
+  .methodologies-grid,
+  .tools-grid {
+      grid-template-columns: 1fr;
+  }
+}
+/* Previous CSS rules remain the same */
+
+/* New styles for API testing section */
+.api-summary, .api-endpoints, .testing-process, .testing-results, .critical-findings {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.api-summary h3, .api-endpoints h3, .testing-process h3 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.api-summary h4, .api-endpoints h4, .testing-process h4 {
+  color: var(--primary-text);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.api-summary ul, .api-endpoints ul, .testing-process ul, .testing-process ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.endpoint {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--secondary-bg);
+}
+
+.endpoint:last-child {
+  border-bottom: none;
+}
+
+code {
+  background-color: var(--secondary-bg);
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.finding ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Ensure text alignment is consistent */
+.api-summary, .api-endpoints, .testing-process, .endpoint, .finding {
+  text-align: left;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .api-summary, .api-endpoints, .testing-process, .testing-results, .critical-findings {
+      padding: 1rem;
+  }
+}
+.scope-item ul {
+  list-style-type: none; /* Removes bullet points */
+  padding: 0;           /* Removes default padding */
+  margin: 0;            /* Removes default margin */
+}
+
+.scope-item li {
+  margin-bottom: 0.5em; /* Adds space between list items */
+}
+ 
+
+  .overview-icon, .testing-icon {
+    font-size: 50px; /* This sets the size for font icons */
+    margin-right: 10px;
+    color: #ff4081; /* Color of the icon */
+
+    
+}
+
+.methodologies-icon {
+  font-size: 20px; /* This sets the size for font icons */
+  margin-right: 10px;
+  color: #ff4081; /* Color of the icon */
+
+  
 }
