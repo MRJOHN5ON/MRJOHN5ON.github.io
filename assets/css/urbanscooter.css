@@ -1,0 +1,415 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    line-height: 1.6;
+    background-color: #121212;
+    color: #333;
+    padding-bottom: 50px;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #e6dede3f;
+    color: #ff0404;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  /* Section Styles */
+  section {
+    margin: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  /* Heading Styles */
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  h3, h4 {
+    margin-bottom: 8px;
+    color: #ff0404;
+  }
+  
+  /* List Styles */
+  ul {
+    margin-left: 20px;
+    list-style: disc;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  
+  /* Image Styles */
+  img.screenshot {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  /* Overview Styles */
+  .overview, .testing-scope {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 30px 0;
+  }
+  
+  .overview h2, .testing-scope h2 {
+    font-size: 2rem;
+    color: #ff0404;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .overview-content, .testing-scope-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  /* Flex/Grid Styles */
+  .overview-list, .testing-scope-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Add gap between the grid items */
+    margin-top: 20px;
+  }
+  
+  .overview-item, .testing-category {
+    flex: 1 1 calc(33.333% - 40px); /* Ensure proper width of each column */
+    background-color: #f8f9fa; /* Background color */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left; /* Align text to the left */
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .overview-item:hover, .testing-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .testing-category h3 {
+    margin-bottom: 15px;
+    color: #ff0404;
+  }
+  
+  .testing-category ul {
+    list-style-position: inside; /* Keeps bullet points inside the container */
+    margin-left: 0; /* No extra left margin */
+  }
+  
+  .testing-category ul li {
+    margin-bottom: 10px; /* Adds space between list items */
+  }
+  
+  /* Icon Styles */
+  .overview-icon, .testing-icon {
+    width: 40px; /* Adjust the size as needed */
+    height: 40px;
+    margin-right: 10px;
+    color: #ff0404; /* Color of the icon */
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .overview-list, .testing-scope-grid {
+      flex-direction: column;
+    }
+  
+    .overview-item, .testing-category {
+      flex: 1 1 100%; /* Each item takes full width on mobile */
+      margin-bottom: 20px;
+    }
+  
+    .methodologies-grid, .tools-grid {
+      grid-template-columns: 1fr; /* Stack items in a single column on mobile */
+      gap: 15px;
+    }
+  }
+  
+  /* Methodologies and Tools Styles */
+  .methodologies, .tools {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0;
+  }
+  
+  .methodologies h2, .tools h2 {
+    font-size: 2rem;
+    color: #ff0404;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .methodologies-grid, .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .methodology-box, .tool-box {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .methodology-box:hover, .tool-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .methodology-box h3, .tool-box h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #ff0404;
+  }
+  
+  .methodology-box p, .tool-box p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Additional Styles */
+  .centered-header {
+    text-align: center;
+    font-size: 2rem;
+    color: #ff0404;
+    margin-bottom: 15px;
+  }
+  
+  .form-testing, .results-summary, .critical-findings {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .results-summary {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+  }
+  
+  .results-summary p {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 0;
+  }
+  
+  .results-summary strong {
+    color: #000000;
+  }
+  
+  .critical-findings h3 {
+    font-size: 2rem;
+    color: #ff0404;
+    margin-bottom: 20px;
+  }
+  
+  .finding {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .finding h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .finding p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .screenshot {
+    max-width: 50%;
+    height: auto;
+    border-radius: 5px;
+    margin: 10px 0;
+  }
+  .screenshot.centered {
+    width: 40%; /* Resize images to 50% of their original size */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Makes the image a block element */
+    margin: 10px auto; /* Center the image with auto margins */
+}
+
+.form-testing,  .critical-findings {
+    margin: 20px 0;
+    text-align: center; /* Ensures text is centered */
+}
+
+#mobile-application-testing {
+    margin: 40px 0;
+}
+
+.testing-categories,
+.testing-results {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the text */
+}
+
+.testing-categories h3,
+.testing-results h3 {
+    font-size: 1.6rem;
+    color: #ff0404;
+    margin-bottom: 15px;
+}
+
+.testing-categories ul,
+.testing-results ul {
+    margin-left: 20px;
+    display: inline-block; /* Make the list inline-block to center */
+}
+
+.testing-categories ul li,
+.testing-results ul li {
+    margin-bottom: 10px;
+}
+
+.testing-results ul li ul {
+    margin-left: 20px; /* Indentation for nested lists */
+}
+.image-container {
+    max-width: 100%;
+    justify-content: center; /* Center the items */
+    gap: 10px; /* Space between images (optional) */
+    margin: 20px 0; /* Margin for top and bottom */
+}
+
+.screenshot {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+/* API Testing Section Styles */
+.api-testing-summary {
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffffff; /* White background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.api-testing-summary h2 {
+    font-size: 2rem;
+    color: #ff0404; /* Match existing red color */
+    margin-bottom: 15px; /* Space below the header */
+    text-align: center; /* Center the title */
+}
+
+.api-testing-summary h3 {
+    font-size: 1.6rem;
+    color: #333; /* Darker color for subheaders */
+    margin-top: 20px; /* Space above subheaders */
+}
+
+.api-testing-summary h4 {
+    font-size: 1.4rem;
+    color: #000000; 
+    margin-top: 15px; /* Space above smaller headers */
+}
+
+.api-testing-summary p {
+    font-size: 1rem;
+    color: #555; /* Softer color for paragraph text */
+    margin-bottom: 15px; /* Space below paragraphs */
+}
+
+.api-testing-summary ul {
+    margin-left: 20px; /* Indentation for lists */
+    list-style: disc; /* Disc style for bullets */
+}
+
+.api-testing-summary ul li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+.api-testing-summary .finding {
+    background-color: #f8f9fa; /* Light gray background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Inner padding */
+    margin: 10px 0; /* Space between findings */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.api-testing-summary .finding h4 {
+    font-size: 1.5rem; /* Slightly larger for emphasis */
+    margin-bottom: 8px; /* Space below findings headers */
+}
+
+.api-testing-summary .screenshot {
+    max-width: 100%; /* Responsive images */
+    height: auto; /* Maintain aspect ratio */
+    margin: 10px auto; /* Centered with space around */
+    border-radius: 5px; /* Soft corners for images */
+}
+
+.api-testing-summary .centered-header {
+    text-align: center; /* Center all headers */
+    font-size: 1.8rem; /* Size for emphasized headers */
+    color: #ff0404; /* Match existing header color */
+}
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}

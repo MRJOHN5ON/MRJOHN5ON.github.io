@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Urban Scooter: Comprehensive Testing Project</title>
+  <link rel="stylesheet" href="assets/css/urbanscooter.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+</head>
+<body>
+
+  <header>
+    <h1>Urban Scooter: Comprehensive Testing Project</h1>
+  </header>
+
+  <section class="overview">
+    <h2>Project Overview</h2>
+    <div class="overview-content">
+        <p class="intro-text">
+            As the final project of my TripleTen Bootcamp, I undertook a comprehensive testing project for 
+            <strong>"Urban Scooter"</strong>, a multi-faceted application designed to provide electric scooter rental 
+            and deliveries. The project was divided into three main components:
+        </p>
+        <img src="assets/images/scooter.png" alt="urban scooters" class="screenshot">
+        <div class="overview-list">
+            <div class="overview-item">
+                <i class="uil uil-browser overview-icon"></i>
+                <a href="#web-application-testing" style="text-decoration: none; color: inherit;">
+                    <p><strong>Web application</strong> for customers to rent and reserve scooters.</p>
+                </a>
+            </div>
+            <div class="overview-item">
+                <i class="uil uil-android-alt overview-icon"></i>
+                <a href="#mobile-application-testing" style="text-decoration: none; color: inherit;">
+                    <p><strong>Android application</strong> for couriers to manage deliveries.</p>
+                </a>
+            </div>
+            <div class="overview-item">
+                <i class="uil uil-database overview-icon"></i>
+                <a href="#backend-api-testing" style="text-decoration: none; color: inherit;">
+                    <p><strong>Backend API</strong> integrated with a PostgreSQL database.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <p class="final-text" style="text-align: center;">
+        My role encompassed thorough testing across all components, ensuring seamless functionality and user experience.
+    </p>
+</section>
+
+  
+
+  <section class="testing-scope">
+    <h2>Testing Scope</h2>
+    <div class="testing-scope-grid">
+        <div class="testing-category">
+            <a href="#web-application-testing" style="text-decoration: none; color: inherit;">
+                <i class="uil uil-browser testing-icon"></i> <!-- Browser Icon for Web Application -->
+                <h3>Web Application</h3>
+                <ul>
+                    <li>Input form validation</li>
+                    <li>Layout consistency</li>
+                    <li>User interface responsiveness</li>
+                </ul>
+            </a>
+        </div>
+        <div class="testing-category">
+            <a href="#mobile-application-testing" style="text-decoration: none; color: inherit;">
+                <i class="uil uil-android-alt testing-icon"></i> <!-- Mobile Icon for Mobile Application -->
+                <h3>Mobile Application</h3>
+                <ul>
+                    <li>Functionality testing</li>
+                    <li>UI/UX evaluation</li>
+                    <li>Cross-device compatibility</li>
+                </ul>
+            </a>
+        </div>
+        <div class="testing-category">
+            <a href="#backend-api-testing" style="text-decoration: none; color: inherit;">
+                <i class="uil uil-database testing-icon"></i> <!-- Database Icon for Backend -->
+                <h3>Backend API & Database</h3>
+                <ul>
+                    <li>API endpoint testing</li>
+                    <li>Database integration verification</li>
+                </ul>
+            </a>
+        </div>
+    </div>
+</section>
+
+  
+  
+
+  <section class="methodologies">
+    <h2>Testing Methodologies</h2>
+    <div class="methodologies-grid">
+      <div class="methodology-box">
+        <h3>Boundary Value Analysis</h3>
+        <p>Rigorously tested edge cases and limits.</p>
+      </div>
+      <div class="methodology-box">
+        <h3>Equivalence Class Testing</h3>
+        <p>Grouped inputs into classes to optimize test efficiency.</p>
+      </div>
+      <div class="methodology-box">
+        <h3>Negative Testing</h3>
+        <p>Validated system behavior under invalid or unexpected inputs.</p>
+      </div>
+      <div class="methodology-box">
+        <h3>Positive Testing</h3>
+        <p>Confirmed correct functionality under valid inputs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tools">
+    <h2>Tools Utilized</h2>
+    <div class="tools-grid">
+      <div class="tool-box">
+        <h3>Postman</h3>
+        <p>API testing and validation.</p>
+      </div>
+      <div class="tool-box">
+        <h3>Jira</h3>
+        <p>Bug tracking and project management.</p>
+      </div>
+      <div class="tool-box">
+        <h3>Google Sheets</h3>
+        <p>Test case organization and documentation.</p>
+      </div>
+      <div class="tool-box">
+        <h3>Chrome DevTools</h3>
+        <p>Web application debugging and performance analysis.</p>
+      </div>
+      <div class="tool-box">
+        <h3>Android Studio</h3>
+        <p>Mobile device emulation.</p>
+      </div>
+      <div class="tool-box">
+        <h3>Figma</h3>
+        <p>UI/UX design reference.</p>
+      </div>
+      <div class="tool-box">
+        <h3>Terminal</h3>
+        <p>Direct PostgreSQL database access and manipulation.</p>
+      </div>
+      <div class="tool-box">
+        <h3>Swagger</h3>
+        <p>API Documentation</p>
+      </div>
+    </div>
+  </section>
+<!-- Web Application Testing -->
+  <section class="form-testing" id="web-application-testing">
+    
+    <h2 class="centered-header">Web Application Form Testing</h2>
+    <p><strong>I focused on stringent validation for key input fields in the "Who the scooter is for" form:</strong></p>
+    
+    <a href="assets/images/order.png" target="_blank">
+        <img src="assets/images/order.png" alt="Place Order Screen" class="screenshot centered">
+    </a>
+    <p class="click-to-enlarge">(click to enlarge)</p><br><br>
+    
+    <p><strong>The form included the following fields with specific restrictions:</strong></p>
+    
+    <a href="assets/images/reqs.png" target="_blank">
+        <img src="assets/images/reqs.png" alt="Field Restrictions" class="screenshot centered">
+    </a>
+    <p class="click-to-enlarge">(click to enlarge)</p><br><br>
+</section>
+
+  <section class="results">
+    <h2 class="centered-header">Testing Results</h2>
+    <div class="results-summary">
+      <p>
+        Total test cases: <strong>123</strong><br>
+        Failed test cases: <strong>21</strong><br>
+        Bug reports logged: <strong>23</strong>
+        <br><a href="assets/files/task1.pdf" download>View Full Test Report</a>
+      </p>
+    </div>
+  </section>
+  
+  <section class="critical-findings">
+    <h3 class="centered-header">Critical Findings</h3>
+
+    <div class="finding">
+        <h4>1. Subway Station Selection Error</h4>
+        <p>A critical TypeError was discovered when submitting the form via the Enter key after selecting a subway station. This resulted in an "Unexpected Application Error" screen, preventing order completion.</p>
+        
+        <a href="assets/images/typeerror.png" target="_blank">
+            <img src="assets/images/typeerror.png" alt="Unexpected Application Error" class="screenshot centered">
+        </a>
+        <p class="click-to-enlarge">(click to enlarge)</p><br><br>
+
+        <p><strong>The error details were logged in Jira for further investigation:</strong></p>
+        
+        <a href="assets/images/typeError jira.png" target="_blank">
+            <img src="assets/images/typeError jira.png" alt="Jira Bug Report - Subway Station Error" class="screenshot centered">
+        </a>
+        <p class="click-to-enlarge">(click to enlarge)</p><br><br>
+    </div>
+
+    <div class="finding">
+        <h4>2. Input Field Vulnerabilities</h4>
+        <p>The system exhibited vulnerabilities across multiple input fields, including the first name, last name, and address fields. Similar to the address field issue, invalid inputs such as only dots ("....."), dashes ("---"), spaces ("     "), and commas (",,,,,") were incorrectly accepted as valid. While these characters were allowed as part of valid inputs, the system erroneously permitted them to be entered alone, without any valid accompanying characters, bypassing the required validation checks.</p>
+        
+        <a href="assets/images/addressjira.png" target="_blank">
+            <img src="assets/images/addressjira.png" alt="Jira Bug Report - Input Field Vulnerability" class="screenshot centered">
+        </a>
+        <p class="click-to-enlarge">(click to enlarge)</p><br><br>
+    </div>
+</section>
+<!--- Mobile Application Testing -->
+<section class="mobile-application-testing" id="mobile-application-testing">
+    <h2 class="centered-header">Mobile App Testing</h2>
+    <p><strong>The mobile application is designed for couriers to accept and complete deliveries of orders placed by clients through the web application:</strong></p>
+    <a href="assets/images/app.png" target="_blank">
+        <img src="assets/images/app.png" alt="Login page andriod" class="screenshot centered">
+    </a>
+    
+    <p>Testing this component required integrating several parts. For each test, I accessed the backend API to create a courier account, generated an order through the frontend web application, and linked everything together within the courier mobile app. The tests were conducted using the Android Studio emulator, specifically with API version 31 on a Google Pixel 6.</p>
+    <a href="assets/images/app1.png" target="_blank">
+        <img src="assets/images/app1.png" alt="Notifications Feature" class="screenshot centered">
+    </a>
+    <p>The Urban Scooters mobile application underwent extensive testing to evaluate its functionality, user interface, and performance across various conditions. A total of 28 test cases were executed, covering a wide range of scenarios typical users might encounter.</p>
+    
+    <h3 class="centered-header">Areas of Focus</h3>
+    
+    <div class="overview-item">
+        <h4><strong>1. Notifications</strong></h4>
+        <p>A notification is triggered when there are two hours left to complete an order. The notification includes the text similar to: "2 hours to the end of the order. The order 'State St 1214' must be completed before time X."</p>
+        
+        <a href="assets/images/app2.png" target="_blank">
+            <img src="assets/images/app2.png" alt="Notifications alert" class="screenshot centered">
+        </a>
+        
+    </div>
+    
+    <div class="overview-item">
+        <h4>2. Lack of Internet Connection</h4>
+        <p>A "No Internet Connection" pop-up appears when the user taps any active button with no connection. This pop-up only disappears when the "OK" button is tapped.</p>
+        
+        <a href="assets/images/appnointernet.png" target="_blank">
+            <img src="assets/images/appnointernet.png" alt="No Internet Connection Pop-Up" class="screenshot centered">
+        </a>
+        
+    </div>
+</section>
+
+<section class="testing-results">
+    <h2 class="centered-header">Testing Results</h2>
+    <div class="results-summary">
+        <p>
+            Total test cases: <strong>28</strong><br>
+            Failed test cases: <strong>9</strong><br>
+            Bug reports logged: <strong>11</strong>
+            <br><a href="assets/files/Ryley Johnson - Final Project - Task 2_ Mobile Test Case.pdf" download>View Full Test Report</a>
+        </p>
+    </div>
+</section>
+
+<section class="critical-findings">
+    <h3 class="centered-header">Critical Findings</h3>
+
+    <div class="finding">
+        <h4>1. Notification System Failure</h4>
+        <p>All six notification tests failed, indicating a significant issue with the app's notification functionality. Notifications were not sent at the expected times (9:59 PM or 10:01 PM) for orders nearing completion. A JIRA ticket was created to document this critical bug affecting the notification system.</p>
+        
+        <a href="assets/images/notifcation_jira.png" target="_blank">
+            <img src="assets/images/notifcation_jira.png" alt="Notification Tests Results" class="screenshot centered">
+        </a>
+        <p class="click-to-enlarge">(click to enlarge)</p><br><br>
+    </div>
+
+    <div class="finding">
+        <h4>2. Internet Connection Pop-Up Issues</h4>
+        <p>The app displayed the "No Internet Connection" pop-up in most cases when users attempted to perform actions offline, but it did not appear on the login screen, and the pop-up could be dismissed by clicking outside of it.</p>
+        
+        <a href="assets/images/jiramobile.png" target="_blank">
+            <img src="assets/images/jiramobile.png" alt="Internet Connection Tests Results" class="screenshot centered">
+        </a>
+        <p class="click-to-enlarge">(click to enlarge)</p><br><br>
+    </div>
+
+    <div class="finding">
+        <h4>3. Layout Design and Functionality Issues</h4>
+        <p>Several UI and functionality issues were discovered, including the login page lacking placeholders, duplicate orders in the 'My Orders' tab, and a blue dot indicator for new orders always being visible. Order details do not display comments made in the web app.
+        Switching to landscape mode triggers an error and displays debug information.</p>
+        
+        <a href="assets/images/placeholder.png" target="_blank">
+            <img src="assets/images/placeholder.png" alt="Layout Design Tests Results1" class="screenshot centered">
+        </a>
+        <p class="click-to-enlarge">Login Page Lacking Placeholders (click to enlarge)</p><br><br>
+
+        <a href="assets/images/duporders.png" target="_blank">
+            <img src="assets/images/duporders.png" alt="Layout Design Tests Results2" class="screenshot centered">
+        </a>
+        <p class="click-to-enlarge">Duplicate Orders in the 'My Orders' Tab (click to enlarge)</p><br><br>
+
+        <div class="image-container">
+            <a href="assets/images/landscapeerror.png" target="_blank">
+                <img src="assets/images/landscapeerror.png" alt="Layout Design Tests Results2" class="screenshot centered">
+            </a>
+            <a href="assets/images/landscapeerror1.png" target="_blank">
+                <img src="assets/images/landscapeerror1.png" alt="Layout Design Tests Results3" class="screenshot centered">
+            </a>
+        
+            
+        </div>  
+        <p class="click-to-enlarge">Landscape Mode Errors (click to enlarge)</p><br><br>
+    </div>
+</section>
+<section class="api-testing-summary" id="backend-api-testing">
+    <h2 class="centered-header">API Test Case Summary and Process Overview</h2>
+
+    <h3>Purpose</h3>
+    <p>
+        The goal of this testing process was to ensure the <code>/api/v1/courier</code> API endpoint functioned correctly. 
+        Specifically, the tests aimed to verify that couriers could be created, authenticated, and deleted according to the API's requirements, 
+        with all changes accurately reflected in the database.
+    </p>
+
+    <h3>Objectives</h3>
+    <ul>
+        <li><strong>Functional Validation:</strong> Ensure that the API correctly handles the creation, deletion, and login of couriers.</li>
+        <li><strong>Boundary and Negative Testing:</strong> Test the system's response to inputs that push boundaries or are invalid, and confirm that inappropriate inputs are rejected.</li>
+        <li><strong>Database Integrity:</strong> Validate that the API's actions are properly reflected in the PostgreSQL database, ensuring no data corruption or inconsistencies.</li>
+    </ul>
+
+    <h3>API Endpoints Tested</h3>
+    <h4>POST /api/v1/courier</h4>
+    <p>
+        This endpoint registers a new courier. It accepts:
+    </p>
+    <ul>
+        <li><strong>login:</strong> A unique username.</li>
+        <li><strong>password:</strong> A secure password that is hashed before being stored.</li>
+        <li><strong>firstName:</strong> The courier’s first name.</li>
+    </ul>
+    <p><strong>Expected Behavior:</strong> A successful POST request should create a courier in the database, ensuring the login is unique. 
+        Duplicate or invalid data should result in an error.</p>
+
+    <h4>DELETE /api/v1/courier/:id</h4>
+    <p>
+        This endpoint deletes a courier by their ID. Upon successful deletion:
+    </p>
+    <ul>
+        <li>The courier’s record should be deleted from the Couriers table.</li>
+        <li>Any associated orders in the Orders table should also be deleted.</li>
+    </ul>
+    <p><strong>Expected Behavior:</strong> Both the courier and their linked orders should be removed from the database.</p>
+
+    <h4>POST /api/v1/courier/login</h4>
+    <p>This endpoint handles courier authentication.</p>
+    <ul>
+        <li>Valid credentials should return a session token.</li>
+        <li>Invalid credentials should return an error.</li>
+    </ul>
+
+    <h3>Tools and Resources Used</h3>
+    <h4>Postman</h4>
+    <p>I used Postman to execute requests for creating, deleting, and logging in couriers, allowing me to validate the responses for each test case.</p>
+
+    <h4>Swagger API Documentation</h4>
+    <p>The Swagger API documentation provided crucial information on the API endpoints, expected input formats, and error handling.</p>
+
+    <h4>PostgreSQL Database</h4>
+    <p>I connected to the PostgreSQL database using SSH to verify the results of the API tests, running SQL queries to ensure that the expected changes occurred.</p>
+
+    <h3>Executing Test Cases</h3>
+    <p>For each API endpoint, I followed these steps:</p>
+    <ul>
+        <li>Sent a request using Postman with valid or invalid inputs.</li>
+        <li>Verified the response status (e.g., 201 Created, 400 Bad Request).</li>
+        <li>Queried the database to ensure the expected changes occurred.</li>
+        <li>Tested edge cases, such as input fields with minimum or maximum character limits.</li>
+    </ul>
+
+    <h3>Handling Boundaries and Special Cases</h3>
+    <h4>Login Field Tests</h4>
+    <p>Verified that the login field respected the character limits (2-10 characters).</p>
+
+    <h4>Password Field Tests</h4>
+    <p>Tested valid and invalid password lengths (4-10 characters).</p>
+
+    <h4>FirstName Field Tests</h4>
+    <p>Ensured that the firstName field accepted inputs between 2 and 10 characters and rejected symbols, numbers, and non-latin characters.</p>
+
+    <h4>Courier Deletion and Linked Orders</h4>
+    <p>Confirmed that deleting a courier also removed their linked orders, maintaining database consistency.</p>
+
+    <h3>Test Results: Summary of Findings</h3>
+    <p>Overall, I ran <strong>40 tests</strong>, of which <strong>16 failed</strong> due to input validation and data integrity issues.</p>
+
+    <h4>Positive Tests</h4>
+    <p>The majority of positive tests passed, confirming that couriers could be created, authenticated, and deleted, with all actions accurately reflected in the database.</p>
+
+    <h4>Negative and Boundary Tests</h4>
+    <p>Validation issues were discovered during testing:</p>
+    <ul>
+        <li>Invalid inputs were allowed, leading to improper records being created.</li>
+        <li>Couriers were created with unacceptable values, including symbols, non-latin characters, and numeric values.</li>
+    </ul>
+
+    <h3>Critical Issue: Orders Not Deleted After Deleting Linked Courier</h3>
+    <p>
+        The most significant issue discovered during testing was the failure to delete linked orders after a courier was removed from the database:
+    </p>
+    <ul>
+        <li><strong>Issue:</strong> Deleting a courier did not remove their associated orders, leading to orphaned records.</li>
+        <li><strong>Impact:</strong> This failure poses a significant risk to data integrity, potentially causing confusion in order management and complicating future data retrieval.</li><br><br><br><br>
+    </ul>
+
+
+</section>
+
+
+  
+<footer>
+    <p>&copy; 2024 Ryley Johnson</p>
+    <a href="index.html"> Go Back To Home Page</a>
+    <p>Contact me: <a href="mailto:ryleyjohnsonemail@gmail.com">ryleyjohnsonemail@gmail.com</a></p>
+</footer>
+  
+
+
+</body>
+
+</html>
