@@ -194,7 +194,7 @@ footer a {
 /* Previous CSS rules remain the same */
 
 /* New styles for API testing section */
-.api-summary, .api-endpoints, .testing-process, .testing-results, .critical-findings {
+.api-summary, .api-endpoints, .testing-process, .testing-results, .critical-findings, .form-testing, .mobile-overview {
   background-color: var(--card-bg);
   padding: 1.5rem;
   border-radius: 5px;

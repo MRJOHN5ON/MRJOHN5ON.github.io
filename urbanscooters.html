@@ -28,13 +28,16 @@
     <main>
         <section id="hero">
             <h1>Urban Scooter: Comprehensive Testing Project</h1>
-            <p>Final project of TripleTen Bootcamp</p>
+            As the final project of my TripleTen Bootcamp, I undertook a comprehensive testing project for 
+            <strong>"Urban Scooter"</strong>, a multi-faceted application designed to provide electric scooter rental 
+            and deliveries. 
             <img src="assets/images/scooter.png" alt="urbanscooter" class="screenshot">
 
         </section>
 
         <section id="overview">
             <h2>Project Overview</h2>
+            <p>The project was divided into three main components:</p>
             <div class="overview-grid">
                 <div class="overview-item">
                     <i class="uil uil-browser overview-icon"></i>
@@ -224,7 +227,45 @@
 
         <section id="web-testing">
             
-            <h2>Web Application Testing<i class="uil uil-browser overview-icon"></i></h2>
+            <h2>Web Application Testing<br><i class="uil uil-browser overview-icon"></i></h2>
+            <div class="form-testing">
+              <h3 class="centered-header">Input Form Testing</h3>
+                 <p><strong>I focused on stringent validation for key input fields in the "Who the scooter is for" form:</strong></p>
+    
+                <a href="assets/images/order.png" target="_blank">
+        <img src="assets/images/order.png" alt="Place Order Screen" class="screenshot centered">
+    </a>
+    <p class="click-to-enlarge">(click to enlarge)</p><br><br>
+    
+    <p><strong>The form included the following fields with specific restrictions:</strong></p>
+    
+    <a href="assets/images/reqs.png" target="_blank">
+        <img src="assets/images/reqs.png" alt="Field Restrictions" class="screenshot centered">
+    </a>
+    <p class="click-to-enlarge">(click to enlarge)</p><br><br>
+    <p>Additionally, I conducted exploratory testing to identify any potential issues with the layout of the UI while refering to the design guidelines on Figma.</p>
+
+    <a href="https://www.figma.com/design/PiEK0kEfKb94vSqtoCQG1w/Web?node-id=0-1&node-type=canvas" class="btn" download><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" id="figma">
+  <path fill="#333" d="M0 24C0 10.745 10.745 0 24 0s24 10.745 24 24-10.745 24-24 24S0 37.255 0 24Z"></path>
+  <path fill="#0ACF83" d="M19.2 38.4a4.8 4.8 0 0 0 4.8-4.8v-4.8h-4.8a4.8 4.8 0 0 0 0 9.6Z"></path>
+  <path fill="#A259FF" d="M14.4 24a4.8 4.8 0 0 1 4.8-4.8H24v9.6h-4.8a4.8 4.8 0 0 1-4.8-4.8Z"></path>
+  <path fill="#F24E1E" d="M14.4 14.4a4.8 4.8 0 0 1 4.8-4.8H24v9.6h-4.8a4.8 4.8 0 0 1-4.8-4.8Z"></path>
+  <path fill="#FF7262" d="M24 9.6h4.8a4.8 4.8 0 1 1 0 9.6H24V9.6Z"></path>
+  <path fill="#1ABCFE" d="M33.6 24a4.8 4.8 0 1 1-9.6 0 4.8 4.8 0 0 1 9.6 0Z"></path>
+</svg>View Figma Layout Specs<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" id="figma">
+  <path fill="#333" d="M0 24C0 10.745 10.745 0 24 0s24 10.745 24 24-10.745 24-24 24S0 37.255 0 24Z"></path>
+  <path fill="#0ACF83" d="M19.2 38.4a4.8 4.8 0 0 0 4.8-4.8v-4.8h-4.8a4.8 4.8 0 0 0 0 9.6Z"></path>
+  <path fill="#A259FF" d="M14.4 24a4.8 4.8 0 0 1 4.8-4.8H24v9.6h-4.8a4.8 4.8 0 0 1-4.8-4.8Z"></path>
+  <path fill="#F24E1E" d="M14.4 14.4a4.8 4.8 0 0 1 4.8-4.8H24v9.6h-4.8a4.8 4.8 0 0 1-4.8-4.8Z"></path>
+  <path fill="#FF7262" d="M24 9.6h4.8a4.8 4.8 0 1 1 0 9.6H24V9.6Z"></path>
+  <path fill="#1ABCFE" d="M33.6 24a4.8 4.8 0 1 1-9.6 0 4.8 4.8 0 0 1 9.6 0Z"></path>
+</svg></a>
+</section>
+
+              
+
+
+            </div>
             <div class="testing-results">
                 <h3>Testing Results<br><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 512 512" viewBox="0 0 512 512" width="50" height="50" id="softwareengineer">
                     <path d="M222.263,312.087c-9.997-30.48-17.277-61.937-13.963-81.17c0-0.218,0.054-0.381,0.109-0.598c0.435-2.39-2.119-4.401-4.455-3.422c-5.053,2.173-9.725,5.161-13.909,8.747c-15.647,13.365-24.721,34.99-25.101,55.256c-0.109,3.097,2.934,5.27,6.574,4.998l28.741-1.957l-17.875,18.147H222.263z" fill="#ff4081" class="color000000 svgShape"></path>
@@ -248,7 +289,7 @@
                 </div>
                 <div class="finding">
                     <h4>Input Field Vulnerabilities</h4>
-                    <p>The system exhibited vulnerabilities across multiple input fields, including the first name, last name, and address fields.</p>
+                    <p>The system exhibited vulnerabilities across multiple input fields, including the first name, last name, and address fields. Similar to the address field issue, invalid inputs such as only dots ("....."), dashes ("---"), spaces ("     "), and commas (",,,,,") were incorrectly accepted as valid. While these characters were allowed as part of valid inputs, the system erroneously permitted them to be entered alone, without any valid accompanying characters, bypassing the required validation checks.</p>
                     <img src="assets/images/addressjira.png" alt="Jira Bug Report - Input Field Vulnerability" class="screenshot">
                 </div>
             </div>
@@ -256,6 +297,63 @@
 
         <section id="mobile-testing">
             <h2>Mobile Application Testing<i class="uil uil-android-alt overview-icon"></i></h2>
+            <div class="mobile-overview">
+              <h3 class="centered-header">Mobile App Testing</h3>
+    <p><strong>The mobile application is designed for couriers to accept and complete deliveries of orders placed by clients through the web application:</strong></p>
+    <a href="assets/images/app.png" target="_blank">
+        <img src="assets/images/app.png" alt="Login page andriod" class="screenshot centered">
+    </a>
+    
+    <p>Testing this component required integrating several parts. For each test, I accessed the backend API to create a courier account, generated an order through the frontend web application, and linked everything together within the courier mobile app. The tests were conducted using the Android Studio emulator, specifically with API version 31 on a Google Pixel 6.</p>
+    <a href="assets/images/app1.png" target="_blank">
+        <img src="assets/images/app1.png" alt="Notifications Feature" class="screenshot centered">
+    </a>
+    <p>The Urban Scooters mobile application underwent extensive testing to evaluate its functionality, user interface, and performance across various conditions. A total of 28 test cases were executed, covering a wide range of scenarios typical users might encounter.</p>
+    
+    <h3 class="centered-header">Areas of Focus</h3>
+    
+    <div class="overview-item">
+        <h4><strong>1. Notifications</strong></h4>
+        <p>A notification is triggered when there are two hours left to complete an order. The notification includes the text similar to: "2 hours to the end of the order. The order 'State St 1214' must be completed before time X."</p>
+        
+        <a href="assets/images/app2.png" target="_blank">
+            <img src="assets/images/app2.png" alt="Notifications alert" class="screenshot centered">
+        </a>
+        
+    </div>
+    
+    <div class="overview-item">
+        <h4>2. Lack of Internet Connection</h4>
+        <p>A "No Internet Connection" pop-up appears when the user taps any active button with no connection. This pop-up only disappears when the "OK" button is tapped.</p>
+        
+        <a href="assets/images/appnointernet.png" target="_blank">
+            <img src="assets/images/appnointernet.png" alt="No Internet Connection Pop-Up" class="screenshot centered">
+        </a>
+        <p>Once again I refered to Figma designs to identify any potential issues with the layout of the UI.</p>
+
+    <a href="https://www.figma.com/file/Ql81P6XKXadabhs5Hi6BxP/mobile?node-id=0%3A1&t=EFnpFwwT1DRQlhIy-1" class="btn" download><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" id="figma">
+  <path fill="#333" d="M0 24C0 10.745 10.745 0 24 0s24 10.745 24 24-10.745 24-24 24S0 37.255 0 24Z"></path>
+  <path fill="#0ACF83" d="M19.2 38.4a4.8 4.8 0 0 0 4.8-4.8v-4.8h-4.8a4.8 4.8 0 0 0 0 9.6Z"></path>
+  <path fill="#A259FF" d="M14.4 24a4.8 4.8 0 0 1 4.8-4.8H24v9.6h-4.8a4.8 4.8 0 0 1-4.8-4.8Z"></path>
+  <path fill="#F24E1E" d="M14.4 14.4a4.8 4.8 0 0 1 4.8-4.8H24v9.6h-4.8a4.8 4.8 0 0 1-4.8-4.8Z"></path>
+  <path fill="#FF7262" d="M24 9.6h4.8a4.8 4.8 0 1 1 0 9.6H24V9.6Z"></path>
+  <path fill="#1ABCFE" d="M33.6 24a4.8 4.8 0 1 1-9.6 0 4.8 4.8 0 0 1 9.6 0Z"></path>
+</svg>View Figma Layout Specs<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" id="figma">
+  <path fill="#333" d="M0 24C0 10.745 10.745 0 24 0s24 10.745 24 24-10.745 24-24 24S0 37.255 0 24Z"></path>
+  <path fill="#0ACF83" d="M19.2 38.4a4.8 4.8 0 0 0 4.8-4.8v-4.8h-4.8a4.8 4.8 0 0 0 0 9.6Z"></path>
+  <path fill="#A259FF" d="M14.4 24a4.8 4.8 0 0 1 4.8-4.8H24v9.6h-4.8a4.8 4.8 0 0 1-4.8-4.8Z"></path>
+  <path fill="#F24E1E" d="M14.4 14.4a4.8 4.8 0 0 1 4.8-4.8H24v9.6h-4.8a4.8 4.8 0 0 1-4.8-4.8Z"></path>
+  <path fill="#FF7262" d="M24 9.6h4.8a4.8 4.8 0 1 1 0 9.6H24V9.6Z"></path>
+  <path fill="#1ABCFE" d="M33.6 24a4.8 4.8 0 1 1-9.6 0 4.8 4.8 0 0 1 9.6 0Z"></path>
+</svg></a>
+        
+    </div>
+</section>
+
+
+
+            </div>
+
             <div class="testing-results">
                 <h3>Testing Results<br><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 512 512" viewBox="0 0 512 512" width="50" height="50" id="softwareengineer">
                     <path d="M222.263,312.087c-9.997-30.48-17.277-61.937-13.963-81.17c0-0.218,0.054-0.381,0.109-0.598c0.435-2.39-2.119-4.401-4.455-3.422c-5.053,2.173-9.725,5.161-13.909,8.747c-15.647,13.365-24.721,34.99-25.101,55.256c-0.109,3.097,2.934,5.27,6.574,4.998l28.741-1.957l-17.875,18.147H222.263z" fill="#ff4081" class="color000000 svgShape"></path>
