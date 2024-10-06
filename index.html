@@ -306,26 +306,35 @@
       <!-- EmailJS send function -->
       <script type="text/javascript">
          function sendEmail() {
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var message = document.getElementById("message").value;
-
-            var templateParams = {
-               name: name,
-               email: email,
-               message: message
-            };
-
-            emailjs.send('service_f9dkmsd', 'template_w0fo8ha', templateParams)
-               .then(function (response) {
-                  console.log('SUCCESS!', response.status, response.text);
-                  alert("Email sent successfully!");
-               }, function (error) {
-                  console.log('FAILED...', error);
-                  alert("Failed to send email. Please try again later.");
-               });
+             var name = document.getElementById("name").value.trim();
+             var email = document.getElementById("email").value.trim();
+             var message = document.getElementById("message").value.trim();
+     
+             // Check if any of the fields are empty
+             if (!name || !email || !message) {
+                 alert("Please fill in all fields before sending the email.");
+                 return; // Exit the function if any field is empty
+             }
+     
+             var templateParams = {
+                 name: name,
+                 email: email,
+                 message: message
+             };
+     
+             emailjs.send('service_f9dkmsd', 'template_w0fo8ha', templateParams)
+                 .then(function (response) {
+                     console.log('SUCCESS!', response.status, response.text);
+                     alert("Email sent successfully!");
+                 }, function (error) {
+                     console.log('FAILED...', error);
+                     alert("Failed to send email. Please try again later.");
+                 });
          }
-      </script>
+     </script>
+     
+ <a href='http://www.freevisitorcounters.com'>Freevisitorcounters.com</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=06f37cd3f0329dae7327551c29c3a56ef82f3016'></script>
+ <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1244199/t/9"></script>
    </div>
 </body>
 
