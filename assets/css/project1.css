@@ -40,7 +40,12 @@ img {
     border-radius: 8px;
     margin: 0 auto; /* Center the image */
 }
-
+.logo {
+    max-width: 150px;  
+    height: auto;      
+    display: block;    
+    margin: 0 auto;    
+}
 /* Styles for the accordion container */
 .accordion-container {
     width: 80%;

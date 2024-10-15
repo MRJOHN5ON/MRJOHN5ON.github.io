@@ -579,6 +579,7 @@ footer{
 .top-footer p{
     font-size: 25px;
     font-weight: 600;
+    text-align: center;
 }
 .middle-footer .footer-menu{
     display: flex;
