@@ -32,11 +32,19 @@ function headerShadow() {
 
 /* ----- TYPING EFFECT ----- */
 var typingEffect = new Typed(".typedText", {
-  strings: ["QA Engineer", "Software Tester", "Automation Engineer"],
+  strings: ["QA Engineer", "Software Tester", "QA Analyst"],
   loop: true,
   typeSpeed: 100,
   backSpeed: 80,
   backDelay: 2000
+});
+
+var typingEffect2 = new Typed(".typedText2", {
+  strings: ["Postman", "WebdriverIO", "Playwright", "Jira", "Android Studio", "Cross-Platform Testing","PostgreSQL", "Swagger", "Javascript", "Typescript", "Mocha", "E2E Testing",],
+  loop: true,
+  typeSpeed: 5,
+  backSpeed: 8,
+  backDelay: 1500
 });
 
 /* ----- SCROLL REVEAL ANIMATIONS ----- */
@@ -53,7 +61,6 @@ sr.reveal('.featured-text-info', { delay: 200 });
 sr.reveal('.featured-text-btn', { delay: 200 });
 sr.reveal('.social_icons', { delay: 200 });
 sr.reveal('.featured-image', { delay: 300 });
-
 sr.reveal('.project-box', { interval: 200 });
 sr.reveal('.top-header', {});
 
