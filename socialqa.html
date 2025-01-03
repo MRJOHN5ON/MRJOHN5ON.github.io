@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social QA Project</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: #00ffcc;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #0d0d0d;
+            border-bottom: 2px solid #00ffcc;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #ff007f;
+        }
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 255, 204, 0.5);
+        }
+        iframe {
+            display: block;
+            margin: 20px auto;
+            border: none;
+        }
+        a {
+            color: #00ffcc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+            font-size: 1.1em;
+            transition: font-size 0.3s;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 0px 2px 5px 0px #00ffcc;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .icon a {
+            color: #ffffff; /* Default color */
+            text-decoration: none;
+        }
+        .icon:hover {
+            background-color: #f0f0f0; /* Change to your desired hover background color */
+        }
+        .icon:hover a {
+            color: #ff007f; /* Change to your desired hover icon color */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="assets/images/SOCIAL QA BOOTCAMP_TRANS.png" alt="Social QA Logo" width="50%" height="auto" />
+    <h1></h1>
+    <p>An ongoing project for The Social QA Bootcamp course.</p>
+    <p>
+        <div class="icon" style="margin: 0 auto; text-align: center;">
+            <a href="https://github.com/MRJOHN5ON/SocialQAproject" target="_blank">
+                <i class="uil uil-github-alt"></i>
+            </a>
+        </div><br>
+        View on GitHub
+    </p>
+</header>
+
+<section>
+    <h2>Project Overview</h2>
+    <p>This is an ongoing repo for The Social QA Bootcamp course by Steven Boutcher. The course is focused on learning the Playwright framework.</p>
+</section>
+
+<section>
+    <h2>Tests</h2>
+    <h3>Adding to Cart</h3>
+    <p>There are two test files that handle the functionality of adding products to the shopping cart on the Amazon website:</p>
+    <ul>
+        <li><strong>addCartDenyWarranty.spec.ts</strong>: This test verifies the process of adding a product to the cart while denying the warranty. It checks for the visibility of the "No Thanks" button, asserts the success message, verifies the cart count, and ensures the item subtotal is correct.</li>
+        <li><strong>addCart2yearWarranty.spec.ts</strong>: This test checks the process of adding a product to the cart while applying a 2-year warranty. It verifies that the warranty panel is triggered, checks the cart count, and ensures the item subtotal reflects the added warranty.</li>
+    </ul>
+    <p>Both tests utilize the <code>config.ts</code> file, which contains URLs for products with and without warranties. This allows for easy swapping of product links, enabling testing of different scenarios without changing the test code itself.</p>
+
+    <h3>Product Searches</h3>
+    <p>Verifies the search functionality for products on Amazon. The tests cover various scenarios, including:</p>
+    <ul>
+        <li>Searching for a product by text and submitting using the enter button.</li>
+        <li>Searching for a product by text and submitting by clicking the search button.</li>
+        <li>Finding a product using its ASIN (Amazon Standard Identification Number) and verifying the correct product title is displayed.</li>
+    </ul>
+
+    <h3>Podcast Sharing</h3>
+    <p>Ensures that the shareable link matches the text copied from the Copy Link button on the Amazon website.</p>
+
+    <h3>Example Test</h3>
+    <p>A basic test to check the presence of specific headers on the Playwright website.</p>
+</section>
+
+<section>
+    <h2>Tech Stack</h2>
+    <ul>
+        <li>Playwright</li>
+        <li>TypeScript</li>
+        <li>Node.js</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Framework Features</h2>
+    <ul>
+        <li><strong>Robust Locator Strategies</strong>: Utilizes Playwright's <code>getByTestId()</code> and other locator methods for precise element targeting.</li>
+        <li><strong>Cross-Browser Testing</strong>: Supports testing across multiple browsers, including Chrome, with easy configuration.</li>
+        <li><strong>Reusable Helper Functions</strong>: Implements utility functions to promote code reuse and maintainability in tests.</li>
+        <li><strong>Clipboard Interaction</strong>: Tests clipboard functionality using Playwright's built-in permissions management.</li>
+        <li><strong>Trace and Debugging Support</strong>: Configured to retain traces on failure for easier debugging of test failures.</li>
+    </ul>
+</section>
+
+
+<section>
+    <h2>My Experience with Clipboard Interaction</h2>
+    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7276816049361068035" height="2057" width="504" allowfullscreen="" title="Embedded post"></iframe>
+</section>
+
+<section>
+    <h2>Articles/Blogs</h2>
+    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7278609399030407168" height="615" width="504" allowfullscreen="" title="Embedded post"></iframe>
+    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7279745163172724738" height="804" width="504" allowfullscreen="" title="Embedded post"></iframe>
+</section>
+
+<footer style="text-align: center; padding: 20px; background-color: #0d0d0d; color: #00ffcc; border-top: 2px solid #00ffcc;">
+    <p>© 2024 Ryley Johnson</p>
+    <a href="index.html" style="color: #00ffcc; text-decoration: none;">Home Page</a><br>
+    <a href="https://mrjohn5on.github.io/#projects" style="color: #00ffcc; text-decoration: none;">Project Bank</a>
+    <p>Contact: <a href="mailto:ryleyjohnsonemail@gmail.com" style="color: #00ffcc; text-decoration: none;">ryleyjohnsonemail@gmail.com</a></p>
+</footer>
+
+</body>
+</html>
