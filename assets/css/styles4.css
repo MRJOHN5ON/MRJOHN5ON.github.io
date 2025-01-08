@@ -110,3 +110,7 @@ footer {
     height: 315px; /* Height of the video */
     border: none; /* Remove border if any */
 }
+
+.text-center {
+    text-align: center;
+}
