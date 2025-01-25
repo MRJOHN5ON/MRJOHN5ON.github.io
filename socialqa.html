@@ -82,7 +82,7 @@
     <p>An ongoing project for The Social QA Bootcamp course.</p>
     <p>
         <div class="icon" style="margin: 0 auto; text-align: center;">
-            <a href="https://github.com/MRJOHN5ON/SocialQAproject" target="_blank">
+            <a href="https://github.com/MRJOHN5ON/Refactoring-using-a-page-object-model" target="_blank">
                 <i class="uil uil-github-alt"></i>
             </a>
         </div><br>
@@ -100,31 +100,31 @@
     <h3>Adding to Cart</h3>
     <p>There are two test files that handle the functionality of adding products to the shopping cart on the Amazon website:</p>
     <ul>
-        <li><strong>addCartDenyWarranty.spec.ts</strong>: This test verifies the process of adding a product to the cart while denying the warranty. It checks for the visibility of the "No Thanks" button, asserts the success message, verifies the cart count, and ensures the item subtotal is correct.</li>
-        <li><strong>addCart2yearWarranty.spec.ts</strong>: This test checks the process of adding a product to the cart while applying a 2-year warranty. It verifies that the warranty panel is triggered, checks the cart count, and ensures the item subtotal reflects the added warranty.</li>
+        <li><strong>addCartDenyWarranty.spec.ts</strong>: This test verifies the process of adding a product to the cart while denying the warranty. It checks for the visibility of the "No Thanks" button, asserts the success message, verifies the cart count, and ensures the item subtotal is correct.</li><br>
+        <li><strong>addCart2yearWarranty.spec.ts</strong>: This test checks the process of adding a product to the cart while applying a 2-year warranty. It verifies that the warranty panel is triggered, checks the cart count, and ensures the item subtotal reflects the added warranty.</li><br>
     </ul>
-    <p>Both tests utilize the <code>config.ts</code> file, which contains URLs for products with and without warranties. This allows for easy swapping of product links, enabling testing of different scenarios without changing the test code itself.</p>
+    
 
     <h3>Product Searches</h3>
     <p>Verifies the search functionality for products on Amazon. The tests cover various scenarios, including:</p>
     <ul>
-        <li>Searching for a product by text and submitting using the enter button.</li>
-        <li>Searching for a product by text and submitting by clicking the search button.</li>
+        <li>Searching for a product by text and submitting using the enter button.</li><br>
+        <li>Searching for a product by text and submitting by clicking the search button.</li><br>
         <li>Finding a product using its ASIN (Amazon Standard Identification Number) and verifying the correct product title is displayed.</li>
     </ul>
 
     <h3>Podcast Sharing</h3>
-    <p>Ensures that the shareable link matches the text copied from the Copy Link button on the Amazon website.</p>
+    <li><strong>podcast.spec.ts</strong>:
+    Ensures that the shareable link matches the text copied from the Copy Link button on the Amazon website.
 
-    <h3>Example Test</h3>
-    <p>A basic test to check the presence of specific headers on the Playwright website.</p>
+    
 </section>
 
 <section>
     <h2>Tech Stack</h2>
     <ul>
-        <li>Playwright</li>
-        <li>TypeScript</li>
+        <li>Playwright</li><br>
+        <li>TypeScript</li><br>
         <li>Node.js</li>
     </ul>
 </section>
@@ -132,10 +132,10 @@
 <section>
     <h2>Framework Features</h2>
     <ul>
-        <li><strong>Robust Locator Strategies</strong>: Utilizes Playwright's <code>getByTestId()</code> and other locator methods for precise element targeting.</li>
-        <li><strong>Cross-Browser Testing</strong>: Supports testing across multiple browsers, including Chrome, with easy configuration.</li>
-        <li><strong>Reusable Helper Functions</strong>: Implements utility functions to promote code reuse and maintainability in tests.</li>
-        <li><strong>Clipboard Interaction</strong>: Tests clipboard functionality using Playwright's built-in permissions management.</li>
+        <li><strong>Robust Locator Strategies</strong>: Utilizes Playwright's <code>getByTestId()</code> and other locator methods for precise element targeting.</li><br>
+        <li><strong>Cross-Browser Testing</strong>: Supports testing across multiple browsers, including Chrome, with easy configuration.</li><br>
+        <li><strong>POM</strong>: Implements page object model concept to promote code reuse and maintainability in tests.</li><br>
+        <li><strong>Clipboard Interaction</strong>: Tests clipboard functionality using Playwright's built-in permissions management.</li><br>
         <li><strong>Trace and Debugging Support</strong>: Configured to retain traces on failure for easier debugging of test failures.</li>
     </ul>
 </section>
