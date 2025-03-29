@@ -644,6 +644,7 @@ footer{
         flex-direction: column;
         justify-content: center;
         height: 100vh;
+        padding-top: 90px; /* Add padding to prevent nav overlap */
     }
     .featured-text{
         width: 100%;
@@ -651,16 +652,35 @@ footer{
         justify-content: center;
         align-content: flex-start;
         min-height: 60vh;
+        text-align: center; /* Center align all text */
+        padding-left: 0; /* Remove left padding */
+    }
+    .featured-text-card {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .featured-name {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .featured-text-btn {
+        justify-content: center; /* Center the buttons */
     }
     .social_icons{
         margin-top: 2em;
+        margin-bottom: 3em;
+        justify-content: center;
+        width: 100%;
     }
     .featured-image{
         order: 1;
         justify-content: center;
-        min-height: 150px;
+        min-height: 180px; /* Increase minimum height */
         width: 100%;
-        margin-top: 65px;
+        margin-top: 10px; /* Reduce top margin */
+        margin-bottom: 20px; /* Add bottom margin for spacing */
     }
     .image, .image img{
         width: 150px;
@@ -722,7 +742,7 @@ footer{
 
 @media only screen and (max-width: 540px){
     .featured-name{
-        font-size: 40px;
+        font-size: 32px; /* Slightly smaller font for very small screens */
     }
     .project-box{
         width: 100%;
@@ -732,6 +752,34 @@ footer{
     }
     .input-field{
         width: 100%;
+    }
+    .featured-box {
+        padding-top: 100px;
+        height: auto; /* Allow natural height instead of fixed 100vh */
+        min-height: 100vh; /* Ensure it takes at least full viewport height */
+    }
+    .featured-image {
+        margin-top: 20px;
+        margin-bottom: 30px; /* More space after image */
+        min-height: 160px;
+    }
+    .featured-text {
+        min-height: auto; /* Allow natural height */
+        padding-top: 0;
+    }
+    .featured-text-info {
+        padding: 0 15px; /* Add horizontal padding for paragraph */
+    }
+    .featured-text-btn {
+        flex-direction: column; /* Stack buttons on very small screens */
+        align-items: center;
+        gap: 10px;
+    }
+    .social_icons {
+        justify-content: center;
+        width: 100%;
+        margin-top: 1.5em;
+        margin-bottom: 3.5em; /* More spacing before About section */
     }
 }
 /* ----- SOCIAL ICONS ----- */
