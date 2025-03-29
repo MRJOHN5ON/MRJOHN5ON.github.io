@@ -3,8 +3,8 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    color: #fffdfd;
-    background-color: #151515;
+    color: #e0e0e0;
+    background-color: #121212;
 }
 
 /* ----- CONTAINER STYLES ----- */
@@ -29,7 +29,7 @@ h6 {
     font-weight: 600;
     text-align: center;
     margin: 10px 0;
-    color: #ff0404;
+    color: #ff4081;
 }
 
 /* ----- IMAGES STYLES ----- */
@@ -67,7 +67,7 @@ img {
 
 /* Styles for the accordion header */
 .accordion-header {
-    background-color: #ff0404;
+    background-color: #ff4081;
     cursor: pointer;
     padding: 15px;
     width: 100%;
@@ -87,7 +87,7 @@ img {
     padding: 0 15px;
     display: none;
     overflow: hidden;
-    background-color: #ff550022;
+    background-color: #2a2a2a;
 }
 
 /* Styles for the images */
@@ -110,7 +110,7 @@ img {
 .project-box {
     width: 80%;
     max-width: 800px;
-    background-color: #FFFFFF;
+    background-color: #2a2a2a;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
@@ -122,14 +122,14 @@ img {
 .project-box h3,
 .project-box p {
     margin: 0;
-    color: #e96f3a;
+    color: #e0e0e0;
 }
 
 /* ----- LINK STYLES IN PROJECT BOX ----- */
 .project-box a {
     display: inline-block;
     margin-top: 10px;
-    color: #2980B9;
+    color: #ff4081;
 }
 
 .project-box a:hover {
@@ -146,8 +146,8 @@ img {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #f0e9e9d2;
-    color: #ff0404;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
 }
 
 /* ----- HEADER STYLES ----- */
@@ -159,7 +159,7 @@ header {
 .github-button-container {
     display: inline-block;
     padding: 10px; /* Adjust the padding as needed */
-    background-color: #ff0404;
+    background-color: #ff4081;
     border: 2px solid rgb(246, 246, 246); /* Border thickness and color */
     border-radius: 12px; /* Adjust the border-radius for rounded corners */
     box-shadow: 0 4px 8px rgba(255, 242, 242, 0.1); /* Optional: adds a slight shadow */
@@ -223,7 +223,7 @@ h4 {
     font-weight: 600; /* Maintains the existing font-weight */
     text-align: center; /* Maintains the existing text alignment */
     margin: 10px 0; /* Maintains the existing margin */
-    color: #ff0404; /* Maintains the existing color */
+    color: #ff4081; /* Maintains the existing color */
 }
 h3 {
     font-size: 32px; /* Adjust to your preferred size */
@@ -240,7 +240,7 @@ h1 {
     color: #a6ff00; /* Maintains the existing color */
 }
 .highlighted-paragraph {
-    background-color: #ff040458; /* Light background color for highlighting */
+    background-color: #ff408158; /* Light background color for highlighting */
     border-left: 5px solid #a6ff00; /* Colorful left border to add emphasis */
     padding: 10px; /* Space around the text */
     margin: 20px 0; /* Space above and below */
@@ -277,7 +277,7 @@ h1 {
 /* Style for individual items */
 .scenario-item {
     background-color: #3c3c3c; /* Light background for each item */
-    border: 1px solid #ff0404; /* Border for better visibility */
+    border: 1px solid #ff4081; /* Border for better visibility */
     padding: 1rem; /* Padding inside each item */
     border-radius: 5px; /* Rounded corners */
     box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
@@ -304,4 +304,45 @@ h1 {
     .test-scenarios {
         grid-template-columns: 1fr; /* 1 item per row on smaller screens */
     }
+}
+
+/* Maintain the existing text highlighting but update the color */
+.highlighted-text {
+    color: #ff4081; /* Updated to match the scheme */
+}
+
+/* Light background color for highlighting */
+.highlighted-section {
+    background-color: #2a2a2a; /* Updated background color */
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+/* Dark text color for contrast */
+.dark-text {
+    color: #e0e0e0; /* Updated text color */
+}
+
+/* Border for better visibility */
+.bordered-element {
+    border: 1px solid #ff4081; /* Updated border color */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.indicator-icon {
+    color: #ff4081; /* Maintains the existing color */
+}
+
+.highlighted-background {
+    background-color: #2a2a2a; /* Light background color for highlighting */
+}
+
+.secondary-text {
+    color: #e0e0e0; /* Updated text color for contrast */
+}
+
+.bordered-item {
+    border: 1px solid #ff4081; /* Border for better visibility */
 }
