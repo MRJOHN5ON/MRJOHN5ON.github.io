@@ -866,6 +866,20 @@ footer{
     height: auto;
     border-radius: 8px;
  }
+
+ /* Styles for clickable carousel items */
+ .carousel-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+ }
+ 
+ .carousel-item a:hover img {
+    transform: scale(1.03);
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.6);
+ }
  
  /* Carousel Controls */
  .carousel-control {

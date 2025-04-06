@@ -64,22 +64,65 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             box-shadow: 0px 2px 5px 0px #00ffcc;
             cursor: pointer;
             transition: background-color 0.3s, color 0.3s;
         }
         .icon a {
-            color: #ffffff; /* Default color */
+            color: #ffffff;
             text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+        .icon i {
+            font-size: 24px; /* Consistent icon size */
         }
         .icon:hover {
-            background-color: #f0f0f0; /* Change to your desired hover background color */
+            background-color: #f0f0f0;
         }
         .icon:hover a {
-            color: #ff007f; /* Change to your desired hover icon color */
+            color: #ff007f;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin: 20px 0;
+        }
+        .button-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .button-text {
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        
+        /* Media query for mobile devices */
+        @media (max-width: 576px) {
+            .button-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .button-item {
+                margin-bottom: 10px;
+            }
+            .icon {
+                width: 60px;
+                height: 60px;
+            }
+            .icon i {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
@@ -89,14 +132,26 @@
     <img src="assets/images/SOCIAL QA BOOTCAMP_TRANS.png" alt="Social QA Logo" width="50%" height="auto" />
     <h1></h1>
     <p>An ongoing project for The Social QA Bootcamp course.</p>
-    <p>
-        <div class="icon" style="margin: 0 auto; text-align: center;">
-            <a href="https://github.com/MRJOHN5ON/Refactoring-using-a-page-object-model" target="_blank">
-                <i class="uil uil-github-alt"></i>
-            </a>
-        </div><br>
-        View on GitHub
-    </p>
+    
+    <div class="button-container">
+        <div class="button-item">
+            <div class="icon">
+                <a href="https://github.com/MRJOHN5ON/Refactoring-using-a-page-object-model" target="_blank">
+                    <i class="uil uil-github-alt"></i>
+                </a>
+            </div>
+            <span class="button-text">View on GitHub</span>
+        </div>
+        
+        <div class="button-item">
+            <div class="icon">
+                <a href="https://www.stevenqa.com/graduates/ryley-johnson/" target="_blank">
+                    <i class="uil uil-graduation-cap"></i>
+                </a>
+            </div>
+            <span class="button-text">Full Bootcamp Portfolio</span>
+        </div>
+    </div>
 </header>
 
 <section>
