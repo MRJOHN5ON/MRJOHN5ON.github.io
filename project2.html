@@ -436,6 +436,254 @@
             content: "\2212"; /* Minus sign */
             transform: rotate(180deg);
         }
+
+        /* Mind Map Section Styles */
+        .mind-map-container {
+            background: linear-gradient(to right, #1e1e1e, #2a2a2a);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px auto;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            max-width: 1200px;
+        }
+        
+        .mind-map-heading {
+            color: #ff4081;
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #ff4081;
+            padding-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .mind-map-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .mind-map-content img {
+            max-width: 80%;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .mind-map-content img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+        
+        .mind-map-content p strong {
+            font-size: 24px;
+            color: #fff;
+            display: block;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .mind-map-content ul {
+            background-color: #2c2c2c;
+            border-radius: 8px;
+            padding: 20px 40px;
+            margin: 10px auto;
+            max-width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mind-map-content ul li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 5px;
+        }
+        
+        .mind-map-content ul li::before {
+            content: "•";
+            color: #ff4081;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 767px) {
+            .mind-map-container {
+                padding: 15px;
+                margin: 20px auto;
+            }
+            
+            .mind-map-content img {
+                max-width: 100%;
+            }
+            
+            .mind-map-content ul {
+                padding: 15px 25px;
+                max-width: 100%;
+            }
+            
+            .mind-map-heading {
+                font-size: 22px;
+            }
+            
+            .mind-map-content p strong {
+                font-size: 20px;
+            }
+        }
+
+        /* E2E Test Flow Section Styles */
+        .test-flow-container {
+            background: linear-gradient(to right, #1e1e1e, #2a2a2a);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px auto;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            max-width: 1200px;
+        }
+        
+        .test-flow-heading {
+            color: #ff4081;
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #ff4081;
+            padding-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .test-flow-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .test-flow-content img {
+            max-width: 80%;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .test-flow-content img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+        
+        .test-flow-content p strong {
+            font-size: 24px;
+            color: #fff;
+            display: block;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .test-flow-content ul {
+            background-color: #2c2c2c;
+            border-radius: 8px;
+            padding: 20px 40px;
+            margin: 10px auto;
+            max-width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .test-flow-content ul li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 5px;
+        }
+        
+        .test-flow-content ul li::before {
+            content: "•";
+            color: #ff4081;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 767px) {
+            .test-flow-container {
+                padding: 15px;
+                margin: 20px auto;
+            }
+            
+            .test-flow-content img {
+                max-width: 100%;
+            }
+            
+            .test-flow-content ul {
+                padding: 15px 25px;
+                max-width: 100%;
+            }
+            
+            .test-flow-heading {
+                font-size: 22px;
+            }
+            
+            .test-flow-content p strong {
+                font-size: 20px;
+            }
+        }
+
+        /* Footer alignment fix */
+        .modern-footer {
+            text-align: center;
+            width: 100%;
+            padding: 40px 20px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            width: 100%;
+        }
+        
+        .footer-info, .footer-social {
+            flex: 1;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .bottom-footer {
+            width: 100%;
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        @media (max-width: 767px) {
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+            }
+            
+            .footer-info, .footer-social {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -471,53 +719,53 @@
         <h2><u>TESTING PROCESS</u></h2>
         <p>The testing process included automated scripts to verify the functionality of key features, ensuring that users could select multiple restaurants, combine dishes, and complete the order process without issues. Test cases covered user interactions, validation checks, and edge cases to ensure a robust and reliable app experience.</p>
 
-        <div class="accordion-container">
-            <div class="accordion">
-                <div class="accordion-item">
-                    <button class="accordion-header" style="text-align: center;" onclick="this.classList.toggle('active'); var content = this.nextElementSibling; if (content.style.display === 'block') { content.style.display = 'none'; } else { content.style.display = 'block'; }">CLICK TO OPEN!<br> [MIND MAP FOR URBAN LUNCH APP TESTING]</button>
-                    <div class="accordion-content" style="display: none;">
+        <div class="test-flow-container">
+            <h2 class="test-flow-heading">E2E USER JOURNEY TEST FLOW</h2>
             
-                        <img src="https://wary-ethernet-059.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffaada197-3f00-4085-a2c7-f628f29ece6f%2Ff59a5357-5aa6-495e-91f9-bc903efda316%2FScreen_Shot_2024-07-10_at_3.07.14_PM.png?table=block&id=18160e91-e191-4fea-a0f9-2f9a686bf5ba&spaceId=faada197-3f00-4085-a2c7-f628f29ece6f&width=1730&userId=&cache=v2" alt="Mind Map 1">
-                        <p><strong>Selecting a pick-up location</strong></p>
-                        <ul>
-                            <li>Ensure no pick-up points are selected by default.</li>
-                            <li>Check highlighting and selection of pick-up points upon tap.</li>
-                            <li>Confirm repeated tap cancels selection.</li>
-                            <li>Ensure selecting a new pick-up point updates the selection.</li>
-                            <li>Verify selected pick-up point name displays in the footer.</li>
-                        </ul>
-                        <img src="https://wary-ethernet-059.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffaada197-3f00-4085-a2c7-f628f29ece6f%2F5be44737-db68-4c13-be85-2b5fe0c3f80c%2FScreen_Shot_2024-07-10_at_3.07.23_PM.png?table=block&id=2ae935e9-ef82-4153-8fae-dc466c6cbc7c&spaceId=faada197-3f00-4085-a2c7-f628f29ece6f&width=1730&userId=&cache=v2" alt="Mind Map 2">
-                        <p><strong>Choosing and adding dishes</strong></p>
-                        <ul>
-                            <li>Ensure no dishes are pre-selected by default.</li>
-                            <li>Verify highlighting and selection of dishes upon tap.</li>
-                            <li>Confirm repeating tap cancels selection.</li>
-                            <li>Ensure adding selected dishes to the basket and proceeding to checkout is possible.</li>
-                        </ul>
-                        <img src="https://wary-ethernet-059.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffaada197-3f00-4085-a2c7-f628f29ece6f%2F91e9c547-1fb4-4077-afc2-5f08935a22ec%2FScreen_Shot_2024-07-10_at_3.07.29_PM.png?table=block&id=c6062b6b-a963-4e4e-98ea-f11f1c0e75af&spaceId=faada197-3f00-4085-a2c7-f628f29ece6f&width=1730&userId=&cache=v2" alt="Mind Map 3">
-                        <p><strong>Choosing and adding restaurants</strong></p>
-                        <ul>
-                            <li>Verify no restaurants are pre-selected by default.</li>
-                            <li>Ensure highlighting and selection of restaurants upon tap.</li>
-                            <li>Confirm selecting a new restaurant updates the selection.</li>
-                            <li>Verify selected restaurants display on the summary page.</li>
-                        </ul>
-                        <img src="https://wary-ethernet-059.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffaada197-3f00-4085-a2c7-f628f29ece6f%2F984bcee0-3f0e-496e-80e5-ed561a3076d9%2FScreen_Shot_2024-07-10_at_3.07.36_PM.png?table=block&id=10d65822-ca08-4a75-84fe-3d703817344d&spaceId=faada197-3f00-4085-a2c7-f628f29ece6f&width=2000&userId=&cache=v2" alt="Mind Map 4">
-                        <p><strong>Summary page</strong></p>
-                        <ul>
-                            <li>Ensure order details are correct before confirmation.</li>
-                            <li>Verify order summary displays selected dishes, pick-up point, and restaurants.</li>
-                            <li>Confirm option to edit the order before finalizing.</li>
-                            <li>Ensure submitting the order leads to a confirmation screen.</li>
-                        </ul>
-                            <img src="https://wary-ethernet-059.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffaada197-3f00-4085-a2c7-f628f29ece6f%2F413a80cf-eb13-4ef8-aa4c-8209b014e122%2FScreen_Shot_2024-07-10_at_3.07.42_PM.png?table=block&id=9e9dc91d-fc2d-48d3-b8e0-33276de3306d&spaceId=faada197-3f00-4085-a2c7-f628f29ece6f&width=1730&userId=&cache=v2" alt="Mind Map 5">
-                            <p><strong>Final Confirmation</strong></p>
-                        <ul>
-                            <li>Verify confirmation message displays after order submission.</li>
-                            <li>Ensure confirmation details include pick-up point, selected dishes, and restaurants.</li>
-                        </ul>
-                    </div>    
-                </div>
+            <div class="test-flow-content">
+                <img src="https://wary-ethernet-059.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffaada197-3f00-4085-a2c7-f628f29ece6f%2Ff59a5357-5aa6-495e-91f9-bc903efda316%2FScreen_Shot_2024-07-10_at_3.07.14_PM.png?table=block&id=18160e91-e191-4fea-a0f9-2f9a686bf5ba&spaceId=faada197-3f00-4085-a2c7-f628f29ece6f&width=1730&userId=&cache=v2" alt="Test Flow 1">
+                <p><strong>Selecting a pick-up location</strong></p>
+                <ul>
+                    <li>Ensure no pick-up points are selected by default.</li>
+                    <li>Check highlighting and selection of pick-up points upon tap.</li>
+                    <li>Confirm repeated tap cancels selection.</li>
+                    <li>Ensure selecting a new pick-up point updates the selection.</li>
+                    <li>Verify selected pick-up point name displays in the footer.</li>
+                </ul>
+                
+                <img src="https://wary-ethernet-059.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffaada197-3f00-4085-a2c7-f628f29ece6f%2F5be44737-db68-4c13-be85-2b5fe0c3f80c%2FScreen_Shot_2024-07-10_at_3.07.23_PM.png?table=block&id=2ae935e9-ef82-4153-8fae-dc466c6cbc7c&spaceId=faada197-3f00-4085-a2c7-f628f29ece6f&width=1730&userId=&cache=v2" alt="Test Flow 2">
+                <p><strong>Choosing and adding dishes</strong></p>
+                <ul>
+                    <li>Ensure no dishes are pre-selected by default.</li>
+                    <li>Verify highlighting and selection of dishes upon tap.</li>
+                    <li>Confirm repeating tap cancels selection.</li>
+                    <li>Ensure adding selected dishes to the basket and proceeding to checkout is possible.</li>
+                </ul>
+                
+                <img src="https://wary-ethernet-059.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffaada197-3f00-4085-a2c7-f628f29ece6f%2F91e9c547-1fb4-4077-afc2-5f08935a22ec%2FScreen_Shot_2024-07-10_at_3.07.29_PM.png?table=block&id=c6062b6b-a963-4e4e-98ea-f11f1c0e75af&spaceId=faada197-3f00-4085-a2c7-f628f29ece6f&width=1730&userId=&cache=v2" alt="Test Flow 3">
+                <p><strong>Choosing and adding restaurants</strong></p>
+                <ul>
+                    <li>Verify no restaurants are pre-selected by default.</li>
+                    <li>Ensure highlighting and selection of restaurants upon tap.</li>
+                    <li>Confirm selecting a new restaurant updates the selection.</li>
+                    <li>Verify selected restaurants display on the summary page.</li>
+                </ul>
+                
+                <img src="https://wary-ethernet-059.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffaada197-3f00-4085-a2c7-f628f29ece6f%2F984bcee0-3f0e-496e-80e5-ed561a3076d9%2FScreen_Shot_2024-07-10_at_3.07.36_PM.png?table=block&id=10d65822-ca08-4a75-84fe-3d703817344d&spaceId=faada197-3f00-4085-a2c7-f628f29ece6f&width=2000&userId=&cache=v2" alt="Test Flow 4">
+                <p><strong>Summary page</strong></p>
+                <ul>
+                    <li>Ensure order details are correct before confirmation.</li>
+                    <li>Verify order summary displays selected dishes, pick-up point, and restaurants.</li>
+                    <li>Confirm option to edit the order before finalizing.</li>
+                    <li>Ensure submitting the order leads to a confirmation screen.</li>
+                </ul>
+                
+                <img src="https://wary-ethernet-059.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffaada197-3f00-4085-a2c7-f628f29ece6f%2F413a80cf-eb13-4ef8-aa4c-8209b014e122%2FScreen_Shot_2024-07-10_at_3.07.42_PM.png?table=block&id=9e9dc91d-fc2d-48d3-b8e0-33276de3306d&spaceId=faada197-3f00-4085-a2c7-f628f29ece6f&width=1730&userId=&cache=v2" alt="Test Flow 5">
+                <p><strong>Final Confirmation</strong></p>
+                <ul>
+                    <li>Verify confirmation message displays after order submission.</li>
+                    <li>Ensure confirmation details include pick-up point, selected dishes, and restaurants.</li>
+                </ul>
             </div>
         </div>
         
@@ -739,26 +987,8 @@
     <script src="assets/js/project2.js"></script>
     
     <script>
-    // Super simple direct accordion implementation
+    // Fix for long URLs causing horizontal scroll
     document.addEventListener('DOMContentLoaded', function() {
-        // Get the button and content by ID
-        const button = document.getElementById('mindMapButton');
-        const content = document.getElementById('mindMapContent');
-        
-        // Add click event listener to the button
-        button.addEventListener('click', function() {
-            // Toggle active class
-            this.classList.toggle('active');
-            
-            // Toggle display
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-        });
-        
-        // Fix for long URLs causing horizontal scroll
         const allLinks = document.querySelectorAll('a');
         allLinks.forEach(link => {
             link.style.wordBreak = 'break-word';
