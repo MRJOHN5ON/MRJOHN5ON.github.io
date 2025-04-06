@@ -150,6 +150,109 @@ footer {
     color: #e0e0e0;
 }
 
+/* Modern Footer Styles */
+.modern-footer {
+    background: linear-gradient(to right, #1e1e1e, #2a2a2a);
+    color: #e0e0e0;
+    padding: 30px 20px;
+    position: relative;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.modern-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #ff4081, #a6ff00);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-info p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.footer-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    background-color: rgba(255, 64, 129, 0.2);
+    color: #ff4081;
+}
+
+.footer-social {
+    margin-top: 10px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(166, 255, 0, 0.2);
+    border-color: #a6ff00;
+    background-color: #ff4081;
+    color: #ffffff;
+}
+
+/* Media query for responsiveness */
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .footer-info {
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
 /* ----- HEADER STYLES ----- */
 header {
     text-align: center; /* Centers text and inline elements within the header */
