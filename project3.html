@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Working The Steps Of The SDLC For Web Based Testing</title>
-    <link rel="stylesheet" href="assets/css/project1.css"> 
+    <link rel="stylesheet" href="assets/css/project3.css">
+    <link rel="stylesheet" href="assets/css/project1.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R59XTH1XN5"></script>
 <script>
@@ -15,53 +17,217 @@
   gtag('config', 'G-R59XTH1XN5');
 </script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
             margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
             padding: 20px;
-            background-color: #ff0404;
-        }
-        header, footer {
-            background-color: #151515;
-            color: #a6ff00;
-            padding: 10px 20px;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+        
         header h1 {
             margin: 0;
+            color: #ff4081;
             text-decoration: underline;
         }
-        header img {
-            margin-top: 10px;
-            width: 100px; /* Adjust width as needed */
-        }
+        
         main {
-            padding: 20px;
-            background-color: #151515a0;
+            padding: 30px;
+            background-color: #1a1a1a;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+            max-width: 1200px;
+            box-sizing: border-box;
+            width: calc(100% - 40px);
         }
+        
         .project-details h2, .project-details h3 {
-            color: #a6ff00;
+            color: #ff4081;
+            margin-top: 30px;
         }
-        .project-details h2 {
-            margin-top: 0;
+        
+        .project-details p {
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
+        
         .project-details img {
-            max-width: 100%;
+            max-width: 80%;
             height: auto;
             display: block;
-            margin: 20px 0;
+            margin: 30px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
         }
-        .centered-text, .centered-link {
+        
+        .project-details img:hover {
+            transform: scale(1.02);
+        }
+        
+        .centered-text {
             text-align: center;
             margin: 20px 0;
         }
-        .image-section {
-            margin-bottom: 30px;
+        
+        /* Footer alignment fix */
+        .modern-footer {
+            text-align: center;
+            width: 100%;
+            padding: 40px 20px;
+            background: linear-gradient(to right, #1e1e1e, #2a2a2a);
+            color: #e0e0e0;
+            position: relative;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
         }
-        footer a {
-            color: #fff;
+        
+        .modern-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, #ff4081, #a6ff00);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            width: 100%;
+        }
+        
+        .footer-info, .footer-social {
+            flex: 1;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .footer-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            background-color: rgba(255, 64, 129, 0.2);
+            color: #ff4081;
+        }
+        
+        @media (max-width: 767px) {
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+            }
+            
+            .footer-info, .footer-social {
+                width: 100%;
+                max-width: 100%;
+                padding: 0 10px;
+                box-sizing: border-box;
+            }
+            
+            .bottom-footer {
+                width: 100%;
+                padding: 0 10px;
+                box-sizing: border-box;
+            }
+            
+            .project-details img {
+                max-width: 100%;
+            }
+            
+            main {
+                padding: 20px 15px;
+                margin: 15px;
+                width: auto;
+            }
+            
+            header {
+                padding: 15px 10px;
+            }
+            
+            /* Fix for long text and links */
+            p, a {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                hyphens: auto;
+            }
+        }
+        
+        /* Ensure all content stays within viewport width */
+        img, table, iframe, video, div {
+            max-width: 100%;
+        }
+        
+        .footer-social {
+            flex: 1;
+            max-width: 500px;
+            text-align: center;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+        
+        .bottom-footer {
+            margin-top: 15px;
+        }
+        
+        .bottom-footer p {
+            margin: 5px 0;
+            padding: 0 10px;
+            word-break: break-word;
+        }
+        
+        .bottom-footer a {
+            word-break: break-all;
+            display: inline-block;
+        }
+
+        .footer-info, .footer-social {
+            flex: 1;
+            max-width: 500px;
+            text-align: center;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+        
+        .bottom-footer {
+            width: 100%;
+            padding: 0 10px;
+            box-sizing: border-box;
         }
     </style>
 </head>
@@ -92,13 +258,49 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Ryley Johnson</p>
-        <a href="index.html">Home Page</a><br>
-        <a href="https://mrjohn5on.github.io/#projects">Project Bank</a>
-        <p>Contact me: <a href="mailto:ryleyjohnsonemail@gmail.com">ryleyjohnsonemail@gmail.com</a></p>
+    <footer class="modern-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>&copy; 2024 Ryley Johnson</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="https://mrjohn5on.github.io/#about">About</a>
+                    <a href="https://mrjohn5on.github.io/#projects">Projects</a>
+                    <a href="https://mrjohn5on.github.io/#contact">Contact</a>
+                </div>
+                <p>Contact: <a href="mailto:ryleyjohnsonemail@gmail.com">ryleyjohnsonemail@gmail.com</a></p>
+            </div>
+            
+            <div class="footer-social">
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/ryleyj" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <i class="uil uil-linkedin-alt"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/MRJOHN5ON" target="_blank" class="social-link" aria-label="GitHub">
+                        <i class="uil uil-github-alt"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                <div class="bottom-footer">
+                    <p>&copy; THANKS FOR STOPPING BY!</p>
+                    <p style="padding: 0 10px; word-break: break-word;">I also have a hobby business making logos:<br><a href="https://wary-ethernet-059.notion.site/Life-of-Logos-168a5a3eb7cd80b392ecdc682a601e4d" target="_blank" style="display: inline-block; word-break: break-all; max-width: 100%;">Life of Logos</a></p>
+                </div>
+            </div>
+        </div>
     </footer>
-    <a href='http://www.freevisitorcounters.com'>Freevisitorcounters.com</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=06f37cd3f0329dae7327551c29c3a56ef82f3016'></script>
-    <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1244199/t/9"></script>
+    
+    <script>
+        // Fix for any overflowing elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Break long words and URLs
+            const contentElements = document.querySelectorAll('p, a, h1, h2, h3, h4, h5, h6');
+            contentElements.forEach(element => {
+                element.style.wordWrap = 'break-word';
+                element.style.overflowWrap = 'break-word';
+                element.style.maxWidth = '100%';
+            });
+        });
+    </script>
 </body>
 </html>
