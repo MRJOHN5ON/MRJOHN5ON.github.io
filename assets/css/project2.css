@@ -1,0 +1,322 @@
+/* Import base styles from project1.css */
+@import url('project1.css');
+
+/* Dark Theme Variables */
+:root {
+    --text-color-second: #fff;
+    --color-white: #fff;
+    --primary-color: #ff69b4;
+    --primary-color-alpha: rgba(255, 105, 180, 0.1);
+    --background-dark: #2a2a2a;
+    --background-darker: #1e1e1e;
+    --card-bg: #2a2a2a;
+    --border-color: #404040;
+    --text-muted: #e0e0e0;
+    --error-color: #ff4444;
+    --secondary-color: #6c757d;
+    --background-color: #1a1a1a;
+    --text-color: #ffffff;
+}
+
+/* Test Flow Section */
+.test-flow-container {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+.test-flow-heading {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.test-step {
+    margin-bottom: 3rem;
+    background: var(--background-darker);
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.test-step:last-child {
+    margin-bottom: 0;
+}
+
+.test-step-row {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.test-step-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.test-step-image {
+    flex: 1;
+    max-width: 50%;
+}
+
+.test-step-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.test-step-content {
+    flex: 1;
+}
+
+.test-step-content h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.test-step-content .list-group-item {
+    background-color: transparent;
+    border-color: var(--border-color);
+    color: var(--text-color);
+    padding: 0.75rem 1rem;
+}
+
+/* Tables */
+.table-dark {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.table-dark th {
+    background-color: var(--background-darker);
+    color: var(--primary-color);
+    border-color: var(--border-color);
+}
+
+.table-dark td {
+    border-color: var(--border-color);
+}
+
+/* Test Case Summary Table */
+.test-case-summary {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.test-case-summary th {
+    background-color: var(--primary-color-alpha);
+    border-bottom: 2px solid var(--border-color);
+    padding: 1rem;
+    color: var(--text-color);
+}
+
+.test-case-summary td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.failed-status {
+    color: var(--error-color) !important;
+    font-weight: bold;
+}
+
+/* Analysis Cards */
+.analysis-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    height: 100%;
+}
+
+.analysis-card .card-title {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.analysis-card .card-body {
+    padding: 1.5rem;
+    color: var(--text-color);
+}
+
+.analysis-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1.5rem;
+}
+
+.analysis-list li {
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.analysis-list li:last-child {
+    margin-bottom: 0;
+}
+
+.analysis-list strong {
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.analysis-list em {
+    color: var(--text-color);
+    font-style: italic;
+}
+
+.analysis-list ul {
+    padding-left: 1.5rem;
+    list-style: disc;
+    color: var(--text-color);
+}
+
+.analysis-list ul li {
+    margin-bottom: 0.5rem;
+}
+
+.analysis-list ul li strong {
+    display: inline;
+    margin-bottom: 0;
+}
+
+.responsive-img-container {
+    margin: 1.5rem 0;
+}
+
+.responsive-img-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Conclusion Card */
+.conclusion-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.conclusion-card .card-title {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.conclusion-card .card-text {
+    color: var(--text-color);
+}
+
+/* Footer Styles */
+.modern-footer {
+    background-color: var(--background-darker);
+    padding: 3rem 0;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-info {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-social {
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--primary-color);
+}
+
+.social-link i {
+    font-size: 1.5rem;
+}
+
+.bottom-footer {
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
+    color: var(--text-muted);
+}
+
+.bottom-footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.bottom-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Feature Card and Process Card */
+.feature-card,
+.process-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.feature-card .card-body,
+.process-card .card-body {
+    padding: 1.5rem;
+    color: var(--text-color);
+}
+
+.feature-card .card-title,
+.process-card .card-title {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-card .card-text,
+.process-card .card-text {
+    color: var(--text-color);
+}
+
+.feature-card .list-group-item {
+    background-color: transparent;
+    border-color: var(--border-color);
+    color: var(--text-color);
+    padding: 0.75rem 0;
+}
