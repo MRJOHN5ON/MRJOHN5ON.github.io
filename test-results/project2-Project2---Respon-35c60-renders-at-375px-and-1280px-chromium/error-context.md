@@ -1,0 +1,313 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e4]:
+      - heading "ANDROID EMULATION TESTING REPORT FOR URBAN LUNCH APP" [level=1] [ref=e5]
+      - paragraph [ref=e6]: Fall 2024
+    - generic [ref=e8]:
+      - heading "PRODUCT OVERVIEW" [level=2] [ref=e9]
+      - iframe [ref=e11]:
+        - generic "YouTube Video Player" [ref=f1e3]:
+          - generic [ref=f1e5]:
+            - link "Photo image of TripleTen" [ref=f1e7] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCCIwsFWZNuugtW1U2X89t7A?embeds_referring_euri=https%3A%2F%2Fmrjohn5on.github.io%2F
+            - link "Urban Lunch App Demonstration" [ref=f1e10] [cursor=pointer]:
+              - /url: https://www.youtube.com/watch?v=0n95FT2YMgU
+            - button "More" [ref=f1e12] [cursor=pointer]:
+              - generic [ref=f1e13]:
+                - img
+          - button "Play" [ref=f1e16] [cursor=pointer]:
+            - img
+      - paragraph [ref=e13]:
+        - strong [ref=e14]: Urban Lunch
+        - text: is an app designed to personalize business lunches by combining orders from different restaurants in the city. The app was created to address the lack of variety in business lunches offered by single-cuisine restaurants. With Urban Lunch, users can mix and match dishes from multiple restaurants into one order, providing a diverse dining experience.
+    - generic [ref=e16]:
+      - heading "Key Features" [level=2] [ref=e17]
+      - generic [ref=e19]:
+        - heading "Variety in One Order:" [level=3] [ref=e20]
+        - paragraph [ref=e21]: Combine dishes like gazpacho, sushi, and mango mousse with chia in a single order.
+        - heading "Simple Process:" [level=3] [ref=e22]
+        - list [ref=e23]:
+          - listitem [ref=e24]: Select a restaurant as the pick-up point.
+          - listitem [ref=e25]: Choose dishes from a comprehensive list.
+          - listitem [ref=e26]: Confirm the order.
+        - heading "Efficient Delivery:" [level=3] [ref=e27]
+        - paragraph [ref=e28]: Couriers collect the prepared dishes from the respective restaurants, bring them to the pick-up point, and pack them carefully for the customer to collect and enjoy.
+    - generic [ref=e30]:
+      - heading "TESTING PROCESS" [level=2] [ref=e31]
+      - paragraph [ref=e34]: The testing process included automated scripts to verify the functionality of key features, ensuring that users could select multiple restaurants, combine dishes, and complete the order process without issues. Test cases covered user interactions, validation checks, and edge cases to ensure a robust and reliable app experience.
+      - generic [ref=e35]:
+        - heading "E2E USER JOURNEY TEST FLOW" [level=2] [ref=e36]
+        - generic [ref=e37]:
+          - generic [ref=e39]:
+            - img "Test Flow 1" [ref=e41]
+            - generic [ref=e42]:
+              - heading "Selecting a pick-up location" [level=4] [ref=e43]:
+                - strong [ref=e44]: Selecting a pick-up location
+              - list [ref=e45]:
+                - listitem [ref=e46]: Ensure no pick-up points are selected by default.
+                - listitem [ref=e47]: Check highlighting and selection of pick-up points upon tap.
+                - listitem [ref=e48]: Confirm repeated tap cancels selection.
+                - listitem [ref=e49]: Ensure selecting a new pick-up point updates the selection.
+                - listitem [ref=e50]: Verify selected pick-up point name displays in the footer.
+          - generic [ref=e52]:
+            - img "Test Flow 2" [ref=e54]
+            - generic [ref=e55]:
+              - heading "Choosing and adding dishes" [level=4] [ref=e56]:
+                - strong [ref=e57]: Choosing and adding dishes
+              - list [ref=e58]:
+                - listitem [ref=e59]: Ensure no dishes are pre-selected by default.
+                - listitem [ref=e60]: Verify highlighting and selection of dishes upon tap.
+                - listitem [ref=e61]: Confirm repeating tap cancels selection.
+                - listitem [ref=e62]: Ensure adding selected dishes to the basket and proceeding to checkout is possible.
+          - generic [ref=e64]:
+            - img "Test Flow 3" [ref=e66]
+            - generic [ref=e67]:
+              - heading "Choosing and adding restaurants" [level=4] [ref=e68]:
+                - strong [ref=e69]: Choosing and adding restaurants
+              - list [ref=e70]:
+                - listitem [ref=e71]: Verify no restaurants are pre-selected by default.
+                - listitem [ref=e72]: Ensure highlighting and selection of restaurants upon tap.
+                - listitem [ref=e73]: Confirm selecting a new restaurant updates the selection.
+                - listitem [ref=e74]: Verify selected restaurants display on the summary page.
+          - generic [ref=e76]:
+            - img "Test Flow 4" [ref=e78]
+            - generic [ref=e79]:
+              - heading "Summary page" [level=4] [ref=e80]:
+                - strong [ref=e81]: Summary page
+              - list [ref=e82]:
+                - listitem [ref=e83]: Ensure order details are correct before confirmation.
+                - listitem [ref=e84]: Verify order summary displays selected dishes, pick-up point, and restaurants.
+                - listitem [ref=e85]: Confirm option to edit the order before finalizing.
+                - listitem [ref=e86]: Ensure submitting the order leads to a confirmation screen.
+          - generic [ref=e88]:
+            - img "Test Flow 5" [ref=e90]
+            - generic [ref=e91]:
+              - heading "Final Confirmation" [level=4] [ref=e92]:
+                - strong [ref=e93]: Final Confirmation
+              - list [ref=e94]:
+                - listitem [ref=e95]: Verify confirmation message displays after order submission.
+                - listitem [ref=e96]: Ensure confirmation details include pick-up point, selected dishes, and restaurants.
+    - table [ref=e100]:
+      - rowgroup [ref=e101]:
+        - row "Test Case Description Status" [ref=e102]:
+          - columnheader "Test Case Description" [ref=e103]
+          - columnheader "Status" [ref=e104]
+      - rowgroup [ref=e105]:
+        - row "The map shows the pickup points PASSED" [ref=e106]:
+          - cell "The map shows the pickup points" [ref=e107]
+          - cell "PASSED" [ref=e108]
+        - row "Ensure no pick-up points are selected by default PASSED" [ref=e109]:
+          - cell "Ensure no pick-up points are selected by default" [ref=e110]
+          - cell "PASSED" [ref=e111]
+        - row "Check highlighting and selection of pick-up points upon tap PASSED" [ref=e112]:
+          - cell "Check highlighting and selection of pick-up points upon tap" [ref=e113]
+          - cell "PASSED" [ref=e114]
+        - row "Confirm repeated tap cancels selection PASSED" [ref=e115]:
+          - cell "Confirm repeated tap cancels selection" [ref=e116]
+          - cell "PASSED" [ref=e117]
+        - row "Ensure selecting a new pick-up point updates the selection PASSED" [ref=e118]:
+          - cell "Ensure selecting a new pick-up point updates the selection" [ref=e119]
+          - cell "PASSED" [ref=e120]
+        - row "Verify selected pick-up point name displays in the footer PASSED" [ref=e121]:
+          - cell "Verify selected pick-up point name displays in the footer" [ref=e122]
+          - cell "PASSED" [ref=e123]
+        - row "Confirm drop-down list contains all restaurants PASSED" [ref=e124]:
+          - cell "Confirm drop-down list contains all restaurants" [ref=e125]
+          - cell "PASSED" [ref=e126]
+        - row "Validate each dish item displays the name, -/+, and arrow buttons PASSED" [ref=e127]:
+          - cell "Validate each dish item displays the name, -/+, and arrow buttons" [ref=e128]
+          - cell "PASSED" [ref=e129]
+        - row "Ensure tapping on the list (except +) navigates to the dish details screen PASSED" [ref=e130]:
+          - cell "Ensure tapping on the list (except +) navigates to the dish details screen" [ref=e131]
+          - cell "PASSED" [ref=e132]
+        - row "Verify clicking + adds the dish to the order list from the nearest restaurant to the pick-up point PASSED" [ref=e133]:
+          - cell "Verify clicking + adds the dish to the order list from the nearest restaurant to the pick-up point" [ref=e134]
+          - cell "PASSED" [ref=e135]
+        - row "Verify clicking + adds the dish amount without any errors in the GUI FAILED" [ref=e136]:
+          - cell "Verify clicking + adds the dish amount without any errors in the GUI" [ref=e137]
+          - cell "FAILED" [ref=e138]
+        - row "Check the order progress displayed in the footer PASSED" [ref=e139]:
+          - cell "Check the order progress displayed in the footer" [ref=e140]
+          - cell "PASSED" [ref=e141]
+        - row "Ensure \"Next\" button in the footer is inactive if no dishes are in the order list and active otherwise PASSED" [ref=e142]:
+          - cell "Ensure \"Next\" button in the footer is inactive if no dishes are in the order list and active otherwise" [ref=e143]
+          - cell "PASSED" [ref=e144]
+        - row "Verify the return arrow navigates back to the dish list PASSED" [ref=e145]:
+          - cell "Verify the return arrow navigates back to the dish list" [ref=e146]
+          - cell "PASSED" [ref=e147]
+        - row "Confirm tapping the restaurant name adds the dish to the order list PASSED" [ref=e148]:
+          - cell "Confirm tapping the restaurant name adds the dish to the order list" [ref=e149]
+          - cell "PASSED" [ref=e150]
+        - row "Ensure the dish list is scrollable if it exceeds screen length PASSED" [ref=e151]:
+          - cell "Ensure the dish list is scrollable if it exceeds screen length" [ref=e152]
+          - cell "PASSED" [ref=e153]
+        - row "Verify the total amount calculation includes the price of all prepared dishes and delivery FAILED" [ref=e154]:
+          - cell "Verify the total amount calculation includes the price of all prepared dishes and delivery" [ref=e155]
+          - cell "FAILED" [ref=e156]
+        - row "Confirm tapping the \"Order\" button navigates to the order tracking screen PASSED" [ref=e157]:
+          - cell "Confirm tapping the \"Order\" button navigates to the order tracking screen" [ref=e158]
+          - cell "PASSED" [ref=e159]
+        - row "Validate the map displays pick-up points, restaurant locations, and routes PASSED" [ref=e160]:
+          - cell "Validate the map displays pick-up points, restaurant locations, and routes" [ref=e161]
+          - cell "PASSED" [ref=e162]
+        - row "Ensure the list of dishes and associated restaurants are displayed and scrollable FAILED" [ref=e163]:
+          - cell "Ensure the list of dishes and associated restaurants are displayed and scrollable" [ref=e164]
+          - cell "FAILED" [ref=e165]
+        - row "Confirm the final cost (Amount) matches the sum of ordered dishes PASSED" [ref=e166]:
+          - cell "Confirm the final cost (Amount) matches the sum of ordered dishes" [ref=e167]
+          - cell "PASSED" [ref=e168]
+        - row "Verify automatic switch to the \"Order is delivered\" screen when the timer expires PASSED" [ref=e169]:
+          - cell "Verify automatic switch to the \"Order is delivered\" screen when the timer expires" [ref=e170]
+          - cell "PASSED" [ref=e171]
+        - row "Ensure the map shows the correct pick-up point location FAILED" [ref=e172]:
+          - cell "Ensure the map shows the correct pick-up point location" [ref=e173]
+          - cell "FAILED" [ref=e174]
+        - row "Test error message for denied geolocation access PASSED" [ref=e175]:
+          - cell "Test error message for denied geolocation access" [ref=e176]
+          - cell "PASSED" [ref=e177]
+        - row "Verify error message when attempting to order without adding dishes PASSED" [ref=e178]:
+          - cell "Verify error message when attempting to order without adding dishes" [ref=e179]
+          - cell "PASSED" [ref=e180]
+        - row "Confirm clicking \"I got the order\" button marks the order as completed, shows a feedback bar, and redirects to the initial screen for a new order PASSED" [ref=e181]:
+          - cell "Confirm clicking \"I got the order\" button marks the order as completed, shows a feedback bar, and redirects to the initial screen for a new order" [ref=e182]
+          - cell "PASSED" [ref=e183]
+        - row "Ensure the costs of each product match the costs outlined in the requirements FAILED" [ref=e184]:
+          - cell "Ensure the costs of each product match the costs outlined in the requirements" [ref=e185]
+          - cell "FAILED" [ref=e186]
+        - row "Ensure the delivery time countdown matches the advertised delivery time when ordering FAILED" [ref=e187]:
+          - cell "Ensure the delivery time countdown matches the advertised delivery time when ordering" [ref=e188]
+          - cell "FAILED" [ref=e189]
+    - generic [ref=e192]:
+      - heading "ANALYSIS OF FAILED TEST CASES" [level=2] [ref=e193]
+      - generic [ref=e194]:
+        - generic [ref=e197]:
+          - heading "1. Verify clicking + adds the dish amount without any errors in the GUI" [level=3] [ref=e198]
+          - img "Issue Screenshot" [ref=e200]
+          - list [ref=e201]:
+            - listitem [ref=e202]:
+              - strong [ref=e203]: "Issue Description:"
+              - emphasis [ref=e204]: When increasing the quantity of the "Tomato Soup with Croutons" item using the + button, the price text overlaps with the restaurant name when the quantity exceeds 9 items. This issue worsens when the quantity exceeds 99 items, causing further overlap and making it difficult for users to read the information clearly.
+            - listitem [ref=e205]:
+              - strong [ref=e206]: "Impact:"
+              - emphasis [ref=e207]: Poor user experience due to UI elements overlapping, leading to potential confusion and frustration when placing large quantity orders.
+            - listitem [ref=e208]:
+              - strong [ref=e209]: "Recommendation:"
+              - list [ref=e210]:
+                - listitem [ref=e211]:
+                  - strong [ref=e212]: "UI Adjustment:"
+                  - emphasis [ref=e213]: Modify the GUI layout to dynamically adjust the placement of price text based on the quantity selected, ensuring it does not overlap with adjacent elements.
+                - listitem [ref=e214]:
+                  - strong [ref=e215]: "Testing Focus:"
+                  - emphasis [ref=e216]: Conduct thorough GUI testing with varying quantities of all menu items to ensure no overlaps occur across different screen sizes and resolutions.
+        - generic [ref=e219]:
+          - heading "2. Verify the total amount calculation includes the price of all prepared dishes and delivery" [level=3] [ref=e220]
+          - img "Issue Screenshot" [ref=e222]
+          - list [ref=e223]:
+            - listitem [ref=e224]:
+              - strong [ref=e225]: "Issue Description:"
+              - emphasis [ref=e226]: The total amount displayed on the order confirmation screen did not consistently include delivery costs or accurately sum up the prices of all ordered dishes. In some instances, delivery charges were omitted from the total, leading to incorrect billing.
+            - listitem [ref=e227]:
+              - strong [ref=e228]: "Impact:"
+              - emphasis [ref=e229]: Financial discrepancies and user dissatisfaction when the total amount billed does not match the expected sum, potentially affecting trust in the app's payment system.
+            - listitem [ref=e230]:
+              - strong [ref=e231]: "Recommendation:"
+              - list [ref=e232]:
+                - listitem [ref=e233]:
+                  - strong [ref=e234]: "Backend Validation:"
+                  - emphasis [ref=e235]: Review the backend calculation logic to ensure all components of the order, including delivery fees, are correctly factored into the total amount.
+                - listitem [ref=e236]:
+                  - strong [ref=e237]: "Integration Testing:"
+                  - emphasis [ref=e238]: Perform comprehensive integration testing to validate that the final calculated amount accurately reflects the cost of all ordered items and associated fees.
+        - generic [ref=e241]:
+          - 'heading "3. Tracker Screen: Long dish names are cut off, and quantities are not aggregated" [level=3] [ref=e242]'
+          - img "Issue Screenshot" [ref=e244]
+          - list [ref=e245]:
+            - listitem [ref=e246]:
+              - strong [ref=e247]: "Issue Description:"
+              - text: On the order tracking screen, long dish names are not fully visible and get cut off. Additionally, multiple items of the same dish are listed individually rather than aggregating the quantity ordered into a single line item (e.g., "Dish Name x3").
+            - listitem [ref=e248]:
+              - strong [ref=e249]: "Impact:"
+              - text: This results in a cluttered and unclear order tracking screen, making it difficult for users to understand their orders and potentially causing confusion.
+            - listitem [ref=e250]:
+              - strong [ref=e251]: "Recommendation:"
+              - list [ref=e252]:
+                - listitem [ref=e253]:
+                  - strong [ref=e254]: "UI Enhancement:"
+                  - emphasis [ref=e255]: Implement text truncation with ellipsis for long dish names to ensure they fit within the allocated space. Aggregate quantities for the same dish to display them as a single line item.
+                - listitem [ref=e256]:
+                  - strong [ref=e257]: "Testing and Validation:"
+                  - emphasis [ref=e258]: Conduct extensive UI testing to verify the display of long dish names and quantity aggregation across different screen sizes and resolutions.
+        - generic [ref=e261]:
+          - heading "4. Ensure the costs of each product match the costs outlined in the requirements" [level=3] [ref=e262]
+          - img "Issue Screenshot" [ref=e264]
+          - list [ref=e265]:
+            - listitem [ref=e266]:
+              - strong [ref=e267]: "Issue Description:"
+              - emphasis [ref=e268]: The Vegan Beet Burger was listed at $25 per burger on the ordering screen, whereas the requirement document lists it at $15 per burger. When ordering two Vegan Beet Burgers, the total was incorrectly displayed as $30.
+            - listitem [ref=e269]:
+              - strong [ref=e270]: "Impact:"
+              - emphasis [ref=e271]: This discrepancy in pricing can lead to overcharging customers and potential loss of trust in the app's accuracy.
+            - listitem [ref=e272]:
+              - strong [ref=e273]: "Recommendation:"
+              - list [ref=e274]:
+                - listitem [ref=e275]:
+                  - strong [ref=e276]: "Pricing Correction:"
+                  - emphasis [ref=e277]: Review and correct the pricing logic for all products to ensure they match the requirements. Conduct thorough testing to validate the displayed prices against the requirement document.
+              - img "Issue Screenshot" [ref=e279]
+        - generic [ref=e282]:
+          - heading "5. Ensure the delivery time countdown matches the advertised delivery time" [level=3] [ref=e283]
+          - img "Issue Screenshot" [ref=e285]
+          - list [ref=e286]:
+            - listitem [ref=e287]:
+              - strong [ref=e288]: "Issue Description:"
+              - emphasis [ref=e289]: The delivery time countdown did not match the advertised delivery time when placing an order, leading to inconsistencies in the order tracking.
+            - listitem [ref=e290]:
+              - strong [ref=e291]: "Impact:"
+              - emphasis [ref=e292]: Incorrect delivery time estimates can lead to customer dissatisfaction and reduced trust in the app's reliability.
+            - listitem [ref=e293]:
+              - strong [ref=e294]: "Recommendation:"
+              - list [ref=e295]:
+                - listitem [ref=e296]:
+                  - strong [ref=e297]: "Time Calculation Correction:"
+                  - emphasis [ref=e298]: Review and correct the delivery time calculation logic to ensure it accurately reflects the advertised delivery times. Test with various order scenarios to validate the consistency of the delivery time countdown.
+    - generic [ref=e302]:
+      - heading "CONCLUSION" [level=2] [ref=e303]
+      - paragraph [ref=e304]: The Urban Lunch app was tested extensively using Android Studio and a Virtual Pixel 5 emulator with API 31. While most test cases passed successfully, several critical issues were identified, particularly concerning UI display, total amount calculation, and pricing discrepancies. Addressing these issues will improve the app's usability, accuracy, and overall user experience. For future testing cycles, it is recommended to expand device coverage to include testing on various Android devices with different screen sizes and iOS devices to ensure consistent functionality across all platforms.
+  - contentinfo [ref=e305]:
+    - generic [ref=e306]:
+      - generic [ref=e307]:
+        - paragraph [ref=e308]: © 2024 Ryley Johnson
+        - generic [ref=e309]:
+          - link "Home" [ref=e310] [cursor=pointer]:
+            - /url: index.html
+          - link "About" [ref=e311] [cursor=pointer]:
+            - /url: https://mrjohn5on.github.io/#about
+          - link "Projects" [ref=e312] [cursor=pointer]:
+            - /url: https://mrjohn5on.github.io/#projects
+          - link "Contact" [ref=e313] [cursor=pointer]:
+            - /url: https://mrjohn5on.github.io/#contact
+        - paragraph [ref=e314]:
+          - text: "Contact:"
+          - link "ryleyjohnsonemail@gmail.com" [ref=e315] [cursor=pointer]:
+            - /url: mailto:ryleyjohnsonemail@gmail.com
+      - generic [ref=e316]:
+        - generic [ref=e317]:
+          - link "LinkedIn" [ref=e318] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/ryleyj
+            - generic [ref=e319]: 
+            - generic [ref=e320]: LinkedIn
+          - link "GitHub" [ref=e321] [cursor=pointer]:
+            - /url: https://github.com/MRJOHN5ON
+            - generic [ref=e322]: 
+            - generic [ref=e323]: GitHub
+        - generic [ref=e324]:
+          - paragraph [ref=e325]: © THANKS FOR STOPPING BY!
+          - paragraph [ref=e326]:
+            - text: "I also have a hobby business making logos:"
+            - link "Life of Logos" [ref=e327] [cursor=pointer]:
+              - /url: https://wary-ethernet-059.notion.site/Life-of-Logos-168a5a3eb7cd80b392ecdc682a601e4d
+            - text: .
+```
