@@ -40,7 +40,7 @@
                 <div class="card-body">
                     <h2>Project Overview</h2>
                     <div class="highlighted-summary">
-                        <p class="lead">This project focuses on testing the Urban Grocers API, specifically:</p>
+                        <p class="lead">Postman and Node.js tests against the Urban Grocers API covered:</p>
                         <ul class="list-unstyled">
                             <li>✓ Adding products to a kit</li>
                             <li>✓ Calculations for fast delivery</li>
@@ -79,7 +79,7 @@
                         <h3>Key Findings</h3>
                         <ul class="list-unstyled">
                             <li>• Total Tests: 28</li>
-                            <li>• Parameters: Tested scenarios around the 30-item limit, invalid product IDs, and kit IDs.</li>
+                            <li>• Coverage: 30-item limit, invalid product IDs, invalid kit IDs</li>
                         </ul>
                     </div>
                 </div>
@@ -91,15 +91,15 @@
                     <h3>Major Bugs</h3>
                     
                     <div class="info-box mb-4">
-                        <p class="mb-0">In addition to using Postman, I wrote JavaScript scripts and ran them through Node.js to manually test the same API scenarios. These scripts replicate the Postman tests, ensuring the Urban Grocers API correctly adheres to the 30-item limit for kits. You can view the scripts in my GitHub repository: <a href="https://github.com/MRJOHN5ON/postmanAPI_testing/tree/main/node-tests" target="_blank">Click here!</a></p>
+                        <p class="mb-0">I also ran the same cases in Node.js scripts that mirror the Postman collection, including the 30-item kit cap. Scripts live in the repo: <a href="https://github.com/MRJOHN5ON/postmanAPI_testing/tree/main/node-tests" target="_blank">node-tests</a></p>
                     </div>
 
                     <div class="highlighted-paragraph">
                         <h4>1. Item Limit Validation Issue</h4>
                         
                         <div class="highlighted-section mt-3">
-                            <p>The API incorrectly allowed multiple quantities of the same product to be added to a kit, causing it to exceed the 30-item limit (expected HTTP 400, received HTTP 200).</p>
-                            <p>Interestingly, when adding multiple different products, each with a single quantity, to a kit that had under 30 items (causing it to exceed 30), the API behaved correctly & returned HTTP 400.</p>
+                            <p>Repeating the same product ID pushed a kit past 30 items but returned HTTP 200 instead of 400.</p>
+                            <p>Mixing different product IDs (one each) past 30 items did return HTTP 400.</p>
                         </div>
 
                         <div class="text-center mt-4">
@@ -120,8 +120,8 @@
 
                     <div class="highlighted-paragraph mt-4">
                         <h4>2. Requesting Non-existent Product IDs</h4>
-                        <p>The system accepted non-existent product IDs (e.g., product ID 407 which does not exist) and responded with HTTP 200 OK instead of the expected HTTP 400 Bad Request.</p>
-                        <p>This could lead to users believing they have successfully added a valid product to their kit when, in fact, the product does not exist in the system.</p>
+                        <p>Product ID 407 (not in the catalog) returned HTTP 200 instead of 400.</p>
+                        <p>The client shows a successful add even when the product does not exist.</p>
                         <div class="text-center mt-4">
                             <a href="assets/images/p4.png" target="_blank">
                                 <img src="assets/images/p4.png" alt="Invalid ID Handling" class="img-fluid">
@@ -173,8 +173,8 @@
                         <div class="col-md-6">
                             <div class="card h-100">
                                 <div class="card-body">
-                                    <h5 class="card-title">Valid Middle-Ground Input</h5>
-                                    <p class="card-text">Tested the system with valid, middle-range parameters to ensure basic functionality.</p>
+                                    <h5 class="card-title">Mid-range valid input</h5>
+                                    <p class="card-text">Weight and count inside limits; baseline pricing response.</p>
                                 </div>
                             </div>
                         </div>
@@ -182,7 +182,7 @@
                             <div class="card h-100">
                                 <div class="card-body">
                                     <h5 class="card-title">Minimal Product Weight and Count</h5>
-                                    <p class="card-text">Verified that the client delivery cost remained $0 for orders with minimal weight and product count within limits.</p>
+                                    <p class="card-text">Minimal weight and count inside limits; client delivery cost stayed $0.</p>
                                 </div>
                             </div>
                         </div>
@@ -190,8 +190,8 @@
                             <div class="card h-100">
                                 <div class="card-body">
                                     <h5 class="card-title">Product Weight Exceeding Maximum Limit</h5>
-                                    <p class="card-text">Tested fast delivery with product count within limits but weight slightly over the limit (6.01 kg).</p>
-                                    <p class="text-danger">Bug: The system failed to apply the excess client delivery cost correctly.</p>
+                                    <p class="card-text">Count inside limits, weight 6.01 kg (over the 6 kg cap).</p>
+                                    <p class="text-danger">Bug: excess client delivery cost was not applied.</p>
                                 </div>
                             </div>
                         </div>
@@ -199,8 +199,8 @@
                             <div class="card h-100">
                                 <div class="card-body">
                                     <h5 class="card-title">Product Count Exceeding Maximum Limit</h5>
-                                    <p class="card-text">Tested fast delivery with weight within limits but product count slightly over the limit.</p>
-                                    <p class="text-danger">Bug: The system failed to apply the excess client delivery cost correctly.</p>
+                                    <p class="card-text">Weight inside limits, product count one over the max.</p>
+                                    <p class="text-danger">Bug: excess client delivery cost was not applied.</p>
                                 </div>
                             </div>
                         </div>
@@ -208,7 +208,7 @@
                             <div class="card h-100">
                                 <div class="card-body">
                                     <h5 class="card-title">Maximum Weight Within Limits</h5>
-                                    <p class="card-text">Tested fast delivery with maximum allowed weight (6.00 kg) and product count within limits.</p>
+                                    <p class="card-text">Weight at the 6.00 kg cap with count inside limits; pricing matched spec.</p>
                                 </div>
                             </div>
                         </div>
@@ -220,8 +220,8 @@
             <div class="card mb-4">
                 <div class="card-body">
                     <h3 class="text-center mb-3">Inconclusive Tests</h3>
-                    <p class="text-center">Two tests were deemed inconclusive, pointing to a significant flaw in the design of the API's cost calculation system.</p>
-                    <p class="text-center">These tests highlighted a gap in the defined ranges for host delivery cost:</p>
+                    <p class="text-center">Two tests had no clear expected price because the requirements leave a gap in host delivery tiers.</p>
+                    <p class="text-center">Example case:</p>
                     <p class="text-center fw-bold">Ordering Fast Delivery with Product Weight Slightly Below the Upper Limit (2.59 kg).</p>
                 </div>
             </div>
@@ -239,7 +239,7 @@
                     
                     <div class="highlighted-paragraph">
                         <h4>Major Design Flaw</h4>
-                        <p>The current requirements have a gap between the $3 price range (0-2.5 kg) and the $6 price range (2.6-6 kg). This ambiguity creates uncertainty in expected outcomes for product weights that fall within this gap (e.g., 2.51 kg and 2.59 kg).</p>
+                        <p>Requirements list $3 for 0–2.5 kg and $6 for 2.6–6 kg. Weights between those bands (e.g. 2.51 kg and 2.59 kg) have no stated host price, so expected results for fast delivery at 2.59 kg were unclear.</p>
                     </div>
                 </div>
             </div>
@@ -251,13 +251,12 @@
                 <div class="card-body">
                     <h2>Conclusion</h2>
                     <div class="highlighted-summary">
-                        <p class="lead">The testing revealed several critical issues that need attention:</p>
+                        <p class="lead">Open items from the run:</p>
                         <ul>
-                            <li>Inconsistent item limit validation</li>
-                            <li>Improper handling of invalid product IDs</li>
-                            <li>Gap in delivery pricing logic</li>
+                            <li>Kit item limit checks differ for duplicate vs mixed product IDs</li>
+                            <li>Invalid product IDs return 200</li>
+                            <li>Delivery pricing spec has a gap between weight tiers; two cases stayed inconclusive</li>
                         </ul>
-                        <p>These issues impact both system reliability and user experience, requiring immediate attention for resolution.</p>
                     </div>
                 </div>
             </div>
