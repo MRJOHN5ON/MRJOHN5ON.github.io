@@ -88,7 +88,7 @@ test.describe('Homepage - Navigation', () => {
     await page.goto('/');
     const resumeLink = page.getByTestId('Download-resume-Nav-btn');
     await expect(resumeLink).toBeVisible();
-    await expect(resumeLink).toHaveAttribute('href', /RYLEYJOHNSONRESUME2024FEB\.pdf/);
+    await expect(resumeLink).toHaveAttribute('href', /RyleyJohnson_Resume2026\.pdf/);
     await expect(resumeLink).toHaveAttribute('download');
   });
 
