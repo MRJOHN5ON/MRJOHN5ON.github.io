@@ -575,6 +575,84 @@ h3{
     transform: translateY(3px);
 }
 
+/* ----- RESOURCES ----- */
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    width: min(92%, 1100px);
+    margin: 0 auto;
+}
+
+.resource-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    padding: 1.5rem;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.resource-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 12px 32px rgba(37, 99, 235, 0.15);
+    transform: translateY(-2px);
+}
+
+.resource-tag {
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
+.resource-card h3 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: var(--color-text);
+}
+
+.resource-card > p:not(.resource-tag) {
+    flex: 1;
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--color-text-muted);
+}
+
+.resource-card a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.25rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.resource-card a:hover,
+.resource-card a:focus-visible {
+    color: var(--color-highlight);
+}
+
+.resource-card a:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.resource-card a i {
+    font-size: 1rem;
+}
+
 /* ----- CONTACT BOX ----- */
 .contact-info {
     position: relative;
