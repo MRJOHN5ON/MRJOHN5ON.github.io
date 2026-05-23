@@ -1,88 +1,70 @@
 /* ----- NAVIGATION BAR FUNCTION ----- */
 function myMenuFunction() {
-  var menuBtn = document.getElementById("myNavMenu");
+  const menuBtn = document.getElementById('myNavMenu');
+  const toggle = document.querySelector('.nav-menu-btn');
 
-  if (menuBtn.className === "nav-menu") {
-    menuBtn.className += " responsive";
-    addMenuLinkListeners(); // Add listeners when menu is opened
+  if (menuBtn.classList.contains('responsive')) {
+    menuBtn.classList.remove('responsive');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    removeMenuLinkListeners();
   } else {
-    menuBtn.className = "nav-menu";
-    removeMenuLinkListeners(); // Remove listeners when menu is closed
+    menuBtn.classList.add('responsive');
+    if (toggle) toggle.setAttribute('aria-expanded', 'true');
+    addMenuLinkListeners();
   }
 }
 
 /* ----- ADD SHADOW ON NAVIGATION BAR WHILE SCROLLING ----- */
-window.onscroll = function () {
-  headerShadow();
-};
-
 function headerShadow() {
-  const navHeader = document.getElementById("header");
+  const navHeader = document.getElementById('header');
+  if (!navHeader) return;
 
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    navHeader.style.boxShadow = "0 1px 6px rgba(0, 0, 0, 0.1)";
-    navHeader.style.height = "70px";
-    navHeader.style.lineHeight = "70px";
+    navHeader.classList.add('is-scrolled');
   } else {
-    navHeader.style.boxShadow = "none";
-    navHeader.style.height = "90px";
-    navHeader.style.lineHeight = "90px";
+    navHeader.classList.remove('is-scrolled');
   }
 }
 
+window.addEventListener('scroll', headerShadow, { passive: true });
+headerShadow();
+
 /* ----- TYPING EFFECT ----- */
-var typingEffect = new Typed(".typedText", {
-  strings: ["QA Engineer", "Software Tester", "QA Analyst"],
-  loop: true,
-  typeSpeed: 100,
-  backSpeed: 80,
-  backDelay: 2000
-});
+if (typeof Typed !== 'undefined' && document.querySelector('.typedText')) {
+  new Typed('.typedText', {
+    strings: ['QA Engineer', 'Software Tester', 'QA Analyst'],
+    loop: true,
+    typeSpeed: 100,
+    backSpeed: 80,
+    backDelay: 2000,
+  });
+}
 
-var typingEffect2 = new Typed(".typedText2", {
-  strings: ["Postman", "WebdriverIO", "Playwright", "Jira", "Android Studio", "Cross-Platform Testing","PostgreSQL", "Swagger", "Javascript", "Typescript", "Mocha", "E2E Testing",],
-  loop: true,
-  typeSpeed: 5,
-  backSpeed: 8,
-  backDelay: 1500
-});
+/* ----- SCROLL REVEAL (Intersection Observer) ----- */
+function initReveal() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-/* ----- SCROLL REVEAL ANIMATIONS ----- */
-const sr = ScrollReveal({
-  origin: 'top',
-  distance: '80px',
-  duration: 2000,
-  reset: true
-});
+  const targets = document.querySelectorAll('.reveal');
+  if (!targets.length || !('IntersectionObserver' in window)) return;
 
-sr.reveal('.featured-text-card', {});
-sr.reveal('.featured-name', { delay: 100 });
-sr.reveal('.featured-text-info', { delay: 200 });
-sr.reveal('.featured-text-btn', { delay: 200 });
-sr.reveal('.social_icons', { delay: 200 });
-sr.reveal('.featured-image', { delay: 300 });
-sr.reveal('.project-box', { interval: 200 });
-sr.reveal('.top-header', {});
+  const observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  );
 
-const srLeft = ScrollReveal({
-  origin: 'left',
-  distance: '80px',
-  duration: 2000,
-  reset: true
-});
+  targets.forEach(function (el) {
+    observer.observe(el);
+  });
+}
 
-srLeft.reveal('.about-info', { delay: 100 });
-srLeft.reveal('.contact-info', { delay: 100 });
-
-const srRight = ScrollReveal({
-  origin: 'right',
-  distance: '80px',
-  duration: 2000,
-  reset: true
-});
-
-srRight.reveal('.skills-box', { delay: 100 });
-srRight.reveal('.form-control', { delay: 100 });
+initReveal();
 
 /* ----- CHANGE ACTIVE LINK ----- */
 const sections = document.querySelectorAll('section[id]');
@@ -90,37 +72,40 @@ const sections = document.querySelectorAll('section[id]');
 function scrollActive() {
   const scrollY = window.scrollY;
 
-  sections.forEach(current => {
-    const sectionHeight = current.offsetHeight,
-      sectionTop = current.offsetTop - 50,
-      sectionId = current.getAttribute('id');
+  sections.forEach(function (current) {
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = current.offsetTop - 80;
+    const sectionId = current.getAttribute('id');
+    const link = document.querySelector('.nav-menu a[href*="' + sectionId + '"]');
+
+    if (!link) return;
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.add('active-link');
+      link.classList.add('active-link');
     } else {
-      document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.remove('active-link');
+      link.classList.remove('active-link');
     }
   });
 }
 
-window.addEventListener('scroll', scrollActive);
+window.addEventListener('scroll', scrollActive, { passive: true });
 
 /* ----- CLOSE MENU ON LINK CLICK ----- */
 function addMenuLinkListeners() {
-  const menuLinks = document.querySelectorAll('.nav-menu a');
-  menuLinks.forEach(link => {
+  document.querySelectorAll('.nav-menu a').forEach(function (link) {
     link.addEventListener('click', closeMenu);
   });
 }
 
 function removeMenuLinkListeners() {
-  const menuLinks = document.querySelectorAll('.nav-menu a');
-  menuLinks.forEach(link => {
+  document.querySelectorAll('.nav-menu a').forEach(function (link) {
     link.removeEventListener('click', closeMenu);
   });
 }
 
 function closeMenu() {
-  var menuBtn = document.getElementById("myNavMenu");
-  menuBtn.className = "nav-menu"; // Close the menu
+  const menuBtn = document.getElementById('myNavMenu');
+  const toggle = document.querySelector('.nav-menu-btn');
+  menuBtn.classList.remove('responsive');
+  if (toggle) toggle.setAttribute('aria-expanded', 'false');
 }

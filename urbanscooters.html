@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Urban Scooter: Comprehensive Testing Project</title>
-    <link rel="stylesheet" href="assets/css/urbanscooter.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="stylesheet" href="assets/css/urbanscooter.css">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R59XTH1XN5"></script>
 <script>
@@ -17,26 +18,39 @@
   gtag('config', 'G-R59XTH1XN5');
 </script>
 </head>
-<body>
-    <header>
-        <nav>
-            <button class="menu-toggle">Menu</button>
-            <ul class="nav-menu">
-                <li><a href="#overview">Overview</a></li>
-                <li><a href="#testing-scope">Testing Scope</a></li>
-                <li><a href="#methodologies">Methodologies</a></li>
-                <li><a href="#tools">Tools</a></li>
-                <li><a href="#web-testing">Web Testing</a></li>
-                <li><a href="#mobile-testing">Mobile Testing</a></li>
-                <li><a href="#api-testing">API Testing</a></li>
-            </ul>
-        </nav>
+<body class="site-body urban-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header" id="site-header">
+        <div class="site-header__inner">
+            <a href="index.html" class="site-brand" aria-label="Ryley Johnson home"><span class="site-brand__name">Johnson</span><span class="site-brand__dot">.</span></a>
+            <button type="button" class="site-nav-toggle" id="site-nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+                <i class="uil uil-bars" aria-hidden="true"></i>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Site navigation">
+                <a href="index.html">Portfolio</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="assets/files/RyleyJohnson_Resume2026.pdf" download class="site-btn site-btn--primary">Resume</a>
+            </nav>
+        </div>
     </header>
 
+    <nav class="page-toc" aria-label="On this page">
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#testing-scope">Scope</a></li>
+            <li><a href="#methodologies">Methods</a></li>
+            <li><a href="#tools">Tools</a></li>
+            <li><a href="#web-testing">Web</a></li>
+            <li><a href="#mobile-testing">Mobile</a></li>
+            <li><a href="#api-testing">API</a></li>
+        </ul>
+    </nav>
 
-    <main>
-        <section id="hero">
-            <h1>Urban Scooter: Comprehensive Testing Project</h1>
+    <main id="main-content" class="site-main">
+        <div class="site-container">
+        <section id="hero" class="site-page-header reveal">
+            <h1>Urban Scooter: Comprehensive Testing</h1>
             <p>October 2024</p>
             As the final project of my TripleTen Bootcamp, I undertook a comprehensive testing project for 
             <strong>"Urban Scooter"</strong>, a multi-faceted application designed to provide electric scooter rental 
@@ -482,20 +496,19 @@ View Figma Layout Specs<svg xmlns="http://www.w3.org/2000/svg" width="48" height
                 </div>
             </div>
         </section>
+        </div>
     </main>
 
-    <footer>
-        <p>© 2024 Ryley Johnson</p>
-        <a href="index.html">Home Page</a><br>
-        <a href="https://mrjohn5on.github.io/#projects">Project Bank</a>
-        <p>Contact: <a href="mailto:ryleyjohnsonemail@gmail.com">ryleyjohnsonemail@gmail.com</a></p>
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <p class="site-footer__meta">&copy; 2024 Ryley Johnson · QA Engineer</p>
+            <div class="site-footer__links">
+                <a href="index.html">Portfolio</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="mailto:ryleyjohnsonemail@gmail.com">Contact</a>
+            </div>
+        </div>
     </footer>
-    <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-menu').classList.toggle('show');
-        });
-    </script>
-     <a href='http://www.freevisitorcounters.com'>Freevisitorcounters.com</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=06f37cd3f0329dae7327551c29c3a56ef82f3016'></script>
-     <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1244199/t/9"></script>
+    <script src="assets/js/site.js"></script>
 </body>
 </html>

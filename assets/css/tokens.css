@@ -1,0 +1,50 @@
+/* Design system: Ryley Johnson Portfolio (ui-ux-pro-max) */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-heading: 'Archivo', system-ui, sans-serif;
+  --font-body: 'Space Grotesk', system-ui, sans-serif;
+
+  --color-bg: #09090b;
+  --color-bg-elevated: #18181b;
+  --color-bg-card: #1f1f23;
+  --color-border: #3f3f46;
+  --color-text: #fafafa;
+  --color-text-muted: #a1a1aa;
+  --color-accent: #2563eb;
+  --color-accent-hover: #3b82f6;
+  --color-accent-soft: rgba(37, 99, 235, 0.15);
+  --color-highlight: #38bdf8;
+  --color-success: #22c55e;
+  --color-danger: #ef4444;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
+
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 5rem;
+
+  --header-height: 72px;
+  /* fixed nav top gap + bar height + breathing room */
+  --header-offset: calc(var(--header-height) + var(--space-md) * 2);
+  --max-width: 1200px;
+  --transition: 200ms ease;
+  --nav-blur: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition: 0ms;
+  }
+}

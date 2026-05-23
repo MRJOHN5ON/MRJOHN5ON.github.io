@@ -201,20 +201,30 @@ test.describe('Project4 - Sections content', () => {
     await expect(img).toHaveAttribute('src', /jira-screenshot\.png/);
   });
 
-  test('Test Case Sheet section has heading and Google Sheets iframe', async ({ page }) => {
+  test('Test Case Sheet section has summary and link to Google Sheets', async ({ page }) => {
     await gotoProject4(page);
     const section = page.locator('section.sheet');
     await ensureVisible(page, section.getByRole('heading', { name: /Test Case Sheet/i }));
-    const iframe = section.locator('iframe[src*="docs.google.com"]');
-    await ensureVisible(page, iframe);
-    await expect(iframe).toHaveAttribute('src', new RegExp(GOOGLE_SHEETS_EMBED_ID.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+    const summary = section.getByRole('group', { name: /Test run summary/i });
+    await ensureVisible(page, summary.getByText('55', { exact: true }));
+    await ensureVisible(page, summary.getByText('41', { exact: true }));
+    await ensureVisible(page, section.getByText(/Results & explore/i));
+    const link = section.getByRole('link', { name: /View full test case sheet/i });
+    await ensureVisible(page, link);
+    await expect(link).toHaveAttribute('href', new RegExp(GOOGLE_SHEETS_EMBED_ID.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+    await expect(link).toHaveAttribute('target', '_blank');
   });
 
-  test('Judges section has call-to-action and PDF link', async ({ page }) => {
+  test('Judges section has score summary and PDF link', async ({ page }) => {
     await gotoProject4(page);
     const section = page.locator('section.judges');
-    await ensureVisible(page, section.getByText(/Full Judges Review.*Scorecard/i));
-    await ensureVisible(page, section.getByRole('link', { name: /OPEN PDF HERE/i }));
+    await ensureVisible(page, section.getByRole('heading', { name: /Judges review/i }));
+    await ensureVisible(page, section.getByText(/46 \/ 50/));
+    await ensureVisible(page, section.getByText(/What judges praised/i));
+    const link = section.getByRole('link', { name: /Open full scorecard PDF/i });
+    await ensureVisible(page, link);
+    await expect(link).toHaveAttribute('href', /Team Triple Threat.*\.pdf/i);
+    await expect(link).toHaveAttribute('target', '_blank');
   });
 
   test('Reflection section has heading and key takeaways', async ({ page }) => {

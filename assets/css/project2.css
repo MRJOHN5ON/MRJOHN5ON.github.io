@@ -320,3 +320,198 @@
     color: var(--text-color);
     padding: 0.75rem 0;
 }
+
+/* Test flow screenshots always full width of their column */
+.test-step-image img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
+.test-step-content .list-group-item {
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+/* ----- Mobile (iPhone / narrow viewports) ----- */
+@media (max-width: 768px) {
+    body.site-body main.site-main.container-fluid {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+
+    body.site-body .site-container {
+        width: 100%;
+        padding-inline: 0.25rem;
+    }
+
+    .test-flow-container {
+        padding: 1rem;
+        margin-bottom: 2rem;
+        border-radius: 12px;
+    }
+
+    .test-flow-heading {
+        font-size: 1.25rem;
+        margin-bottom: 1.25rem;
+        line-height: 1.3;
+    }
+
+    .test-step {
+        padding: 1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .test-step-row,
+    .test-step-row.reverse {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .test-step-image,
+    .test-step-content {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .test-step-content h4 {
+        font-size: 1.15rem;
+        line-height: 1.35;
+    }
+
+    .test-step-content .list-group-item {
+        padding: 0.6rem 0;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .feature-card .card-body,
+    .process-card .card-body {
+        padding: 1rem;
+    }
+
+    .video-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        padding-bottom: 0;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        margin-bottom: 1rem;
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .analysis-card .card-title {
+        font-size: 1.05rem;
+        line-height: 1.35;
+    }
+
+    .analysis-list {
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
+
+    .section-title {
+        font-size: 1.25rem;
+        line-height: 1.3;
+    }
+
+    /* Pass/fail table → stacked cards (no horizontal scroll) */
+    .table-responsive:has(.test-case-summary) {
+        overflow-x: visible;
+        margin-bottom: 1rem;
+    }
+
+    .test-case-summary {
+        display: block;
+        font-size: 0.95rem;
+        border: none;
+    }
+
+    .test-case-summary thead {
+        display: none;
+    }
+
+    .test-case-summary tbody {
+        display: block;
+    }
+
+    .test-case-summary tr {
+        display: block;
+        margin-bottom: 0.75rem;
+        padding: 0.85rem 1rem;
+        background: var(--background-darker);
+        border: 1px solid var(--color-border, var(--border-color));
+        border-radius: 10px;
+    }
+
+    .test-case-summary tr:hover {
+        background: var(--background-darker);
+    }
+
+    .test-case-summary td {
+        display: block;
+        width: 100%;
+        padding: 0.2rem 0;
+        border: none;
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: break-word;
+        line-height: 1.45;
+    }
+
+    .test-case-summary td:first-child {
+        margin-bottom: 0.5rem;
+        color: var(--text-color);
+    }
+
+    .test-case-summary td:last-child {
+        font-weight: 700;
+        font-size: 0.8rem;
+        letter-spacing: 0.04em;
+    }
+
+    .test-case-summary td:last-child::before {
+        content: "Status · ";
+        font-weight: 500;
+        color: var(--text-muted);
+        letter-spacing: normal;
+        text-transform: none;
+    }
+
+    .test-case-summary td:last-child:not(.failed-status) {
+        color: #4ade80;
+    }
+
+    .test-case-summary td.failed-status {
+        color: var(--error-color) !important;
+    }
+
+    .analysis-card .card-body {
+        padding: 1rem;
+    }
+
+    .display-5 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 390px) {
+    .test-flow-heading {
+        font-size: 1.1rem;
+    }
+
+    .test-step {
+        padding: 0.75rem;
+    }
+}

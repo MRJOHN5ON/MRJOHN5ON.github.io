@@ -34,10 +34,11 @@
    </script>
 </head>
 
-<body>
+<body class="home-page">
+   <a class="skip-link" href="#home">Skip to content</a>
    <div class="container">
       <!-- HEADER -->
-      <nav id="header">
+      <nav id="header" aria-label="Main navigation">
          <div class="nav-logo">
             <p class="nav-name">JOHNSON</p>
             <span>.</span>
@@ -65,15 +66,15 @@
          <div class="nav-button">
             <a href="assets/files/RyleyJohnson_Resume2026.pdf" data-testid="Download-resume-Nav-btn" download class="btn">RESUME<i class="uil uil-file-alt"></i></a>
          </div>
-         <div class="nav-menu-btn">
-            <i class="uil uil-bars" onclick="myMenuFunction()"></i>
-         </div>
+         <button type="button" class="nav-menu-btn" onclick="myMenuFunction()" aria-expanded="false" aria-controls="myNavMenu" aria-label="Open menu">
+            <i class="uil uil-bars" aria-hidden="true"></i>
+         </button>
       </nav>
 
       <!-- MAIN CONTENT -->
       <main class="wrapper">
          <!-- FEATURED BOX -->
-         <section class="featured-box" id="home">
+         <section class="featured-box reveal" id="home">
             <div class="featured-text">
                <div class="featured-text-card">
                   <span>Ryley Johnson</span>
@@ -110,7 +111,7 @@
          </section>
 
          <!-- ABOUT BOX -->
-         <section class="section" id="about">
+         <section class="section reveal" id="about">
             <div class="top-header">
                <h1>About Me</h1>
             </div>
@@ -180,84 +181,83 @@
          </section>
 
          <!-- PROJECT BOX -->
-         <section class="section" id="projects">
+         <section class="section reveal" id="projects">
             <div class="top-header">
                <h1>Projects</h1>
             </div>
             <div class="project-container">
-         <div class="project-box current-work" data-testid="project-box1" style="background: linear-gradient(135deg, #101e30 0%, #1e3a5f 100%); cursor: default; border: 2px solid #44eeff;">
+         <div class="project-box current-work" data-testid="project-box1">
             <div class="current-badge">CURRENT ROLE</div>
-            <h3 style="color: #44eeff; margin-top: 15px;">Prophet Town LLC</h3>
-            <p style="color: #fff; font-weight: 600;">QA Analyst (ERP Migration)</p>
-            
-            <div class="work-details" style="text-align: left; font-size: 0.85rem; color: #ccd6f6; margin-top: 15px; padding: 0 10px;">
+            <h3>Prophet Town LLC</h3>
+            <p class="role-title">QA Analyst (ERP Migration)</p>
+            <div class="work-details">
                <p>• <b>Methodology:</b> Session-Based Test Management (SBTM)</p>
                <p>• <b>Environment:</b> Oracle Cloud, Odoo, & NetSuite</p>
                <p>• <b>Scope:</b> Sole QA for Timekeeping; API & Data Orchestration</p>
             </div>
       </div>
-               <div class="project-box" data-testid="project-box-testlio" style="background-image: url('assets/images/testlio.png');">
+               <div class="project-box" data-testid="project-box-testlio" data-bg="testlio">
                   <a href="https://testlio.com/job/freelance-uber-driver-with-existing-uber-account-united-states-3/" target="_blank" rel="noopener noreferrer">
                      <h3>Ongoing Project</h3>
                      <p>Mobile App Beta Testing</p>
                   </a>
                </div>
-               <div class="project-box project-box--with-description" data-testid="project-box-givens" style="background-image: url('assets/images/givensfireandforestry.png'); background-size: cover; background-position: center;">
+               <div class="project-box project-box--with-description" data-testid="project-box-givens" data-bg="givens">
                   <a href="https://www.givensfireandforestry.com/" target="_blank" rel="noopener noreferrer">
                      <h3>Squarespace Website Design For Given's Fire and Forestry</h3>
                      <p class="project-caption">Built a 10-page Squarespace site from the client's business plan and meeting notes. I wrote the copy, added CSS overrides, and wired Google Tag Manager for tracking.</p>
                   </a>
                </div>
-               <div class="project-box" data-testid="project-box2" style="background-image: url('assets/images/photo_2024-11-27\ 18.52.48.jpeg');">
+               <div class="project-box" data-testid="project-box2" data-bg="socialqa">
                   <a href="socialqa.html">
                      <h3>E-commerce UI Automation</h3>
                      <p>Playwright, Typescript</p>
                   </a>   
                </div>
-               <div class="project-box" data-testid="project-box3" style="background-image: url('assets/images/postman.svg');">
+               <div class="project-box" data-testid="project-box3" data-bg="postman">
                   <a href="project1.html">
                      <h3>API TESTING WITH POSTMAN</h3>
                      <p>Urban Grocers API</p>
                   </a>
                </div>
-               <div class="project-box" data-testid="project-box4" style="background-image: url('assets/images/droid4.png');">
+               <div class="project-box" data-testid="project-box4" data-bg="droid">
                   <a href="project2.html">
                      <h3>Mobile App Testing</h3>
                      <p>Android Studio Virtual Device Emulator</p>
                   </a>
                </div>
-               <div class="project-box" data-testid="project-box5" style="background-image: url('assets/images/project3.1.png');">
+               <div class="project-box" data-testid="project-box5" data-bg="project3">
                   <a href="project3.html">
                      <h3>Testing practices and analysis</h3>
                      <p>Requirements review, test case design, and results analysis</p>
                   </a>   
                </div>
-               <div class="project-box" data-testid="project-box6" style="background-image: url('assets/images/supernovaLogo.png');">
+               <div class="project-box" data-testid="project-box6" data-bg="supernova">
                   <a href="supernova.html">
                      <h3>Internship with Supernova</h3>
                      <p>Testing Report & Presentation</p>
                   </a>   
                </div>
-               <div class="project-box" data-testid="project-box7" style="background-image: url('assets/images/bugjam.png');">
+               <div class="project-box" data-testid="project-box7" data-bg="bugjam">
                   <a href="project4.html">
                      <h3>Collaboration with TripleTen Students</h3>
                      <p>Won 1st Place for Bug Reporting and Manual Testing Presentation</p>
                      
                   </a>   
                </div>
-               <div class="project-box" data-testid="project-box8" style="background-image: url('assets/images/playwright.webp');">
+               <div class="project-box" data-testid="project-box8" data-bg="playwright">
                   <a href="https://github.com/MRJOHN5ON/learning_playwright">
                      <h3>Automated Web UI Testing</h3>
                      <p>Playwright & Typescript</p>
                   </a>   
                </div>
-               <div class="project-box" data-testid="project-box9" style="background-image: url('assets/images/scooter.png');">
+               <div class="project-box" data-testid="project-box9" data-bg="scooter">
                   <a href="urbanscooters.html">
                      <h3>Cross-Platform Manual Testing: API, Web, Database, Android</h3>
                      <p>Postman, Form Validation, PostgreSQL, Swagger</p>
                   </a>   
                </div>
-               <div class="project-box" data-testid="project-box10" style="background-image: url('assets/images/urbanroutes.png');">
+               <div class="project-box" data-testid="project-box10" data-bg="urbanroutes">
                   <a href="https://github.com/MRJOHN5ON/E2E-webdriverIO-">
                      <h3>E2E Testing for a Ride-Booking App</h3>
                      <p>Javascript, Node.js, WebDriverIO, Mocha</p>
@@ -267,7 +267,7 @@
          </section>
 
          <!-- CONTACT BOX -->
-         <section class="section" id="contact">
+         <section class="section reveal" id="contact">
             <div class="top-header">
                <h1>Get in touch</h1>
                <span>Have work in mind? Email or call below.</span>
@@ -289,11 +289,14 @@
                <div class="col">
                   <div class="form-control" id="contact-form">
                      <div class="form-inputs">
-                        <input type="text" id="name" class="input-field" placeholder="Name">
-                        <input type="email" id="email" class="input-field" placeholder="Email">
+                        <label class="sr-only" for="name">Name</label>
+                        <input type="text" id="name" name="name" class="input-field" placeholder="Name" autocomplete="name" required>
+                        <label class="sr-only" for="email">Email</label>
+                        <input type="email" id="email" name="email" class="input-field" placeholder="Email" autocomplete="email" required>
                      </div>
                      <div class="text-area">
-                        <textarea id="message" placeholder="message"></textarea>
+                        <label class="sr-only" for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="message" required></textarea>
                      </div>
                      <div class="form-button">
                         <button class="btn" type="button" onclick="sendEmail()">Send <i
@@ -336,14 +339,14 @@
          </div>
       </div>
       <!-- Carousel Controls -->
-      <button class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</button>
-      <button class="carousel-control next" onclick="moveSlide(1)">&#10095;</button>
+      <button type="button" class="carousel-control prev" onclick="moveSlide(-1)" aria-label="Previous certificate">&#10094;</button>
+      <button type="button" class="carousel-control next" onclick="moveSlide(1)" aria-label="Next certificate">&#10095;</button>
    </div>
    <script src="assets/js/carousel.js"></script>
 </section>
 
       <!-- FOOTER -->
-      <footer>
+      <footer role="contentinfo">
          <div class="top-footer">
             <p>Ryley Johnson.</p>
             <p>Quality Assurance Engineer.</p>

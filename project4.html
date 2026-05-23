@@ -3,81 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bug Jam Experience - Ryley's Journey</title>
+    <title>Bug Jam Experience — Ryley Johnson</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="assets/css/site.css">
     <link rel="stylesheet" href="assets/css/styles4.css">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
     <script src="assets/js/script4.js" defer></script>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R59XTH1XN5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-R59XTH1XN5');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R59XTH1XN5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R59XTH1XN5');
+    </script>
 </head>
-<body>
-    <header>
-        <h1 class="title">Bug Jam Experience</h1>
+<body class="site-body project4-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header" id="site-header">
+        <div class="site-header__inner">
+            <a href="index.html" class="site-brand" aria-label="Ryley Johnson home"><span class="site-brand__name">Johnson</span><span class="site-brand__dot">.</span></a>
+            <button type="button" class="site-nav-toggle" id="site-nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+                <i class="uil uil-bars" aria-hidden="true"></i>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Site navigation">
+                <a href="index.html">Portfolio</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="assets/files/RyleyJohnson_Resume2026.pdf" download class="site-btn site-btn--primary">Resume</a>
+            </nav>
+        </div>
     </header>
-    
-    <section class="intro">
-        <div class = "centered-text">
-            <p>August 2024</p><br>
+
+    <main id="main-content" class="site-main">
+        <div class="site-container">
+            <header class="site-page-header reveal">
+                <h1>Bug Jam Experience</h1>
+                <p>August 2024 · TripleTen QA Bootcamp</p>
+            </header>
+
+            <section class="intro site-card reveal">
+                <p>Four-day <span class="highlight">Bug Jam</span> during TripleTen QA bootcamp. Our team placed first among four teams testing a web app built by software engineering students in July's Code Jam. Work covered manual UI testing, test cases, coverage, bug logging, and a presentation for judges.</p>
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/z2b-5Ltrn7M?si=zUF4B9pqmZTjwna1" title="Bug Jam video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="website-link">
+                    <h2>App we tested</h2>
+                    <p><a href="https://summeradventure.netlify.app/" target="_blank" rel="noopener noreferrer" class="tested-website">Summer Adventure</a></p>
+                </div>
+            </section>
+
+            <section class="team site-card reveal">
+                <h2>Meet the team</h2>
+                <p>Teammates: <a href="https://www.linkedin.com/in/jasmine-dardy/" class="teammate">Jasmine Dardy</a> and <a href="https://www.linkedin.com/in/noah-arbaugh/" class="teammate">Noah Arbaugh</a>. We split the app by area and ran through STLC steps together.</p>
+            </section>
+
+            <section class="tools site-card reveal">
+                <h2>Tools &amp; techniques</h2>
+                <p><span class="highlight">Chrome DevTools</span> for performance, layout across viewports, and element inspection.</p>
+            </section>
+
+            <section class="jira site-card reveal">
+                <h2>Bug tracking with Jira</h2>
+                <p>Shared <span class="highlight">Jira template</span> for logging, categorizing, and prioritizing bugs.</p>
+                <div class="jira-screenshot">
+                    <img src="assets/images/jira-screenshot.png" alt="Jira bug tracking template screenshot">
+                </div>
+            </section>
+
+            <section class="sheet site-card reveal" aria-labelledby="test-cases-heading">
+                <h2 id="test-cases-heading">Test case sheet</h2>
+                <p class="sheet-intro">Manual test cases for <strong>Summer Adventure</strong> across the home screen and results flow — steps, expected vs actual results, pass/fail status, and Jira links for every failure.</p>
+
+                <div class="tc-stats" role="group" aria-label="Test run summary">
+                    <div class="tc-stat">
+                        <span class="tc-stat__value">55</span>
+                        <span class="tc-stat__label">Test cases</span>
+                    </div>
+                    <div class="tc-stat tc-stat--pass">
+                        <span class="tc-stat__value">41</span>
+                        <span class="tc-stat__label">Passed</span>
+                    </div>
+                    <div class="tc-stat tc-stat--fail">
+                        <span class="tc-stat__value">14</span>
+                        <span class="tc-stat__label">Failed · logged in Jira</span>
+                    </div>
+                </div>
+
+                <div class="tc-areas">
+                    <h3>By screen</h3>
+                    <ul class="tc-area-list">
+                        <li class="tc-area">
+                            <span class="tc-area__name">Home screen</span>
+                            <span class="tc-area__meta">31 tests · 30 passed · 1 failed</span>
+                        </li>
+                        <li class="tc-area">
+                            <span class="tc-area__name">Results &amp; explore</span>
+                            <span class="tc-area__meta">24 tests · 11 passed · 13 failed</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tc-coverage">
+                    <h3>Coverage areas</h3>
+                    <ul class="tc-tags">
+                        <li>Copy &amp; headings</li>
+                        <li>Filter &amp; explore UI</li>
+                        <li>Activity cards</li>
+                        <li>Performance</li>
+                        <li>Responsive / mobile</li>
+                        <li>Cross-browser</li>
+                    </ul>
+                </div>
+
+                <div class="tc-samples">
+                    <h3>Sample results</h3>
+                    <ul class="tc-list">
+                        <li class="tc-card tc-card--fail">
+                            <div class="tc-card__head">
+                                <span class="tc-badge tc-badge--fail">Failed</span>
+                                <span class="tc-card__id">#3 · Home</span>
+                            </div>
+                            <p class="tc-card__title">Home page should match inviting summer-adventure design</p>
+                            <p class="tc-card__detail">Emoji in heading/sub-heading; gradient did not fill the screen vs mock-up.</p>
+                        </li>
+                        <li class="tc-card tc-card--fail">
+                            <div class="tc-card__head">
+                                <span class="tc-badge tc-badge--fail">Failed</span>
+                                <span class="tc-card__id">#32 · Results</span>
+                            </div>
+                            <p class="tc-card__title">Explore button functionality</p>
+                            <p class="tc-card__detail">Explore flow did not behave as specified after filters were applied.</p>
+                        </li>
+                        <li class="tc-card tc-card--fail">
+                            <div class="tc-card__head">
+                                <span class="tc-badge tc-badge--fail">Failed</span>
+                                <span class="tc-card__id">#34–36 · Results</span>
+                            </div>
+                            <p class="tc-card__title">Display of all low / mid / high cost options</p>
+                            <p class="tc-card__detail">Filtered result sets did not show the full expected option lists.</p>
+                        </li>
+                        <li class="tc-card tc-card--fail">
+                            <div class="tc-card__head">
+                                <span class="tc-badge tc-badge--fail">Failed</span>
+                                <span class="tc-card__id">#56 · Results</span>
+                            </div>
+                            <p class="tc-card__title">Website adaptive to mobile devices</p>
+                            <p class="tc-card__detail">Layout and usability issues on mobile viewports during exploratory testing.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <p class="tc-cta">
+                    <a href="https://docs.google.com/spreadsheets/d/1jeu6KwbMZz-VEAK7aUesCdSq305SYgqw1qtmnDRH6QI/edit?usp=sharing"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="site-btn site-btn--primary">
+                        View full test case sheet
+                    </a>
+                </p>
+            </section>
+
+            <section class="judges site-card reveal" aria-labelledby="judges-heading">
+                <h2 id="judges-heading">Judges review</h2>
+                <p class="judges-intro">Summary from the official <strong>Team Triple Threat</strong> scorecard — QA deliverables and final presentation, judged by TripleTen staff after the Bug Jam.</p>
+
+                <div class="judges-total" role="group" aria-label="Overall score">
+                    <span class="judges-total__value">46 / 50</span>
+                    <span class="judges-total__label">Combined score</span>
+                    <span class="judges-total__breakdown">QA work 23.5 · Presentation 22.5</span>
+                </div>
+
+                <div class="judges-block">
+                    <h3>What we were graded on</h3>
+                    <ul class="judges-criteria">
+                        <li><strong>Test cases</strong> — coverage, format, and how well requirements were broken into atomic scenarios</li>
+                        <li><strong>Bug reports</strong> — clarity, structure, reproducibility, and evidence</li>
+                        <li><strong>Test results</strong> — how many issues were found vs requirements, and how results were documented</li>
+                        <li><strong>Presentation</strong> — structure, communicating key findings, engagement, visuals, and staying within time (5–7 minutes)</li>
+                    </ul>
+                </div>
+
+                <div class="judges-block judges-block--praise">
+                    <h3>What judges praised</h3>
+                    <ul>
+                        <li>Test cases were <strong>detailed, atomic, and easy to execute</strong> — strong decomposition of requirements, including non-functional checks</li>
+                        <li>Bug reports followed a <strong>consistent template</strong> with clear titles, steps, expected vs actual, environment, and attachments</li>
+                        <li>Reports covered <strong>most major issues</strong> between the app and requirements; easy to reproduce</li>
+                        <li>Presentation had a <strong>clear intro, body, and conclusion</strong>; accessible language and strong bug screenshots/recordings</li>
+                        <li>Slide design called out as <strong>modern, consistent, and engaging</strong>; smooth handoffs between speakers</li>
+                    </ul>
+                </div>
+
+                <div class="judges-block judges-block--standout">
+                    <h3>What made us stand out</h3>
+                    <ul>
+                        <li>Judges highlighted <strong>depth of test design</strong> — individual validations per requirement, not bundled scenarios</li>
+                        <li><strong>Professional-grade bug write-ups</strong> — brief titles stating what/where/when, without extra noise</li>
+                        <li>Visual bug demos helped the audience <strong>see issues on the real app</strong>, not just read titles</li>
+                        <li>First-place finish among four teams — strong balance of <strong>documentation + live storytelling</strong></li>
+                    </ul>
+                </div>
+
+                <div class="judges-block judges-block--improve">
+                    <h3>Where we could improve</h3>
+                    <ul>
+                        <li>Split combined issues into <strong>separate bugs</strong> (e.g. emoji vs background gradient in one report) and use sharper titles</li>
+                        <li>One requirement gap noted: <strong>Gastronomy subheading/section</strong> not called out in testing</li>
+                        <li>Add a <strong>full test execution summary</strong> so pass/fail trends are obvious at a glance</li>
+                        <li>Presentation: organize “other bugs” into <strong>priority columns</strong>; add a dedicated <strong>tools</strong> slide and bullet the teamwork slide</li>
+                        <li>Stay within the <strong>7-minute</strong> window (we ran ~7:45); polish the closing sections so energy stays consistent</li>
+                    </ul>
+                </div>
+
+                <p class="judges-cta">
+                    <a href="assets/files/Team Triple Threat - Sheet1.pdf" target="_blank" rel="noopener noreferrer" class="site-btn site-btn--ghost">Open full scorecard PDF</a>
+                </p>
+            </section>
+
+            <section class="reflection site-card reveal">
+                <h2>Reflection</h2>
+                <p>Sharpened test planning, bug reporting, presentations, and remote collaboration. The Bug Jam was intense and mapped directly to bootcamp skills.</p>
+            </section>
         </div>
-        <p>I recently participated in the 4-day intensive <span class="highlight">"Bug Jam"</span> competition during my QA engineering bootcamp at TripleTen. My team won first place, outperforming 3 other teams in QA'ing a web app created by software engineering students during July's Code Jam. The competition focused on manual UI testing, where we excelled in test case creation, test coverage, bug logging, and delivering a high-quality visual presentation to the judges.
+    </main>
 
-        </p>
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/z2b-5Ltrn7M?si=zUF4B9pqmZTjwna1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <p class="site-footer__meta">&copy; 2024 Ryley Johnson · QA Engineer</p>
+            <div class="site-footer__links">
+                <a href="index.html">Portfolio</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="mailto:ryleyjohnsonemail@gmail.com">Contact</a>
+            </div>
         </div>
-        <div class="website-link">
-            <h2>Check Out the Website We Tested</h2>
-            <p>Explore the <a href="https://summeradventure.netlify.app/" target="_blank" class="tested-website">Summer Adventure</a> website that we thoroughly tested during the Bug Jam.</p>
-        </div>
-    </section>
-
-    <section class="team">
-        <h2>Meet the Team</h2>
-        <p>For this project, I was paired with two awesome teammates, <a href="https://www.linkedin.com/in/jasmine-dardy/" class="teammate">Jasmine Dardy</a> and <a href="https://www.linkedin.com/in/noah-arbaugh/" class="teammate">Noah Arbaugh</a>. Together, we broke down the testing process into manageable steps, diving deep into the STLC. Each of us took charge of different parts of the app, ensuring it was tested from every angle.</p>
-    </section>
-
-    <section class="tools">
-        <h2>Tools & Techniques</h2>
-        <p>We used <span class="highlight">Chrome DevTools</span> extensively to analyze performance issues, spot layout inconsistencies across devices, and debug other tricky problems. DevTools became our go-to resource for digging into rendering performance and inspecting elements, which was crucial for diagnosing issues like slow loading times and skewed layouts.</p>
-    </section>
-
-    <section class="jira">
-        <h2>Bug Tracking with Jira</h2>
-        <p>We used a shared <span class="highlight">Jira bug tracking template</span> to keep track of all the issues we found. This template allowed us to efficiently log, categorize, and prioritize bugs, making our testing process smoother and more organized.</p>
-        <div class="jira-screenshot">
-            <img src="assets/images/jira-screenshot.png" alt="Jira Bug Tracking Template Screenshot">
-        </div>
-    </section>
-
-    <section class="sheet">
-        <h2>Test Case Sheet</h2>
-        <div class="sheet-container">
-            <iframe src="https://docs.google.com/spreadsheets/d/1jeu6KwbMZz-VEAK7aUesCdSq305SYgqw1qtmnDRH6QI/htmlview" width="100%" height="600px"></iframe>
-        </div>
-    </section>
-    <section class="judges text-center">
-        <p><strong>(👇 Full Judges Review & Scorecard 👇)</strong></p>
-        <p><a href="assets/files/Team Triple Threat - Sheet1.pdf" target="_blank">OPEN PDF HERE</a></p>
-    </section>
-
-    <section class="reflection">
-        <h2>Reflection</h2>
-        <p>This experience deepened my understanding of tools like DevTools and the importance of thorough testing. I also sharpened my skills in test planning, bug reporting, crafting effective presentations, and collaboration with a remote team.</p>
-        <br><p>The “Bug Jam” was intense but incredibly rewarding. It was a real-world application of everything we've learned so far, and I’m excited to carry these skills forward in my QA journey.</p>
-    </section>
-    <footer>
-        <p>&copy; 2024 Ryley Johnson</p>
-        <a href="index.html">Home Page</a><br>
-        <a href="https://mrjohn5on.github.io/#projects">Project Bank</a>
-        <p>Contact me: <a href="mailto:ryleyjohnsonemail@gmail.com">ryleyjohnsonemail@gmail.com</a></p>
     </footer>
-    <a href='http://www.freevisitorcounters.com'>Freevisitorcounters.com</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=06f37cd3f0329dae7327551c29c3a56ef82f3016'></script>
-    <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1244199/t/9"></script>
+    <script src="assets/js/site.js"></script>
 </body>
 </html>

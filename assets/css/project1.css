@@ -1,29 +1,4 @@
-/* ----- VARIABLES ----- */
-:root {
-    --body-color: #121212;
-    --color-white: #ffffff;
-    --text-color-second: #e0e0e0;
-    --text-color-third: #ff4081;
-    --first-color: #1a1a1a;
-    --first-color-hover: #ff4081;
-    --second-color: #ff4081;
-    --third-color: #2a2a2a;
-    --first-shadow-color: #ff4081;
-    --forth-color: #1e1e1e;
-    --fifth-color: #ff4081;
-}
-
-/* ----- GLOBAL STYLES ----- */
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: var(--color-white);
-    background-color: var(--body-color);
-    line-height: 1.8;
-    font-size: 16px;
-    letter-spacing: 0.3px;
-}
+/* Project 1 — page-specific overrides (tokens via site.css) */
 
 /* ----- CONTAINER STYLES ----- */
 .container {
@@ -33,46 +8,31 @@ body {
     padding: 30px 20px;
 }
 
-/* ----- MAIN CONTENT STYLES ----- */
-main {
+/* ----- MAIN CONTENT STYLES (legacy pages without .site-main only) ----- */
+main:not(.site-main) {
     padding: 40px 0;
 }
 
 /* ----- HEADER STYLES ----- */
-h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--text-color-third);
-    line-height: 1.2;
+body.site-body h2 {
+    font-family: var(--font-heading);
+    color: var(--color-text);
+    border-bottom: 2px solid var(--color-accent-soft);
+    padding-bottom: 0.5rem;
 }
 
-h2 {
-    font-size: 2rem;
-    margin: 2rem 0 1.5rem;
-    color: var(--text-color-third);
-    line-height: 1.3;
+body.site-body h3,
+body.site-body h4 {
+    color: var(--color-highlight);
 }
 
-h3 {
-    font-size: 1.75rem;
-    margin: 1.5rem 0 1rem;
-    color: var(--text-color-third);
-}
-
-h4 {
-    font-size: 1.5rem;
-    margin: 1.25rem 0 0.75rem;
-    color: var(--text-color-third);
-}
-
-/* ----- IMAGES STYLES ----- */
-img {
+/* ----- IMAGES STYLES (not test-flow screenshots) ----- */
+body.site-body img:not(.test-step-image img):not(.logo) {
     display: block;
-    max-width: 60%; /* Adjust as needed */
+    max-width: 100%;
     height: auto;
     border-radius: 8px;
-    margin: 0 auto; /* Center the image */
+    margin: 0 auto;
 }
 .logo {
     max-width: 120px;  
