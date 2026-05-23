@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quinn App — Playlist QA — Ryley Johnson</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="stylesheet" href="assets/css/quinn.css">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R59XTH1XN5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R59XTH1XN5');
+    </script>
+</head>
+<body class="site-body quinn-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header" id="site-header">
+        <div class="site-header__inner">
+            <a href="index.html" class="site-brand" aria-label="Ryley Johnson home"><span class="site-brand__name">Johnson</span><span class="site-brand__dot">.</span></a>
+            <button type="button" class="site-nav-toggle" id="site-nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+                <i class="uil uil-bars" aria-hidden="true"></i>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Site navigation">
+                <a href="index.html">Portfolio</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#resources">Resources</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="assets/files/RyleyJohnson_Resume2026.pdf" download class="site-btn site-btn--primary">Resume</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="site-main">
+        <div class="site-container">
+            <header class="quinn-hero site-page-header reveal">
+                <figure class="quinn-hero__banner">
+                    <img src="assets/images/quinn/hero.png" alt="Quinn app — mobile screens for categories, discover, and favorites" width="1200" height="675" loading="eager" decoding="async">
+                </figure>
+                <h1>Quinn App — Playlist Functionality QA</h1>
+                <p>January 2025 · Paid take-home · iOS &amp; web (Chrome &amp; Safari)</p>
+                <div class="quinn-hero-links">
+                    <a href="https://tryquinn.com/" target="_blank" rel="noopener noreferrer">tryquinn.com <i class="uil uil-external-link-alt" aria-hidden="true"></i></a>
+                    <a href="assets/files/Quinn-Bug-Reports.pdf" target="_blank" rel="noopener noreferrer">Bug report PDF <i class="uil uil-file-alt" aria-hidden="true"></i></a>
+                    <a href="https://github.com/MRJOHN5ON/Quinn-App" target="_blank" rel="noopener noreferrer">GitHub repo <i class="uil uil-github-alt" aria-hidden="true"></i></a>
+                </div>
+            </header>
+
+            <section class="site-card reveal">
+                <h2>Overview</h2>
+                <p>
+                    Quinn’s CEO reached out with a <span class="highlight">paid take-home QA assignment</span> on
+                    <a href="https://tryquinn.com/" target="_blank" rel="noopener noreferrer">Quinn</a>, an audio storytelling platform. The scope was
+                    <span class="highlight">playlist functionality</span> — creating playlists, adding and reordering stories, privacy settings, favorites, title/description boundaries, and behavior under different network speeds and offline mode. The work was also part of their <strong>hiring process</strong>.
+                </p>
+                <p>I tested the same flows on <strong>iOS</strong> (physical device and simulator) and the <strong>web app</strong> in Chrome and Safari, then documented bugs with Loom recordings, screenshots, and a structured PDF report. I wasn’t offered the role, but it was valuable experience on a live product with real hiring stakes.</p>
+            </section>
+
+            <section class="site-card reveal">
+                <h2>Scope &amp; tools</h2>
+                <ul class="tag-list">
+                    <li>Manual exploratory testing</li>
+                    <li>Boundary testing (titles, descriptions)</li>
+                    <li>Cross-platform (iOS + web)</li>
+                    <li>Network throttling</li>
+                    <li>Offline behavior</li>
+                    <li>Chrome DevTools</li>
+                    <li>Safari Web Inspector</li>
+                    <li>Postman (API validation)</li>
+                    <li>Loom</li>
+                </ul>
+                <h3>Features exercised</h3>
+                <p>Create playlists · add single/multiple stories (100+ stress-tested) · reorder &amp; remove · public/private · favoriting · edit title &amp; description · library counts · duration accuracy · offline sync.</p>
+            </section>
+
+            <section class="site-card reveal">
+                <h2>Findings by platform</h2>
+                <div class="platform-grid">
+                    <div class="platform-card">
+                        <h3>Web (Chrome &amp; Safari)</h3>
+                        <ul>
+                            <li>Core playlist flows worked; large playlists (100+ stories) performed well.</li>
+                            <li>Library overview story count stale until page reload.</li>
+                            <li>Account likes count stuck at zero when favoriting stories or playlists.</li>
+                            <li>Playlist descriptions not shown on web (visible on iOS).</li>
+                            <li>Whitespace-only titles accepted → nameless, unsearchable playlists.</li>
+                            <li>Total playlist duration consistently <strong>+1 second</strong> vs sum of stories.</li>
+                            <li>Offline adds showed in UI but did not sync after reconnect.</li>
+                        </ul>
+                    </div>
+                    <div class="platform-card">
+                        <h3>iOS app (v2.4.1)</h3>
+                        <ul>
+                            <li>Creation, reorder, privacy toggles, and favoriting worked smoothly.</li>
+                            <li>Recent Activity list showed wrong story count until app restart.</li>
+                            <li>Whitespace-only titles accepted (same as web).</li>
+                            <li>Offline UI masked controls in gray — clearer than web.</li>
+                            <li>Descriptions displayed correctly on iOS.</li>
+                            <li>Playlist durations accurate (no +1s issue on iOS).</li>
+                            <li>Strong UX: add-to-playlist from three-dot menu anywhere in the app.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="site-card reveal" aria-labelledby="network-heading">
+                <h2 id="network-heading">Network performance</h2>
+                <p>Search and add-story timing under throttled conditions (Chrome DevTools):</p>
+                <div class="perf-stats" role="group" aria-label="Network timing results">
+                    <div class="perf-stat">
+                        <span class="perf-stat__value">&lt;500ms</span>
+                        <span class="perf-stat__label">Search · fast (~321 Mbps)</span>
+                    </div>
+                    <div class="perf-stat">
+                        <span class="perf-stat__value">~10s</span>
+                        <span class="perf-stat__label">Search · slow 3G</span>
+                    </div>
+                    <div class="perf-stat">
+                        <span class="perf-stat__value">&lt;500ms</span>
+                        <span class="perf-stat__label">Add story · fast</span>
+                    </div>
+                    <div class="perf-stat">
+                        <span class="perf-stat__value">~2s</span>
+                        <span class="perf-stat__label">Add story · slow 3G</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="site-card reveal" aria-labelledby="api-heading">
+                <h2 id="api-heading">API exploration with Postman</h2>
+                <p>Captured playlist requests from the Chrome Network tab and replayed them in Postman to validate story additions and correlate UI actions with story IDs.</p>
+                <div class="evidence-grid">
+                    <figure>
+                        <img src="assets/images/quinn/postman.png" alt="Postman request used to manipulate playlist data">
+                        <figcaption>Postman request</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="assets/images/quinn/devtools.png" alt="Chrome DevTools network panel showing playlist API traffic">
+                        <figcaption>DevTools network capture</figcaption>
+                    </figure>
+                </div>
+                <p class="bug-item__detail">Workflow: filter DevTools for playlist traffic, copy a successful <strong>add story</strong> request, paste into Postman with the same auth headers, swap in a different story ID from the response body, and send. The playlist updated in the web UI without repeating the click path — confirming the API accepted the change independently of the front-end flow. Full request/response notes are in the bug report PDF.</p>
+            </section>
+
+            <section class="site-card reveal" aria-labelledby="bugs-heading">
+                <h2 id="bugs-heading">Documented issues</h2>
+                <p>Ten issues logged with severity, steps, expected vs actual, environment, and video or image evidence. Full write-up in the PDF.</p>
+                <ul class="bug-list">
+                    <li class="bug-item">
+                        <div class="bug-item__head">
+                            <span class="bug-item__id">Issue 1</span>
+                            <span class="bug-badge bug-badge--minor">Minor</span>
+                        </div>
+                        <p>Library overview playlist story count does not update until page reload after add/remove.</p>
+                        <a href="https://www.loom.com/share/9fc4e87d419645a492e1f998feaeb2d6" target="_blank" rel="noopener noreferrer">Loom recording <i class="uil uil-external-link-alt" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="bug-item">
+                        <div class="bug-item__head">
+                            <span class="bug-item__id">Issue 2</span>
+                            <span class="bug-badge bug-badge--minor">Minor</span>
+                        </div>
+                        <p>After favoriting another user’s playlist, My Account playlist count is one less than Library.</p>
+                        <a href="https://www.loom.com/share/294e3b7049b74c52ac9322f2e710b334" target="_blank" rel="noopener noreferrer">Loom recording <i class="uil uil-external-link-alt" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="bug-item">
+                        <div class="bug-item__head">
+                            <span class="bug-item__id">Issue 3</span>
+                            <span class="bug-badge bug-badge--minor">Minor</span>
+                        </div>
+                        <p>Account Overview likes count stays at zero when favoriting individual stories or full playlists.</p>
+                        <a href="https://www.loom.com/share/3cb2e407f1c64af4a857e4946834a093" target="_blank" rel="noopener noreferrer">Loom recording <i class="uil uil-external-link-alt" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="bug-item">
+                        <div class="bug-item__head">
+                            <span class="bug-item__id">Issue 4</span>
+                            <span class="bug-badge bug-badge--major">Major</span>
+                        </div>
+                        <p>Playlist descriptions save but do not display on web for owner or shared public link (iOS shows them).</p>
+                        <a href="https://www.loom.com/share/6ec435aa3150412d88e66b4f9e4435c0" target="_blank" rel="noopener noreferrer">Loom recording <i class="uil uil-external-link-alt" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="bug-item">
+                        <div class="bug-item__head">
+                            <span class="bug-item__id">Issue 5</span>
+                            <span class="bug-badge bug-badge--major">Major</span>
+                        </div>
+                        <p>Title field accepts spaces only → nameless playlist, hard to find in Library or search.</p>
+                        <a href="https://www.loom.com/share/f0f9ea727585405ab03d7897b7cc7469" target="_blank" rel="noopener noreferrer">Loom recording <i class="uil uil-external-link-alt" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="bug-item">
+                        <div class="bug-item__head">
+                            <span class="bug-item__id">Issue 6</span>
+                            <span class="bug-badge bug-badge--enhancement">Enhancement</span>
+                        </div>
+                        <p>Web: users must open a playlist to add stories — suggest add-to-playlist from browse/profile flows (iOS already supports this).</p>
+                        <a href="https://www.loom.com/share/90a45f24de6b4880806e27bf7fafca37" target="_blank" rel="noopener noreferrer">Loom recording <i class="uil uil-external-link-alt" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="bug-item">
+                        <div class="bug-item__head">
+                            <span class="bug-item__id">Issue 7</span>
+                            <span class="bug-badge bug-badge--minor">Minor</span>
+                        </div>
+                        <p>Playlist header total duration is always one second longer than the sum of story durations (even for a single story).</p>
+                    </li>
+                    <li class="bug-item">
+                        <div class="bug-item__head">
+                            <span class="bug-item__id">Issue 8</span>
+                            <span class="bug-badge bug-badge--enhancement">Enhancement</span>
+                        </div>
+                        <p>Offline story add updates UI with no network warning; change is lost after reconnect and refresh.</p>
+                        <a href="https://www.loom.com/share/030c06a9de944598a370d763e39eeeed" target="_blank" rel="noopener noreferrer">Loom recording <i class="uil uil-external-link-alt" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="bug-item">
+                        <div class="bug-item__head">
+                            <span class="bug-item__id">Issue 9</span>
+                            <span class="bug-badge bug-badge--minor">Minor</span>
+                            <span class="bug-badge bug-badge--minor">iOS</span>
+                        </div>
+                        <p>Recent Activity shows stale story count after add; correct after force-close and reopen.</p>
+                        <p class="bug-item__detail"><strong>Steps:</strong> Open a playlist from Recent Activity, add one or more stories, return to Recent Activity. <strong>Expected:</strong> Row shows updated story count. <strong>Actual:</strong> Count stays at the pre-add value until the app is force-closed and reopened. <strong>Env:</strong> iOS 18, Quinn v2.4.1 (physical device). Documented with screenshots in the PDF — iOS screen recording was not hosted publicly.</p>
+                    </li>
+                    <li class="bug-item">
+                        <div class="bug-item__head">
+                            <span class="bug-item__id">Issue 10</span>
+                            <span class="bug-badge bug-badge--enhancement">Enhancement</span>
+                            <span class="bug-badge bug-badge--minor">iOS</span>
+                        </div>
+                        <p>Suggest remove-story option on the three-dot menu next to each story, not only via Edit Playlist.</p>
+                        <p class="bug-item__detail">iOS already surfaces <strong>add to playlist</strong> from the three-dot menu on story cards across the app — a strong pattern. Removing a story still requires entering <strong>Edit Playlist</strong> and using the trash icon per row. Suggestion: mirror the add flow with <strong>Remove from playlist</strong> on the same menu to cut steps for curation. Compared against web, where add also requires opening the playlist first (Issue 6).</p>
+                    </li>
+                </ul>
+                <p style="margin-top: var(--space-lg);">
+                    <a href="assets/files/Quinn-Bug-Reports.pdf" target="_blank" rel="noopener noreferrer" class="site-btn site-btn--ghost">Open full bug report PDF</a>
+                </p>
+            </section>
+
+            <section class="site-card reveal">
+                <h2>Evidence</h2>
+                <figure style="max-width: 520px; margin: 0 auto var(--space-lg);">
+                    <img src="assets/images/quinn/one_second_difference.png" alt="Playlist header showing total duration one second longer than the sum of individual story durations">
+                    <figcaption class="text-muted">Issue 7 — playlist duration off by one second (web)</figcaption>
+                </figure>
+                <h3>Web recordings (Loom)</h3>
+                <ul class="video-links">
+                    <li><a href="https://www.loom.com/share/9fc4e87d419645a492e1f998feaeb2d6" target="_blank" rel="noopener noreferrer">Library count mismatch (web)</a></li>
+                    <li><a href="https://www.loom.com/share/294e3b7049b74c52ac9322f2e710b334" target="_blank" rel="noopener noreferrer">Favorited playlist count mismatch (web)</a></li>
+                    <li><a href="https://www.loom.com/share/3cb2e407f1c64af4a857e4946834a093" target="_blank" rel="noopener noreferrer">Likes count stuck at zero (web)</a></li>
+                    <li><a href="https://www.loom.com/share/6ec435aa3150412d88e66b4f9e4435c0" target="_blank" rel="noopener noreferrer">Description not displayed (web)</a></li>
+                    <li><a href="https://www.loom.com/share/f0f9ea727585405ab03d7897b7cc7469" target="_blank" rel="noopener noreferrer">Whitespace-only playlist title (web)</a></li>
+                    <li><a href="https://www.loom.com/share/90a45f24de6b4880806e27bf7fafca37" target="_blank" rel="noopener noreferrer">Add-to-playlist UX suggestion (web)</a></li>
+                    <li><a href="https://www.loom.com/share/030c06a9de944598a370d763e39eeeed" target="_blank" rel="noopener noreferrer">Offline sync failure (web)</a></li>
+                </ul>
+            </section>
+
+            <section class="site-card reveal">
+                <h2>Takeaway</h2>
+                <p>Core playlist features were solid on both platforms, with clear gaps in count sync, validation (whitespace titles), web description display, offline handling, and a persistent duration rounding bug on web. iOS led on discoverability (add from anywhere) and offline affordances. The assignment mirrored production QA under hiring pressure: exploratory sessions, cross-platform comparison, API corroboration, and evidence-backed reporting a team could act on.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <p class="site-footer__meta">&copy; 2024 Ryley Johnson · QA Engineer</p>
+            <div class="site-footer__links">
+                <a href="index.html">Portfolio</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#resources">Resources</a>
+                <a href="mailto:ryleyjohnsonemail@gmail.com">Contact</a>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/site.js"></script>
+</body>
+</html>

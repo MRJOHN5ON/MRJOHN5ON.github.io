@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planning Center Publishing — Custom Pages QA — Ryley Johnson</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="stylesheet" href="assets/css/quinn.css">
+    <link rel="stylesheet" href="assets/css/planning-center.css">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R59XTH1XN5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R59XTH1XN5');
+    </script>
+</head>
+<body class="site-body planning-center-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header" id="site-header">
+        <div class="site-header__inner">
+            <a href="index.html" class="site-brand" aria-label="Ryley Johnson home"><span class="site-brand__name">Johnson</span><span class="site-brand__dot">.</span></a>
+            <button type="button" class="site-nav-toggle" id="site-nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+                <i class="uil uil-bars" aria-hidden="true"></i>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Site navigation">
+                <a href="index.html">Portfolio</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#resources">Resources</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="assets/files/RyleyJohnson_Resume2026.pdf" download class="site-btn site-btn--primary">Resume</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="site-main">
+        <div class="site-container">
+            <header class="pc-hero site-page-header reveal">
+                <figure class="pc-hero__banner">
+                    <img src="assets/images/planning-center/hero.png" alt="Planning Center Publishing custom page block editor" width="1200" height="750" loading="eager" decoding="async">
+                </figure>
+                <h1>Planning Center Publishing — Custom Pages</h1>
+                <p>October 2024 · QA take-home · Test strategy &amp; exploratory findings</p>
+                <div class="pc-hero-links">
+                    <a href="https://www.planningcenter.com/publishing" target="_blank" rel="noopener noreferrer">Publishing product <i class="uil uil-external-link-alt" aria-hidden="true"></i></a>
+                    <a href="https://github.com/MRJOHN5ON/take_home_assignment_planning_center" target="_blank" rel="noopener noreferrer">GitHub repo <i class="uil uil-github-alt" aria-hidden="true"></i></a>
+                    <a href="https://github.com/MRJOHN5ON/take_home_assignment_planning_center/blob/main/TEST_PLAN.md" target="_blank" rel="noopener noreferrer">Full test plan <i class="uil uil-file-alt" aria-hidden="true"></i></a>
+                    <a href="assets/files/Planning-Center-Bug-Reports.pdf" target="_blank" rel="noopener noreferrer">Bug report PDF <i class="uil uil-file-alt" aria-hidden="true"></i></a>
+                </div>
+            </header>
+
+            <section class="site-card reveal">
+                <h2>Overview</h2>
+                <p>
+                    Take-home exercise for a <span class="highlight">QA Tester role at Planning Center</span>. Planning Center is a church-management SaaS suite (calendars, giving, registrations, groups, and more). <strong>Publishing</strong> is the CMS for <a href="https://www.planningcenter.com/church-center" target="_blank" rel="noopener noreferrer">Church Center</a> — the free app and web experience congregants use to give, sign up for events, and browse church content.
+                </p>
+                <p>
+                    <strong>Custom Pages</strong> let church admins build no-code pages with a drag-and-drop block editor: welcome pages, bulletins, about pages, and anything else — published to Church Center web and mobile. Blocks include text, media, maps, social links, and deep links into other Planning Center products (Calendar, Giving).
+                </p>
+                <p>
+                    The assignment asked for a <strong>written testing plan only</strong>. I delivered a ~560-line <code>TEST_PLAN.md</code> with objectives, testing types, environment matrix, block-by-block scenarios, publishing workflows, known challenges, and a two-sprint prioritization. I also used their 30-day trial to run exploratory sessions on live <code>publishing.planningcenteronline.com</code> and logged <strong>four defects</strong> in Jira plus a supplemental PDF (not required).
+                </p>
+            </section>
+
+            <section class="site-card reveal">
+                <h2>What they asked for</h2>
+                <p class="assignment-quote">
+                    Submit a written testing plan focused on the Custom Page feature of Publishing. Custom pages enable churches to create engaging web and app experiences, with multiple configurable blocks providing flexibility for each church’s needs. Your plan should include test objectives, key scenarios, and specific challenges — especially flexibility and unique use cases. There are no strict length requirements, but clarity and sufficient detail matter.
+                </p>
+                <p>They offered a free 30-day trial to explore firsthand. Submissions were evaluated on:</p>
+                <ul class="criteria-list">
+                    <li><strong>Thoroughness</strong> — Coverage across all block types, publish states (draft / published / archived), third-party embeds, and integration with Calendar and Giving — not only happy-path “add a text block.”</li>
+                    <li><strong>Practicality and creativity</strong> — A prioritized sprint plan and realistic device matrix instead of claiming every browser × block × permission combination will be tested manually.</li>
+                    <li><strong>Clarity</strong> — Structured sections, official resource links (Zendesk, image sizing, navigation setup), and a clear API → manual → automation → beta rollout.</li>
+                    <li><strong>Publishing-specific challenges</strong> — Drag-and-drop on touch and desktop, Church Center preview vs live parity, membership-based access, QR/URL flows, concurrent admins, and international / RTL content.</li>
+                </ul>
+                <p>
+                    <a href="https://pcopublishing.zendesk.com/hc/en-us/articles/360052458693-Create-a-Custom-Page" target="_blank" rel="noopener noreferrer">Custom Pages guide</a> ·
+                    <a href="https://developer.planning.center/docs/#/overview" target="_blank" rel="noopener noreferrer">API documentation</a> ·
+                    <a href="https://support.planningcenteronline.com/hc/en-us/articles/18032518633115-Image-Sizing" target="_blank" rel="noopener noreferrer">Image sizing requirements</a>
+                </p>
+            </section>
+
+            <section class="site-card reveal" aria-labelledby="deliverables-heading">
+                <h2 id="deliverables-heading">Deliverables</h2>
+                <div class="pc-stats" role="group" aria-label="Project summary">
+                    <div class="pc-stat">
+                        <span class="pc-stat__value">560+</span>
+                        <span class="pc-stat__label">Lines in test plan</span>
+                    </div>
+                    <div class="pc-stat">
+                        <span class="pc-stat__value">8</span>
+                        <span class="pc-stat__label">Major document sections</span>
+                    </div>
+                    <div class="pc-stat">
+                        <span class="pc-stat__value">11</span>
+                        <span class="pc-stat__label">Block types with scenarios</span>
+                    </div>
+                    <div class="pc-stat">
+                        <span class="pc-stat__value">4</span>
+                        <span class="pc-stat__label">Bugs on live trial (Jira)</span>
+                    </div>
+                </div>
+                <h3>Test plan structure</h3>
+                <ol class="plan-outline">
+                    <li><strong>Introduction</strong> — Document purpose; Planning Center product suite; how Custom Pages fit into Publishing and Church Center for congregants.</li>
+                    <li><strong>Testing approaches</strong> — Functional (editor + publish flows); non-functional (a11y, performance, security); API contract testing; E2E journeys; regression and beta strategy with automation handoff.</li>
+                    <li><strong>Test environments</strong> — Top U.S. phones, macOS/Windows, Chrome/Safari/Firefox, tablets, desktop resolutions; DevTools, Postman, Playwright/Selenium.</li>
+                    <li><strong>Team communication</strong> — Jira severity workflow, stand-ups, shared Drive docs, GitHub for automation assets.</li>
+                    <li><strong>Key scenarios &amp; challenges</strong> — Page creation edge cases; 11 block types with per-type bullets; PC Calendar/Giving blocks; publish toolbar; performance, cross-platform, and i18n risks.</li>
+                    <li><strong>Prioritized 2-sprint plan</strong> — Sprint 1: core blocks, publish, access; Sprint 2: grid layouts, load testing, cross-product consistency, multi-admin E2E.</li>
+                    <li><strong>Conclusion</strong> — Why exhaustive combinatorial testing fails; what to automate after Sprint 1–2; beta with real church configurations.</li>
+                    <li><strong>Resource links</strong> — Custom Page guide, API overview, image sizing, navigation setup, archive/restore, hide-from-nav articles.</li>
+                </ol>
+                <p style="margin-top: var(--space-lg);">
+                    <a href="https://github.com/MRJOHN5ON/take_home_assignment_planning_center/blob/main/TEST_PLAN.md" target="_blank" rel="noopener noreferrer" class="site-btn site-btn--primary">Read full test plan on GitHub</a>
+                    <a href="assets/files/Planning-Center-Bug-Reports.pdf" target="_blank" rel="noopener noreferrer" class="site-btn site-btn--ghost" style="margin-left: 0.5rem;">Bug report PDF</a>
+                </p>
+            </section>
+
+            <section class="site-card reveal">
+                <h2>Testing approaches</h2>
+                <p>
+                    The plan treats Custom Pages as several surfaces at once: the admin block editor, published Church Center web and app views, backend APIs, and live integrations with Calendar and Giving.
+                    It proposes a layered rollout — API checks first, then manual and session-based exploratory testing, then automation for stable regression paths, then a beta period with real church configurations.
+                </p>
+                <div class="approach-grid">
+                    <div class="approach-card">
+                        <h3>Functional</h3>
+                        <p class="text-muted" style="font-size: 0.9rem; margin: 0 0 var(--space-sm);">Verify each feature behaves per requirements in both the editor and congregant-facing output.</p>
+                        <ul>
+                            <li>Create new pages; add text, images, video, social, section dividers</li>
+                            <li>Drag-and-drop reorder across mouse, trackpad, and touch</li>
+                            <li>Embed YouTube, maps, third-party content</li>
+                            <li>Integrate Calendar, Giving, and other PC products on one page</li>
+                            <li>Discard, Save Draft, Save &amp; Publish; verify Church Center view</li>
+                            <li>Navigation, QR code, URL copy, membership access restrictions</li>
+                            <li>Archive, restore, hide from nav while keeping title searchable</li>
+                        </ul>
+                    </div>
+                    <div class="approach-card">
+                        <h3>Non-functional</h3>
+                        <p class="text-muted" style="font-size: 0.9rem; margin: 0 0 var(--space-sm);">UX, accessibility, device states, media performance, and security around restricted content.</p>
+                        <ul>
+                            <li>UI responsiveness and editor smoothness</li>
+                            <li>Accessibility — screen readers, contrast, keyboard paths</li>
+                            <li>Layout under dark/light mode, airplane mode, split screen, throttled network, low battery</li>
+                            <li>Cross-browser and top mobile devices in the U.S.</li>
+                            <li>Image load performance (700px+ width on mobile per requirements)</li>
+                            <li>Heavy pages with video and large images under load</li>
+                            <li>Security of restricted pages — no bypass via email/phone changes</li>
+                        </ul>
+                    </div>
+                    <div class="approach-card">
+                        <h3>API</h3>
+                        <p class="text-muted" style="font-size: 0.9rem; margin: 0 0 var(--space-sm);">Confirm front-end actions match backend state — especially publish, access rules, and integration payloads.</p>
+                        <ul>
+                            <li>Endpoint functionality and expected responses</li>
+                            <li>Front-end / back-end data consistency</li>
+                            <li>Error handling and meaningful messages for invalid requests</li>
+                            <li>Performance under normal and peak load</li>
+                            <li>Auth and authorization on sensitive endpoints</li>
+                            <li>Tools: Postman (manual), Jest/Mocha (proposed automation)</li>
+                        </ul>
+                    </div>
+                    <div class="approach-card">
+                        <h3>End-to-end</h3>
+                        <p class="text-muted" style="font-size: 0.9rem; margin: 0 0 var(--space-sm);">Validate full admin-to-congregant workflows after individual areas pass.</p>
+                        <ul>
+                            <li>Design page → add PC blocks → Save &amp; Publish → add to Church Center navigation → open as congregant</li>
+                            <li>Restricted pages: visible in nav for eligible members, blocked for others; title still discoverable where required</li>
+                            <li>Re-run journeys after each release to catch workflow regressions</li>
+                        </ul>
+                    </div>
+                    <div class="approach-card">
+                        <h3>Regression &amp; beta</h3>
+                        <p class="text-muted" style="font-size: 0.9rem; margin: 0 0 var(--space-sm);">Protect stable paths while leaving room for exploratory work on new blocks.</p>
+                        <ul>
+                            <li>Automate repeatable functional tests (Playwright or Selenium) once charters are reviewed with dev and QA leads</li>
+                            <li>Re-test third-party embeds when YouTube, map APIs, or other external services change</li>
+                            <li>Continue manual exploratory passes on new features — automation misses obscure layout and i18n defects</li>
+                            <li>Beta release to selected churches for real-world configurations before general availability</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="site-card reveal">
+                <h2>Test environments &amp; tools</h2>
+                <div class="sprint-grid">
+                    <div class="sprint-card">
+                        <h3>Environment matrix</h3>
+                        <ul>
+                            <li><strong>Mobile:</strong> top 10 smartphones in the U.S.</li>
+                            <li><strong>Desktop OS:</strong> macOS and Windows</li>
+                            <li><strong>Browsers:</strong> Chrome, Safari, Firefox (top 3 U.S.)</li>
+                            <li><strong>Tablets:</strong> top 5 tablets in the U.S.</li>
+                            <li><strong>Resolutions:</strong> top 5 desktop resolutions for responsive layout</li>
+                        </ul>
+                    </div>
+                    <div class="sprint-card">
+                        <h3>Tools &amp; process</h3>
+                        <ul>
+                            <li>Chrome DevTools &amp; Android Studio for layout emulation</li>
+                            <li>Postman for API; Jest/Mocha for API automation (proposed)</li>
+                            <li>Playwright or Selenium for UI regression (proposed)</li>
+                            <li>Jira for bugs with severity-based prioritization</li>
+                            <li>Shared docs (Google Drive) + GitHub for automation code</li>
+                            <li>Daily or weekly stand-ups during active test cycles</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="margin-top: var(--space-md); color: var(--color-text-muted); font-size: 0.95rem;">
+                    The plan acknowledges exhaustive device × browser × block combinations is unrealistic — prioritization focuses on highest-impact flows first, then automation for stable regression paths.
+                </p>
+            </section>
+
+            <section class="site-card reveal">
+                <h2>Publishing workflows in the plan</h2>
+                <p>Beyond individual blocks, the plan dedicates full scenario suites to how pages go live.</p>
+                <ul class="detail-list">
+                    <li><strong>Discard</strong> — All changes since last save are undone; page returns to last saved state. Test on slow or offline connections and whether behavior depends on cookies or device permissions.</li>
+                    <li><strong>Save Draft</strong> — Changes persist without going live; small incremental edits; multiple saves in a row; then use Discard and confirm only the last draft boundary is respected.</li>
+                    <li><strong>Save &amp; Publish</strong> — Page becomes viewable on Church Center; confirm it stays unreachable until added to navigation where that applies; published HTML/app view must match the editor preview.</li>
+                    <li><strong>Page navigation dropdown</strong> — QR code resolves to the correct URL on iOS and Android cameras; copy link via keyboard shortcut and right-click; pasted URL matches live page; dropdown UI with many blocks stays ordered and readable.</li>
+                    <li><strong>User access</strong> — Public pages vs membership-restricted; restricted pages may show title in search but block content; zero-access vs full-access edge cases; same user on two devices; rapid toggle between hidden and visible; users who lost access still cannot view archived content; attempt bypass via email or phone number changes on profile.</li>
+                    <li><strong>Archive / restore</strong> — Scenarios tied to official archive and hide-from-nav Zendesk articles (linked in test plan resources).</li>
+                    <li><strong>Concurrent admins</strong> — Two staff editing one page at the same time — conflict messaging, overwrite behavior, and data loss risk.</li>
+                </ul>
+            </section>
+
+            <section class="site-card reveal">
+                <h2>Two-sprint execution model</h2>
+                <p>After defining scenarios, the plan prioritizes into two 1–2 week sprints so a small QA team can ship meaningful coverage before chasing edge cases.</p>
+                <div class="sprint-grid">
+                    <div class="sprint-card">
+                        <h3>Sprint 1 — Core functionality (1–2 weeks)</h3>
+                        <ul>
+                            <li>Create pages with varied titles (length, multilingual, empty, linked titles)</li>
+                            <li>Drag-and-drop every block type; edge case ~12 blocks per page</li>
+                            <li>Text, image, button, video, location blocks — happy paths and validation</li>
+                            <li>Video URLs and embed codes (YouTube, Vimeo, Boxcast)</li>
+                            <li>Calendar block — up to six events, past events dropping off, canceled events</li>
+                            <li>Giving block — fund links and cross-product data consistency</li>
+                            <li>Save draft, publish, discard end-to-end</li>
+                            <li>Access restrictions, visibility (public / limited / hidden), archive and restore</li>
+                        </ul>
+                    </div>
+                    <div class="sprint-card">
+                        <h3>Sprint 2 — Advanced &amp; cross-platform (1–2 weeks)</h3>
+                        <ul>
+                            <li>Grid block — 1–3 columns, mobile vs desktop column rules, max items, spacing</li>
+                            <li>Complex layouts mixing many block types on one page</li>
+                            <li>Load times with multiple high-res images and embedded video on slow networks</li>
+                            <li>Simulated high user load on published pages</li>
+                            <li>Top 3 iOS/Android devices + top 3 desktop browsers</li>
+                            <li>Data consistency between Custom Pages and Calendar, Giving, and other PC products</li>
+                            <li>Simultaneous admin editing; full E2E journeys from create → publish → congregant access</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="site-card reveal">
+                <h2>Page creation scenarios</h2>
+                <p>Before block-level testing, the plan covers how pages themselves are created and edited — because church admins rarely use a single “template” layout.</p>
+                <ul class="detail-list">
+                    <li>Page titles at various lengths; multilingual and RTL input in title fields</li>
+                    <li>Pages created without titles; titles that contain hyperlinks</li>
+                    <li>Combining many block types on one page; edge case near the ~12-block recommendation</li>
+                    <li>Drag-and-drop with mouse, trackpad, and stylus across desktop and touch devices</li>
+                    <li>Two admins editing the same page simultaneously — conflict handling and last-write behavior</li>
+                </ul>
+            </section>
+
+            <section class="site-card reveal" aria-labelledby="blocks-heading">
+                <h2 id="blocks-heading">Block-by-block scenarios</h2>
+                <p>Each block type has a dedicated subsection in <code>TEST_PLAN.md</code>. Below is the level of detail from the plan (not abbreviated to one line per block).</p>
+
+                <div class="block-scenario">
+                    <h3>Button</h3>
+                    <ul class="detail-list">
+                        <li>Hyperlink attached to button opens correct destination on tap/click</li>
+                        <li>Valid and invalid URL inputs; varied domain extensions</li>
+                        <li>URL length limits and shortened URLs (bit.ly, etc.)</li>
+                        <li>Whether link styling matches between draft preview and published Church Center page</li>
+                    </ul>
+                </div>
+                <div class="block-scenario">
+                    <h3>Contact</h3>
+                    <ul class="detail-list">
+                        <li>Phone numbers with different delimiters and country codes</li>
+                        <li>Invalid contact data — error messaging and whether publish is blocked</li>
+                        <li>Tap-to-call and tap-to-email open the correct native apps</li>
+                        <li>Multiple contact blocks on the same page without layout breakage</li>
+                    </ul>
+                </div>
+                <div class="block-scenario">
+                    <h3>Event schedule</h3>
+                    <ul class="detail-list">
+                        <li>Past and future dates; invalid date handling</li>
+                        <li>Description length boundaries; hyperlinks and emojis inside descriptions</li>
+                        <li>Local time zone display; suggestions for “current” date/time when adding events</li>
+                        <li>Layout and aspect ratio on the published page; multiple schedule blocks on one page</li>
+                        <li>Data consistency with Planning Center scheduling elsewhere in the suite</li>
+                        <li>RTL titles with punctuation — validated in trial as <strong>PC-4</strong></li>
+                    </ul>
+                </div>
+                <div class="block-scenario">
+                    <h3>Image <span class="text-muted">(called out as high-focus in the plan)</span></h3>
+                    <ul class="detail-list">
+                        <li>Select from device, saved media library, and Unsplash integration</li>
+                        <li>Library storage limits; add/delete files; supported file types</li>
+                        <li>Large uploads — speed, reliability, and behavior when upload is interrupted</li>
+                        <li>Minimum width rules (700px on mobile per official sizing guide); reject or resize out-of-spec images</li>
+                        <li>User-friendly errors for wrong type or dimensions; corrupt file handling without hanging the editor</li>
+                        <li>Pages with several images near max file size across browsers and resolutions</li>
+                        <li>Hyperlink on image acting as a button — URL formats, load times, appearance change when link added</li>
+                        <li>Unsplash search relevance and whether suggested images respect size restrictions</li>
+                    </ul>
+                </div>
+                <div class="block-scenario">
+                    <h3>Location</h3>
+                    <ul class="detail-list">
+                        <li>Varied address formats; valid vs invalid addresses</li>
+                        <li>Map API integration — satellite view, zoom, directions</li>
+                        <li>Map readability, resolution, and aspect ratio on published pages</li>
+                        <li>Countries without states — state field should not block publish (<strong>PC-1</strong> on trial)</li>
+                    </ul>
+                </div>
+                <div class="block-scenario">
+                    <h3>Section header</h3>
+                    <ul class="detail-list">
+                        <li>Background image file types and size limits; cropping on different viewports</li>
+                        <li>Buttons embedded in headers; header text length limits</li>
+                        <li>Multiple section headers on one page</li>
+                    </ul>
+                </div>
+                <div class="block-scenario">
+                    <h3>Social</h3>
+                    <ul class="detail-list">
+                        <li>Facebook, Twitter/X, Instagram, TikTok, YouTube — valid profile URLs</li>
+                        <li>Invalid or broken links; shortened URL formats</li>
+                        <li>Icon alignment and responsiveness on mobile vs desktop</li>
+                        <li>Redirect to correct platform when tapped; stacked social blocks</li>
+                        <li>Draft vs published appearance of icons and links</li>
+                    </ul>
+                </div>
+                <div class="block-scenario">
+                    <h3>Video</h3>
+                    <ul class="detail-list">
+                        <li>Valid/invalid URLs and embed codes for YouTube, Vimeo, Boxcast</li>
+                        <li>Playback, buffering, and controls (play, pause, volume, fullscreen) across browsers</li>
+                        <li>Responsive embed sizing; captions and accessibility on embedded players</li>
+                        <li>Clear error copy when URL or embed is rejected</li>
+                    </ul>
+                </div>
+                <div class="block-scenario">
+                    <h3>Grid</h3>
+                    <ul class="detail-list">
+                        <li>Mix of buttons, images with hyperlinks, and text in 1-, 2-, and 3-column layouts</li>
+                        <li>Separate column counts for mobile vs desktop views</li>
+                        <li>Item proportions, spacing, and overlap when resizing; broken links inside grid cells</li>
+                        <li>Accessibility for tappable grid items; performance at maximum recommended items</li>
+                        <li>Pressure-test beyond the ~12-item-per-block guidance</li>
+                    </ul>
+                </div>
+                <div class="block-scenario">
+                    <h3>Calendar (Planning Center block)</h3>
+                    <ul class="detail-list">
+                        <li>Up to six events displayed; behavior at the limit</li>
+                        <li>Past events dropping off automatically; speed of removal for repeating weekly events</li>
+                        <li>Whether users can RSVP or open event details from the block</li>
+                        <li>Canceled events marked or removed appropriately</li>
+                        <li>Data stays in sync with events created in Calendar elsewhere in Planning Center</li>
+                    </ul>
+                </div>
+                <div class="block-scenario">
+                    <h3>Giving (Planning Center block)</h3>
+                    <ul class="detail-list">
+                        <li>Every fund available in Giving can be linked from the block</li>
+                        <li>Link redirects to the correct fund page</li>
+                        <li>Fund names and amounts match the Giving product — no stale data on Custom Pages</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="site-card reveal">
+                <h2>Known challenges addressed</h2>
+                <p>The assignment specifically asked for challenges churches might hit — not only “does the button work.” The plan calls these out before the sprint prioritization.</p>
+                <div class="challenge-grid">
+                    <div class="challenge-card">
+                        <h3>Flexibility &amp; unique church layouts</h3>
+                        <p>Every congregation configures pages differently: sermon archives with embedded video, multi-campus location blocks, bilingual welcome text, giving campaigns beside event calendars. Testing must cover unusual <em>combinations</em> of blocks and permissions, not a single demo page.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Performance &amp; scalability</h3>
+                        <p>Balancing rich media with fast load times on mobile and throttled networks. Bottlenecks often appear only with several high-resolution images, embedded livestreams, or many blocks on one page — scenarios called out for Sprint 2 load testing.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Cross-platform consistency</h3>
+                        <p>Uniform experience between the admin editor, Church Center web, and the mobile app. Grid column rules, image full-bleed on phone, and video controls must be verified on both desktop browsers and top iOS/Android devices.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Multi-language &amp; RTL</h3>
+                        <p>Correct date/time formats and time zones for events; RTL text in drag-and-drop fields; locale-specific address fields. Trial testing surfaced RTL punctuation bugs (PC-4) and international address validation (PC-1) before any formal test cycle.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Integration consistency</h3>
+                        <p>Calendar and Giving blocks import live data from other Planning Center apps. Tests must catch stale events, wrong fund links, or content that updates in Calendar but not on the published Custom Page.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="site-card reveal" aria-labelledby="bugs-heading">
+                <h2 id="bugs-heading">Exploratory findings (30-day trial)</h2>
+                <p>
+                    During the week of <strong>Oct 13, 2024</strong> I exercised the live editor at
+                    <code>publishing.planningcenteronline.com</code> on a MacBook Pro (macOS Big Sur 11.7.10, Chrome 129).
+                    Bugs were filed in Jira (PC-1 through PC-4); access available on request. The company did not require bug reports — these were supplemental.
+                </p>
+                <ul class="bug-list">
+                    <li class="bug-item">
+                        <div class="bug-item__head">
+                            <span class="bug-item__id">PC-1</span>
+                            <span class="bug-badge bug-badge--major">Major</span>
+                            <span class="bug-badge bug-badge--minor">Location block</span>
+                        </div>
+                        <p><strong>International locations still require “State” in address.</strong></p>
+                        <p class="bug-item__detail">
+                            <strong>Steps:</strong> Open block editor → add Location block → set country to one without states (e.g. outside U.S.) → fill all other fields validly → leave state empty → Publish Page.<br>
+                            <strong>Expected:</strong> State field optional or hidden for countries without states; page publishes with map.<br>
+                            <strong>Actual:</strong> Error requires state; publish blocked despite valid international address.
+                        </p>
+                    </li>
+                    <li class="bug-item">
+                        <div class="bug-item__head">
+                            <span class="bug-item__id">PC-2</span>
+                            <span class="bug-badge bug-badge--minor">Minor</span>
+                            <span class="bug-badge bug-badge--minor">Text block</span>
+                        </div>
+                        <p><strong>Link field rejects URLs without protocol — no user feedback.</strong></p>
+                        <p class="bug-item__detail">
+                            <strong>Steps:</strong> Text block → link toolbar → enter <code>insidemcc.org</code> (no <code>https://</code>) → save.<br>
+                            <strong>Expected:</strong> Auto-prefix <code>https://</code> or show “Please add a protocol.”<br>
+                            <strong>Actual:</strong> Link silently rejected; user not told why.
+                        </p>
+                    </li>
+                    <li class="bug-item">
+                        <div class="bug-item__head">
+                            <span class="bug-item__id">PC-3</span>
+                            <span class="bug-badge bug-badge--minor">Minor</span>
+                            <span class="bug-badge bug-badge--minor">Pages overview</span>
+                        </div>
+                        <p><strong>“In Nav” column out of sync with editor after adding page to navigation.</strong></p>
+                        <p class="bug-item__detail">
+                            <strong>Steps:</strong> Create page → Save Draft → Save &amp; Publish → add to nav via Edit Navigation → Save &amp; Publish → open Pages overview table → compare “In Nav” column vs editor dropdown.<br>
+                            <strong>Expected:</strong> Both show page in navigation (checkmark in table).<br>
+                            <strong>Actual:</strong> Editor dropdown says in nav; overview table missing checkmark.
+                        </p>
+                        <a href="https://youtu.be/Ih-F_OYRdg4" target="_blank" rel="noopener noreferrer">Screen recording <i class="uil uil-external-link-alt" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="bug-item">
+                        <div class="bug-item__head">
+                            <span class="bug-item__id">PC-4</span>
+                            <span class="bug-badge bug-badge--major">Major</span>
+                            <span class="bug-badge bug-badge--minor">Event schedule · RTL</span>
+                        </div>
+                        <p><strong>RTL paste with exclamation mark reverses punctuation in event titles.</strong></p>
+                        <p class="bug-item__detail">
+                            <strong>Steps:</strong> New page → Event schedule block → paste Arabic or Hebrew title containing <code>!</code> → Done.<br>
+                            <strong>Expected:</strong> Title displays correctly RTL in preview and published page.<br>
+                            <strong>Actual:</strong> Exclamation mark moves to wrong end of sentence.<br>
+                            <strong>Impact:</strong> Hurts i18n quality for non-Christian and international faith communities if Publishing expands market.
+                        </p>
+                    </li>
+                </ul>
+                <p style="margin-top: var(--space-lg);">
+                    <a href="assets/files/Planning-Center-Bug-Reports.pdf" target="_blank" rel="noopener noreferrer" class="site-btn site-btn--ghost">Open full bug report PDF</a>
+                </p>
+            </section>
+
+            <section class="site-card reveal">
+                <h2>Evidence</h2>
+                <p>Screenshots from the supplemental bug PDF. PC-4 (RTL event title) is documented in the PDF with reproduction steps; no static screenshot is on this page.</p>
+                <div class="evidence-grid">
+                    <figure>
+                        <img src="assets/images/planning-center/bug-screenshot-1.png" alt="Location block requiring state field for international address" loading="lazy">
+                        <figcaption>PC-1 — State still required for international country</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="assets/images/planning-center/bug-screenshot-2.png" alt="Text block link field rejecting URL without protocol" loading="lazy">
+                        <figcaption>PC-2 — Link field with no validation message</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="assets/images/planning-center/bug-screenshot-3.png" alt="Pages overview In Nav column mismatch" loading="lazy">
+                        <figcaption>PC-3 — Overview table vs editor dropdown</figcaption>
+                    </figure>
+                </div>
+                <p style="margin-top: var(--space-md);">
+                    <a href="https://youtu.be/Ih-F_OYRdg4" target="_blank" rel="noopener noreferrer">PC-3 screen recording (YouTube)</a>
+                </p>
+            </section>
+
+            <section class="site-card reveal">
+                <h2>Takeaway</h2>
+                <p>
+                    This take-home is test <em>design</em> at product scale: decompose a flexible no-code editor into layers (blocks, publish pipeline, integrations, environments), prioritize what breaks for real churches, and be explicit about what you cannot exhaustively cover.
+                </p>
+                <p>
+                    The trial turned abstract scenarios into concrete defects — international address rules, silent validation, table/dropdown inconsistency, RTL punctuation — the kinds of issues that show up when software built for one audience meets global use. The plan’s proposed path (API → manual charters → automation → beta) mirrors how I would approach QA on a mature SaaS team like Planning Center.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <p class="site-footer__meta">&copy; 2024 Ryley Johnson · QA Engineer</p>
+            <div class="site-footer__links">
+                <a href="index.html">Portfolio</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#resources">Resources</a>
+                <a href="mailto:ryleyjohnsonemail@gmail.com">Contact</a>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+body.planning-center-page .site-card {
+  margin-bottom: var(--space-xl);
+}
+
+body.planning-center-page .site-card h2 {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+}
+
+body.planning-center-page .site-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--color-highlight);
+  margin: var(--space-lg) 0 var(--space-sm);
+}
+
+body.planning-center-page .highlight {
+  color: var(--color-highlight);
+  font-weight: 600;
+}
+
+.pc-hero {
+  text-align: center;
+}
+
+.pc-hero__banner {
+  margin: 0 0 var(--space-xl);
+  padding: 0;
+}
+
+.pc-hero__banner img {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  height: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.pc-hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+  margin-top: var(--space-lg);
+}
+
+.pc-hero-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.pc-hero-links a:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.pc-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-md);
+  margin: var(--space-lg) 0;
+}
+
+.pc-stat {
+  text-align: center;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+}
+
+.pc-stat__value {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-highlight);
+}
+
+.pc-stat__label {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.sprint-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+.sprint-card {
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+}
+
+.sprint-card h3 {
+  margin-top: 0;
+}
+
+.sprint-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--color-text-muted);
+}
+
+.sprint-card li + li {
+  margin-top: 0.35rem;
+}
+
+.assignment-quote {
+  margin: var(--space-md) 0 0;
+  padding: var(--space-md) var(--space-lg);
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-accent-soft);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.approach-grid,
+.challenge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+.approach-card,
+.challenge-card {
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+}
+
+.approach-card h3,
+.challenge-card h3 {
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+.approach-card p,
+.challenge-card p {
+  margin: 0 0 var(--space-sm);
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.approach-card ul,
+.challenge-card ul,
+.detail-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.approach-card li + li,
+.challenge-card li + li,
+.detail-list li + li {
+  margin-top: 0.35rem;
+}
+
+.block-scenario {
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.block-scenario:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.block-scenario h3 {
+  margin: 0 0 var(--space-sm);
+  font-size: 1rem;
+}
+
+.criteria-list {
+  margin: var(--space-md) 0 0;
+  padding-left: 1.2rem;
+  color: var(--color-text-muted);
+}
+
+.criteria-list li + li {
+  margin-top: 0.35rem;
+}
+
+.plan-outline {
+  margin: var(--space-lg) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.plan-outline li {
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+}
+
+.plan-outline li + li {
+  margin-top: var(--space-sm);
+}
+
+.plan-outline strong {
+  color: var(--color-text);
+}

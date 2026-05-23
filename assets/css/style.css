@@ -1239,6 +1239,8 @@ footer {
 }
 
 .project-box[data-bg="testlio"] { background-image: url('../images/testlio.png'); }
+.project-box[data-bg="quinn"] { background-image: url('../images/quinn-tile.jpg'); }
+.project-box[data-bg="planningcenter"] { background-image: url('../images/planning-center-tile.jpg'); }
 .project-box[data-bg="givens"] { background-image: url('../images/givensfireandforestry.png'); }
 .project-box[data-bg="socialqa"] { background-image: url('../images/photo_2024-11-27%2018.52.48.jpeg'); }
 .project-box[data-bg="postman"] { background-image: url('../images/postman.svg'); }
