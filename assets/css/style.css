@@ -981,6 +981,16 @@ footer {
     border-radius: 8px;
  }
 
+ .carousel-item--document a {
+    background: #fff;
+    border-radius: 8px;
+    padding: var(--space-sm);
+ }
+
+ .carousel-item--document img {
+    background: #fff;
+ }
+
  /* Styles for clickable carousel items */
  .carousel-item a {
     display: block;
